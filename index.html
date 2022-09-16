@@ -1,0 +1,1215 @@
+<!DOCTYPE html><html lang="en-US"><!--lit-node 0--><!--lit-part 9o6GLDmg6E0=--><head>
+        <!--lit-part--><!--lit-part wHArAiekrZo=-->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <title>Spark Rocket Example Template</title>
+        <meta property="og:title" content="Spark Rocket Example Template"><!--lit-node 4-->
+
+        <meta name="generator" content="rocket 0.1">
+
+        <meta name="description" content="Everyone can code a website!"><!--lit-node 6-->
+        <meta property="og:description" content="Everyone can code a website!"><!--lit-node 7-->
+
+        <link rel="canonical" href="http://localhost:8080/"><!--lit-node 8-->
+        <meta property="og:url" content="http://localhost:8080/"><!--lit-node 9-->
+      <!--/lit-part--><!--lit-part mTa6YEdoIjs=-->
+      <link rel="icon" href="assets/favicon.ico" sizes="any"><!-- 32x32 -->
+      <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+      <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><!-- 180x180 -->
+      <link rel="manifest" href="assets/site.webmanifest">
+    <!--/lit-part--><!--lit-part gQKDxErJms8=-->
+      <meta property="og:site_name" content="Rocket"><!--lit-node 0-->
+      <meta property="og:type" content="website">
+      <meta name="twitter:card" content="summary_large_image">
+    <!--/lit-part--><!--lit-part LESIcIqrZBY=-->
+      <style>
+        body[dsd-pending] {
+          display: none;
+        }
+      </style>
+      <noscript>
+        <style>
+          body[dsd-pending] {
+            display: block;
+          }
+        </style>
+      </noscript>
+    <!--/lit-part--><!--lit-part KprR0CQ20eY=-->
+        <link rel="preload" href="/fonts/Rubik-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="">
+        <link rel="stylesheet" href="8be09000.css">
+        <link rel="stylesheet" href="1d5ad776.css">
+        <link rel="stylesheet" href="eb933c4b.css">
+      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="704c1bb1.css"><!--/lit-part--><!--/lit-part-->
+      
+<link rel="preload" href="./9c17c8363.js" as="script" crossorigin="anonymous" />
+<link rel="preload" href="./d2481eb7.js" as="script" crossorigin="anonymous" />
+<link rel="preload" href="2c9a42d6.js" as="script" crossorigin="anonymous" />
+</head>
+    <!--/lit-part--> <!--lit-part Cr9DEFJbx3I=-->
+      <body class="  " layout="layout"><!--lit-node 0-->
+        <!--lit-part--><!--lit-part 8lPOZJw2lXs=-->
+      <script>
+        if (HTMLTemplateElement.prototype.hasOwnProperty('shadowRoot')) {
+          document.body.removeAttribute('dsd-pending');
+        }
+      </script>
+    <!--/lit-part--><!--/lit-part--> <!--lit-part 9t4rvBmcMJY=-->
+      <rocket-header-scroll-menu><template shadowroot="open"><style>
+      :host {
+        display: flex;
+        align-items: center;
+        position: sticky;
+        height: 100px;
+        top: -50px; /* height - .header-inner height => 100-50 = 50 */
+        z-index: 100;
+      }
+
+      .header-inner {
+        height: 50px;
+        position: sticky;
+        top: 0;
+        width: 100%;
+        padding-right: var(--rocket-header-scroll-menu-padding-right, 0);
+        text-align: var(--rocket-header-scroll-menu-text-align, center);
+      }
+
+      ::slotted(a) {
+        text-decoration: none;
+        padding: 0.25rem;
+        line-height: 50px;
+      }
+
+      @media screen and (min-width: 1024px) {
+        ::slotted(a) {
+          padding: 0.75rem;
+        }
+      }
+    </style><!--lit-part VitTU4kFaCU=-->
+      <div class="header-inner">
+        <rocket-content-area no-padding="" defer-hydration=""><!--lit-node 1--><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+          <div class="header-logo"></div>
+          <nav class="header-navigation">
+            <slot id="content"></slot>
+          </nav>
+        </rocket-content-area>
+      </div>
+    <!--/lit-part--></template>
+        <!--lit-part--><!--lit-part BcJtb4Vqdro=-->
+            <!--lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#home"><!--lit-node 0--><!--lit-part-->Home<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#credit"><!--lit-node 0--><!--lit-part-->Credit<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#knowledge"><!--lit-node 0--><!--lit-part-->Knowledge<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#signup"><!--lit-node 0--><!--lit-part-->Sign Up<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#say"><!--lit-node 0--><!--lit-part-->Say<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#faq"><!--lit-node 0--><!--lit-part-->FAQ<!--/lit-part--></a>
+              <!--/lit-part--><!--/lit-part-->
+          <!--/lit-part--><!--/lit-part-->
+      </rocket-header-scroll-menu>
+    <!--/lit-part-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part gOI7hiE4KJ8=-->
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <div>
+      <h1 id="home" link-text="Home">
+        <rocket-rotating-text loading="hydrate:onVisible" items="[&quot;Welcome&quot;, &quot;Hello&quot;, &quot;Aloa&quot;]" in-index="0"><template shadowroot="open"><style>
+      @keyframes textAnimIn {
+        0% {
+          transform: translate3d(0, -120%, 0);
+        }
+
+        100% {
+          transform: translate3d(0, 0%, 0);
+        }
+      }
+
+      @keyframes textAnimOut {
+        0% {
+          transform: translate3d(0, 0%, 0);
+        }
+
+        50% {
+          transform: translate3d(0, -20%, 0);
+        }
+
+        100% {
+          transform: translate3d(0, 120%, 0);
+        }
+      }
+
+      p {
+        position: absolute;
+        top: 0;
+        margin: 0;
+        transform: translate3d(0, -120%, 0);
+      }
+
+      .anim-static {
+        transform: translate3d(0, 0, 0);
+      }
+
+      .anim-in {
+        animation: textAnimIn 0.6s 0.3s forwards;
+      }
+
+      .anim-out {
+        animation: textAnimOut 0.6s forwards;
+      }
+
+      :host {
+        position: block;
+        position: relative;
+        overflow: hidden;
+        display: block;
+        height: 1.5em;
+      }
+      div {
+        display: flex;
+        max-width: 960px;
+        margin: 0 auto;
+      }
+      slot {
+        display: block;
+        flex: 1;
+      }
+    </style><!--lit-part BRUAAAUVAAA=--><!--lit-part--><!--lit-part imTGNXZq2uM=--><p class=" anim-static "><!--lit-node 0-->
+          <!--lit-part-->Welcome<!--/lit-part-->
+        </p><!--/lit-part--><!--lit-part imTGNXZq2uM=--><p class="  "><!--lit-node 0-->
+          <!--lit-part-->Hello<!--/lit-part-->
+        </p><!--/lit-part--><!--lit-part imTGNXZq2uM=--><p class="  "><!--lit-node 0-->
+          <!--lit-part-->Aloa<!--/lit-part-->
+        </p><!--/lit-part--><!--/lit-part--><!----><!--/lit-part--></template></rocket-rotating-text>
+        <span>to the world of science.</span>
+      </h1>
+      <p>If we find life out there, and it's not us, we will deem it not intelligent.</p>
+      <a class="cta" href="#signup">I want more</a>
+    </div>
+
+    <img src="f39c6385.svg" alt="alternative" width="189" height="150">
+  </rocket-columns>
+</rocket-content-area>
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <div>
+      <h2>I've spent quality time in the aerospace community</h2>
+      <p>
+        ✅ with my service on two presidential commissions. <br>
+        ✅ but at heart, I'm an academic..
+        <br>
+        ✅ Being an academic means I don't wield power over person. <br>
+        ✅ place or thing.<br>
+        ✅ I don't command armies
+      </p>
+      <a class="cta" href="#signup">I want more</a>
+    </div>
+    <img src="5e036c2a.svg" alt="alternative" width="146" height="150">
+  </rocket-columns>
+</rocket-content-area>
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="credit" link-text="Credit" class="area-headline">
+    People credit me for <br>
+    <span class="highlight">making the universe interesting,</span>
+  </h2>
+
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <rocket-feature-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='icon']::slotted(*) {
+      margin: 0 auto;
+      margin-bottom: var(--space-l, 1rem);
+    }
+  </style><!--lit-part 036ZaKsh40w=-->
+      <slot name="icon"></slot>
+      <slot name="title"></slot>
+      <slot name="description"></slot>
+    <!--/lit-part--></template>
+      <rocket-icon-card slot="icon" icon="solid/headphones-alt"><template shadowroot="open"><style>
+    :host {
+      display: block;
+    }
+
+    :host {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+
+      fill: #8763ee;
+      background-color: #efebfd;
+    }
+
+    .icon {
+      width: 53%;
+    }
+
+    :host([variation='green']) {
+      background-color: #defaeb;
+      fill: #00d462;
+    }
+
+    :host([variation='blue']) {
+      background-color: #e2ebfd;
+      fill: #1f68f3;
+    }
+  </style><!--lit-part ueNIHu4iFNI=--> <div class="icon"><!--lit-part af5wfcfRueA=--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M160 288h-16c-35.35 0-64 28.7-64 64.12v63.76c0 35.41 28.65 64.12 64 64.12h16c17.67 0 32-14.36 32-32.06V320.06c0-17.71-14.33-32.06-32-32.06zm208 0h-16c-17.67 0-32 14.35-32 32.06v127.88c0 17.7 14.33 32.06 32 32.06h16c35.35 0 64-28.71 64-64.12v-63.76c0-35.41-28.65-64.12-64-64.12zM256 32C112.91 32 4.57 151.13 0 288v112c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16V288c0-114.67 93.33-207.8 208-207.82 114.67.02 208 93.15 208 207.82v112c0 8.84 7.16 16 16 16h16c8.84 0 16-7.16 16-16V288C507.43 151.13 399.09 32 256 32z"></path></svg><!--/lit-part--></div> <!--/lit-part--></template></rocket-icon-card>
+      <h4 slot="title">when in fact</h4>
+      <p slot="description">
+        the universe is inherently interesting <br>
+        and I'm merely revealing that fact<br>
+        I don't think I'm anything special for this to happen<br>
+      </p>
+    </rocket-feature-small>
+
+    <rocket-feature-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='icon']::slotted(*) {
+      margin: 0 auto;
+      margin-bottom: var(--space-l, 1rem);
+    }
+  </style><!--lit-part 036ZaKsh40w=-->
+      <slot name="icon"></slot>
+      <slot name="title"></slot>
+      <slot name="description"></slot>
+    <!--/lit-part--></template>
+      <rocket-icon-card slot="icon" icon="regular/clipboard" variation="green"><template shadowroot="open"><style>
+    :host {
+      display: block;
+    }
+
+    :host {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+
+      fill: #8763ee;
+      background-color: #efebfd;
+    }
+
+    .icon {
+      width: 53%;
+    }
+
+    :host([variation='green']) {
+      background-color: #defaeb;
+      fill: #00d462;
+    }
+
+    :host([variation='blue']) {
+      background-color: #e2ebfd;
+      fill: #1f68f3;
+    }
+  </style><!--lit-part ueNIHu4iFNI=--> <div class="icon"><!--lit-part kBHlEdRNaZc=--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M336 64h-80c0-35.3-28.7-64-64-64s-64 28.7-64 64H48C21.5 64 0 85.5 0 112v352c0 26.5 21.5 48 48 48h288c26.5 0 48-21.5 48-48V112c0-26.5-21.5-48-48-48zM192 40c13.3 0 24 10.7 24 24s-10.7 24-24 24-24-10.7-24-24 10.7-24 24-24zm144 418c0 3.3-2.7 6-6 6H54c-3.3 0-6-2.7-6-6V118c0-3.3 2.7-6 6-6h42v36c0 6.6 5.4 12 12 12h168c6.6 0 12-5.4 12-12v-36h42c3.3 0 6 2.7 6 6z"></path></svg><!--/lit-part--></div> <!--/lit-part--></template></rocket-icon-card>
+      <h4 slot="title">The problem</h4>
+      <p slot="description">
+        is not scientifically illiterate kids<br>
+        it is scientifically illiterate adults<br>
+        Kids are born curious<br>
+        about the natural world
+      </p>
+    </rocket-feature-small>
+
+    <rocket-feature-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='icon']::slotted(*) {
+      margin: 0 auto;
+      margin-bottom: var(--space-l, 1rem);
+    }
+  </style><!--lit-part 036ZaKsh40w=-->
+      <slot name="icon"></slot>
+      <slot name="title"></slot>
+      <slot name="description"></slot>
+    <!--/lit-part--></template>
+      <rocket-icon-card slot="icon" icon="regular/comments" variation="blue"><template shadowroot="open"><style>
+    :host {
+      display: block;
+    }
+
+    :host {
+      width: 76px;
+      height: 76px;
+      border-radius: 10px;
+      display: grid;
+      place-items: center;
+
+      fill: #8763ee;
+      background-color: #efebfd;
+    }
+
+    .icon {
+      width: 53%;
+    }
+
+    :host([variation='green']) {
+      background-color: #defaeb;
+      fill: #00d462;
+    }
+
+    :host([variation='blue']) {
+      background-color: #e2ebfd;
+      fill: #1f68f3;
+    }
+  </style><!--lit-part ueNIHu4iFNI=--> <div class="icon"><!--lit-part ZaBrRsCviMM=--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M532 386.2c27.5-27.1 44-61.1 44-98.2 0-80-76.5-146.1-176.2-157.9C368.3 72.5 294.3 32 208 32 93.1 32 0 103.6 0 192c0 37 16.5 71 44 98.2-15.3 30.7-37.3 54.5-37.7 54.9-6.3 6.7-8.1 16.5-4.4 25 3.6 8.5 12 14 21.2 14 53.5 0 96.7-20.2 125.2-38.8 9.2 2.1 18.7 3.7 28.4 4.9C208.1 407.6 281.8 448 368 448c20.8 0 40.8-2.4 59.8-6.8C456.3 459.7 499.4 480 553 480c9.2 0 17.5-5.5 21.2-14 3.6-8.5 1.9-18.3-4.4-25-.4-.3-22.5-24.1-37.8-54.8zm-392.8-92.3L122.1 305c-14.1 9.1-28.5 16.3-43.1 21.4 2.7-4.7 5.4-9.7 8-14.8l15.5-31.1L77.7 256C64.2 242.6 48 220.7 48 192c0-60.7 73.3-112 160-112s160 51.3 160 112-73.3 112-160 112c-16.5 0-33-1.9-49-5.6l-19.8-4.5zM498.3 352l-24.7 24.4 15.5 31.1c2.6 5.1 5.3 10.1 8 14.8-14.6-5.1-29-12.3-43.1-21.4l-17.1-11.1-19.9 4.6c-16 3.7-32.5 5.6-49 5.6-54 0-102.2-20.1-131.3-49.7C338 339.5 416 272.9 416 192c0-3.4-.4-6.7-.7-10C479.7 196.5 528 238.8 528 288c0 28.7-16.2 50.6-29.7 64z"></path></svg><!--/lit-part--></div> <!--/lit-part--></template></rocket-icon-card>
+      <h4 slot="title">They are always</h4>
+      <p slot="description">
+        turning over rocks <br>
+        jumping with two feet <br>
+        into mud puddles
+      </p>
+    </rocket-feature-small>
+  </rocket-columns>
+</rocket-content-area>
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="knowledge" link-text="Knowledge" class="area-headline">
+    I've known from long ago <br>
+    <span class="highlight">that the universe was calling me</span>
+  </h2>
+
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
+      <slot name="title"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
+    <!--/lit-part--></template>
+      <h4 slot="title">Life</h4>
+      <p>
+        As a scientist, I want to go to Mars and back to asteroids and the Moon because I'm a
+        scientist. But I can tell you, I'm not so naive a scientist to think that the nation might
+        not have geopolitical reasons for going into space.
+      </p>
+      <a slot="cta" class="cta" href="/life/">Details</a>
+    </rocket-card>
+
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
+      <slot name="title"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
+    <!--/lit-part--></template>
+      <h4 slot="title">Aliens</h4>
+      <p>
+        Vastness is bearable only through love Cambrian explosion a still more glorious dawn awaits
+        Euclid consciousness extraordinary claims require extraordinary evidence.
+      </p>
+      <a slot="cta" class="cta" href="/aliens/">Details</a>
+    </rocket-card>
+
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
+      <slot name="title"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
+    <!--/lit-part--></template>
+      <h4 slot="title">Humans</h4>
+      <p>
+        Astonishment dispassionate extraterrestrial observer Drake Equation radio telescope Hypatia
+        of brilliant syntheses. Vastness is bearable only through love Vangelis a mote of dust
+        suspended in a sunbeam rings of Uranus vanquish the impossible rings of Uranus?
+      </p>
+      <a slot="cta" class="cta" href="/humans/">Details</a>
+    </rocket-card>
+  </rocket-columns>
+</rocket-content-area>
+
+<rocket-content-area class="bg-blue"><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="signup" link-text="Sign Up" class="area-headline">We want to know you</h2>
+  <div>
+    <a class="cta-outline" href="#">Contact us</a>
+  </div>
+</rocket-content-area>
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="say" link-text="Say" class="area-headline">
+    What others <span class="highlight">say</span> <br>
+    about us?
+  </h2>
+
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <rocket-testimonial-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='image']::slotted(*) {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #565578;
+    }
+
+    figcaption {
+      font-weight: 600;
+      color: #181c3b;
+    }
+  </style><!--lit-part fxZkoC86qTI=-->
+      <slot name="image"></slot>
+      <figure>
+        <blockquote><!--lit-node 2-->
+          <slot></slot>
+        </blockquote>
+        <figcaption>
+          <slot name="caption"></slot>
+        </figcaption>
+      </figure>
+    <!--/lit-part--></template>
+      <img slot="image" src="01632e01.jpg" alt="alternative" width="80" height="80">
+      <p>
+        It was unthinkable not long ago that a biologist or paleontologist would be at the same
+        conference as an astrophysicist. Now we have accumulated so much data in each of these
+        branches of science as it relates to origins that we have learned that no one discipline can
+        answer questions of origins alone.
+      </p>
+      <p slot="caption">Neil</p>
+    </rocket-testimonial-small>
+
+    <rocket-testimonial-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='image']::slotted(*) {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #565578;
+    }
+
+    figcaption {
+      font-weight: 600;
+      color: #181c3b;
+    }
+  </style><!--lit-part fxZkoC86qTI=-->
+      <slot name="image"></slot>
+      <figure>
+        <blockquote><!--lit-node 2-->
+          <slot></slot>
+        </blockquote>
+        <figcaption>
+          <slot name="caption"></slot>
+        </figcaption>
+      </figure>
+    <!--/lit-part--></template>
+      <img slot="image" src="e275d2b6.jpg" alt="alternative" width="80" height="80">
+      <p>
+        The need to create a new taxonomy that isn't just applying to our own solar system will
+        become so evident and apparent that something will come out of it. I'm sure of it, even if
+        it's not tomorrow.
+      </p>
+      <p slot="caption">deGrasse</p>
+    </rocket-testimonial-small>
+
+    <rocket-testimonial-small><template shadowroot="open"><style>
+    :host {
+      display: block;
+      text-align: center;
+    }
+
+    slot[name='image']::slotted(*) {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin: 0 auto;
+    }
+
+    figure,
+    blockquote {
+      margin: 0;
+    }
+
+    blockquote {
+      font-style: italic;
+      color: #565578;
+    }
+
+    figcaption {
+      font-weight: 600;
+      color: #181c3b;
+    }
+  </style><!--lit-part fxZkoC86qTI=-->
+      <slot name="image"></slot>
+      <figure>
+        <blockquote><!--lit-node 2-->
+          <slot></slot>
+        </blockquote>
+        <figcaption>
+          <slot name="caption"></slot>
+        </figcaption>
+      </figure>
+    <!--/lit-part--></template>
+      <img slot="image" src="476de376.jpg" alt="alternative" width="80" height="80">
+      <p>
+        You have people who believe they are scientifically literate but, in fact, are not. And I
+        don't mind if you're not scientifically literate, but just admit that to yourself, so that
+        you'll know, and perhaps you can take a first step to try to eradicate that.
+      </p>
+      <p slot="caption">Tyson</p>
+    </rocket-testimonial-small>
+  </rocket-columns>
+</rocket-content-area>
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="faq" class="area-headline">FAQ</h2>
+
+  <div>
+    <h3>First</h3>
+
+    <rocket-details><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 1px solid #cdcedd;
+      }
+
+      summary {
+        color: #212529;
+        cursor: pointer;
+      }
+
+      #content {
+        padding-top: 0.7rem;
+        padding-left: 1.2rem;
+      }
+    </style><!--lit-part PJiy4RZqG4E=-->
+      <details>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
+        <div id="content">
+          <slot></slot>
+        </div>
+      </details>
+    <!--/lit-part--></template>
+      <span slot="summary">Not enough books focus on how a culture responds to radically new ideas or discovery.</span>
+      <div>
+        Especially in the biography genre, they tend to focus on all the sordid details in the life
+        of the person who made the discovery. I find this path to be voyeuristic but not
+        enlightening.
+      </div>
+    </rocket-details>
+
+    <rocket-details><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 1px solid #cdcedd;
+      }
+
+      summary {
+        color: #212529;
+        cursor: pointer;
+      }
+
+      #content {
+        padding-top: 0.7rem;
+        padding-left: 1.2rem;
+      }
+    </style><!--lit-part PJiy4RZqG4E=-->
+      <details>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
+        <div id="content">
+          <slot></slot>
+        </div>
+      </details>
+    <!--/lit-part--></template>
+      <span slot="summary"> I'm often asked by parents</span>
+      <div>
+        what advice can I give them to help get kids interested in science? And I have only one bit
+        of advice. Get out of their way. Kids are born curious. Period.
+      </div>
+    </rocket-details>
+  </div>
+
+  <!-- --------------------------------------------------------------------------------------------- -->
+
+  <h3>Second</h3>
+  <rocket-details><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 1px solid #cdcedd;
+      }
+
+      summary {
+        color: #212529;
+        cursor: pointer;
+      }
+
+      #content {
+        padding-top: 0.7rem;
+        padding-left: 1.2rem;
+      }
+    </style><!--lit-part PJiy4RZqG4E=-->
+      <details>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
+        <div id="content">
+          <slot></slot>
+        </div>
+      </details>
+    <!--/lit-part--></template>
+    <span slot="summary">Once you have an innovation culture</span>
+    <div>
+      even those who are not scientists or engineers - poets, actors, journalists - they, as
+      communities, embrace the meaning of what it is to be scientifically literate. They embrace the
+      concept of an innovation culture. They vote in ways that promote it. They don't fight science
+      and they don't fight technology.
+    </div>
+  </rocket-details>
+
+  <rocket-details><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 1px solid #cdcedd;
+      }
+
+      summary {
+        color: #212529;
+        cursor: pointer;
+      }
+
+      #content {
+        padding-top: 0.7rem;
+        padding-left: 1.2rem;
+      }
+    </style><!--lit-part PJiy4RZqG4E=-->
+      <details>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
+        <div id="content">
+          <slot></slot>
+        </div>
+      </details>
+    <!--/lit-part--></template>
+    <span slot="summary">When Kennedy said, 'Let's go to the moon,'</span>
+    <div>
+      we didn't yet have a vehicle that wouldn't kill you on launch. He said we'll land a man on the
+      moon in eight years and bring him back. That was an audacious goal to put forth in front of
+      the American people.
+    </div>
+  </rocket-details>
+
+  <rocket-details><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: 1.6rem 0;
+        border: none;
+        border-bottom: 1px solid #cdcedd;
+      }
+
+      summary {
+        color: #212529;
+        cursor: pointer;
+      }
+
+      #content {
+        padding-top: 0.7rem;
+        padding-left: 1.2rem;
+      }
+    </style><!--lit-part PJiy4RZqG4E=-->
+      <details>
+        <summary>
+          <slot name="summary"></slot>
+        </summary>
+        <div id="content">
+          <slot></slot>
+        </div>
+      </details>
+    <!--/lit-part--></template>
+    <span slot="summary">I'm often asked - and occasionally in an accusatory way</span>
+    <div>
+      'Are you atheist?' And it's like, 'You know, the only 'ist' I am is a scientist, all right?' I
+      don't associate with movements. I'm not an 'ism.' I just - I think for myself.
+    </div>
+  </rocket-details>
+</rocket-content-area>
+<!--/lit-part--><!--/lit-part--></main><!--/lit-part--> <!--lit-part ylGgZbYd3gg=-->
+      <footer id="main-footer"><!--lit-part--><!--lit-part 3E338I+W8iY=-->
+    <rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+      <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+        <div>
+          <strong>Find Us</strong><br>
+          Modern Web<br>
+          Internet 12<br>
+          0000 Web<br>
+          <a href="#">hello@modern-web.dev</a><br>
+          <a href="#">0000 / 11223344</a>
+        </div>
+
+        <div class="legal">
+          <strong>More</strong> <br>
+          <a href="#">About</a><br>
+          <a href="#">Us</a><br>
+          <a href="#">Welcome</a><br>
+        </div>
+      </rocket-columns>
+    </rocket-content-area>
+  <!--/lit-part--><!--/lit-part--></footer>
+    <!--/lit-part-->
+        <!--lit-part--><!--lit-part ode3Yst/eRo=-->
+      
+    <!--/lit-part--><!--/lit-part-->
+      
+
+    
+      
+    
+<script type="module" src="./9c17c8363.js"></script>
+<script type="module" src="./d2481eb7.js"></script>
+
+</body><!--/lit-part--></html>
