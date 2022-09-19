@@ -61,7 +61,5 @@
     "block-blue": "@rocket/spark/block-blue.js::BlockBlue",
     "block-features": "@rocket/spark/block-features.js::BlockFeatures"
   },
-  "description": "Everyone can code a website!",
-  "needsLoader": true,
-  "children": []
+  "description": "Everyone can code a website!"
 }

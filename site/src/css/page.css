@@ -9,7 +9,8 @@ body {
   --theme-on-dark: #ffffff;
   --theme-light: #6d6d6d;
   --theme-on-dark: #ffffff;
-  --theme-secondary: #357a38;
+  --theme-secondary: #388E3C;
+  --theme-secondary-light: #8BC34A;
   --default-headline-color:  white;
 }
 
@@ -55,12 +56,12 @@ main > *:nth-child(1) {
   background-size: cover !important;
   background-position: top left !important;
   height: 300px;
-  background-blend-mode: multiply !important;
 }
 
 rocket-card {
-  background-color: var(--theme-light);
+  background-color: var(--theme-secondary);
   min-width: 300px;
+  border-radius: 8px;
 }
 
 .photo {

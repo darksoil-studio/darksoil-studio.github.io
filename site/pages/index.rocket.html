@@ -14,10 +14,6 @@ export async function registerCustomElements() {
   // prettier-ignore
   customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
   // prettier-ignore
-  customElements.define('rocket-icon-card', await import('@rocket/components/icon-card.js').then(m => m.RocketIconCard));
-  // prettier-ignore
-  customElements.define('rocket-feature-small', await import('@rocket/components/feature-small.js').then(m => m.RocketFeatureSmall));
-  // prettier-ignore
   customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
 }
 /* END - Rocket auto generated - do not touch */
@@ -80,17 +76,16 @@ export async function registerCustomElements() {
   </h2>
 
   <rocket-columns>
-    <rocket-feature-small>
-      <rocket-icon-card slot="icon" icon="solid/money-check"></rocket-icon-card>
+    <rocket-card>
       <h4 slot="title">Buyers Club</h4>
-      <p slot="description">
+      <p>
         We have a buyers club in Röstånga that makes purchases from distributors and producers and gets the products delivered to our space. There the food is sorted by those who ordered it and is stored until pickup. Once an order has been made, people pay for their part of the order with a mobile pay or bank transfer to the associations account and the person that made the order pays the invoice to the producer/distributor.
         <br />
         <br />
         While we have an association set up that can handle this with a bank account etc. This application can also be used by a group of friends that want to do collective ordering and just have one of them pay the producer and have the food delivered to them. The friends just pay the person that paid the invoice then. The app can still manage all of the logistics and produce the needed order documents that can be emailed to the producer etc. This could be used by a lot of people without prior context and also be integrated into existing spaces like a church or whatever as a powerful organizing tool for local food webs even as a simple MVP. 
       </p>
-    </rocket-feature-small>
-
+    
+    </rocket-card>
   </rocket-columns>
 </rocket-content-area>
 
