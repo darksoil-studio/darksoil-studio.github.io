@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="8be09000.css">
         <link rel="stylesheet" href="1d5ad776.css">
         <link rel="stylesheet" href="eb933c4b.css">
-      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="2ad14191.css"><!--/lit-part--><!--/lit-part-->
+      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="c2e60d7f.css"><!--/lit-part--><!--/lit-part-->
       
 <link rel="preload" href="./9c17c836.js" as="script" crossorigin="anonymous" />
 </head>
@@ -176,7 +176,7 @@
     <!--/lit-part--></template></rocket-social-link></div><!--/lit-part--><!--/lit-part-->
       </rocket-header-scroll-menu>
     <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part 4zcCLD/VDso=-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part z9/VSsTIpnk=-->
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -404,60 +404,37 @@
         }
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-    <rocket-feature-small><template shadowroot="open"><style>
-    :host {
-      display: block;
-      text-align: center;
-    }
-
-    slot[name='icon']::slotted(*) {
-      margin: 0 auto;
-      margin-bottom: var(--space-l, 1rem);
-    }
-  </style><!--lit-part 036ZaKsh40w=-->
-      <slot name="icon"></slot>
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
       <slot name="title"></slot>
-      <slot name="description"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
     <!--/lit-part--></template>
-      <rocket-icon-card slot="icon" icon="solid/money-check"><template shadowroot="open"><style>
-    :host {
-      display: block;
-    }
-
-    :host {
-      width: 76px;
-      height: 76px;
-      border-radius: 10px;
-      display: grid;
-      place-items: center;
-
-      fill: #8763ee;
-      background-color: #efebfd;
-    }
-
-    .icon {
-      width: 53%;
-    }
-
-    :host([variation='green']) {
-      background-color: #defaeb;
-      fill: #00d462;
-    }
-
-    :host([variation='blue']) {
-      background-color: #e2ebfd;
-      fill: #1f68f3;
-    }
-  </style><!--lit-part ueNIHu4iFNI=--> <div class="icon"><!--lit-part 9lNf5aWVba0=--><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Free 5.15.4 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) --><path d="M0 448c0 17.67 14.33 32 32 32h576c17.67 0 32-14.33 32-32V128H0v320zm448-208c0-8.84 7.16-16 16-16h96c8.84 0 16 7.16 16 16v32c0 8.84-7.16 16-16 16h-96c-8.84 0-16-7.16-16-16v-32zm0 120c0-4.42 3.58-8 8-8h112c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H456c-4.42 0-8-3.58-8-8v-16zM64 264c0-4.42 3.58-8 8-8h304c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zm0 96c0-4.42 3.58-8 8-8h176c4.42 0 8 3.58 8 8v16c0 4.42-3.58 8-8 8H72c-4.42 0-8-3.58-8-8v-16zM624 32H16C7.16 32 0 39.16 0 48v48h640V48c0-8.84-7.16-16-16-16z"></path></svg><!--/lit-part--></div> <!--/lit-part--></template></rocket-icon-card>
       <h4 slot="title">Buyers Club</h4>
-      <p slot="description">
+      <p>
         We have a buyers club in Röstånga that makes purchases from distributors and producers and gets the products delivered to our space. There the food is sorted by those who ordered it and is stored until pickup. Once an order has been made, people pay for their part of the order with a mobile pay or bank transfer to the associations account and the person that made the order pays the invoice to the producer/distributor.
         <br>
         <br>
         While we have an association set up that can handle this with a bank account etc. This application can also be used by a group of friends that want to do collective ordering and just have one of them pay the producer and have the food delivered to them. The friends just pay the person that paid the invoice then. The app can still manage all of the logistics and produce the needed order documents that can be emailed to the producer etc. This could be used by a lot of people without prior context and also be integrated into existing spaces like a church or whatever as a powerful organizing tool for local food webs even as a simple MVP. 
       </p>
-    </rocket-feature-small>
-
+    
+    </rocket-card>
   </rocket-columns>
 </rocket-content-area>
 
