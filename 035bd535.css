@@ -50,7 +50,7 @@ main > *:nth-child(2n + 1) {
 }
 
 main > *:nth-child(1) {
-  background-image: url(/darksoil.jpg) !important;
+  background-image: url(darksoil.jpg) !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-position: top left !important;
