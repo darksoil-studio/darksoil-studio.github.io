@@ -8,6 +8,8 @@ export async function registerCustomElements() {
   // prettier-ignore
   customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
   // prettier-ignore
+  customElements.define('rocket-social-link', await import('@rocket/components/social-link.js').then(m => m.RocketSocialLink));
+  // prettier-ignore
   customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
   // prettier-ignore
   customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
@@ -17,15 +19,7 @@ export async function registerCustomElements() {
   customElements.define('rocket-feature-small', await import('@rocket/components/feature-small.js').then(m => m.RocketFeatureSmall));
   // prettier-ignore
   customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-  // prettier-ignore
-  customElements.define('rocket-testimonial-small', await import('@rocket/components/testimonial-small.js').then(m => m.RocketTestimonialSmall));
-  // prettier-ignore
-  customElements.define('rocket-details', await import('@rocket/components/details.js').then(m => m.RocketDetails));
-  // hydrate-able components
-  // prettier-ignore
-  customElements.define('rocket-rotating-text', await import('@rocket/components/rotating-text.js').then(m => m.RocketRotatingText));
 }
-export const needsLoader = true;
 /* END - Rocket auto generated - do not touch */
 
   import { LayoutHome } from '@rocket/spark';
@@ -35,247 +29,115 @@ export const needsLoader = true;
     ...layoutData,
   });
 
-  export const title = 'Spark Rocket Example Template';
+  export const title = 'darksoil studio';
   export const description = 'Everyone can code a website!';
 </script>
 
 <rocket-content-area>
   <rocket-columns>
-    <div>
-      <h1 id="home" link-text="Home">
-        <rocket-rotating-text
-          loading="hydrate:onVisible"
-          items='["Welcome", "Hello", "Aloa"]'
-        ></rocket-rotating-text>
-        <span>to the world of science.</span>
-      </h1>
-      <p>If we find life out there, and it's not us, we will deem it not intelligent.</p>
-      <a class="cta" href="#signup">I want more</a>
+    <div style="padding-top: 100px">
+      <h1>darksoil studio</h1>
+      <p style="width: 600px">A software studio dedicated to create conditions for thriving life using holochain as distributed data integrity layer.</p>
     </div>
 
-    <img
-      src="resolve:#src/images/header-illustration.svg"
-      alt="alternative"
-      width="189"
-      height="150"
-    />
   </rocket-columns>
 </rocket-content-area>
 
 <rocket-content-area>
   <rocket-columns>
     <div>
-      <h2>I've spent quality time in the aerospace community</h2>
+      <h2 id="about-us" link-text="About Us">About Us</h2>
       <p>
-        ✅ with my service on two presidential commissions. <br />
-        ✅ but at heart, I'm an academic..
-        <br />
-        ✅ Being an academic means I don't wield power over person. <br />
-        ✅ place or thing.<br />
-        ✅ I don't command armies
+        At darksoil we build software that helps existing groups of people do more kinds of stuff together. Our aim is to support groups to fulfill the needs of people in the group together. Needs that we want to support fulfilling can be things like ensuring good food is available, helping people organize the work of making things together or facilitating sharing of goods within a group.
+        <br>
+        <br>
+        The groups we are looking to support can be of any type. A group may be a local village, a block of houses, a church congregation, a cooperative or a book club. By increasing the type of activities that a group engages in, we are seeking to strengthen the social ties between people and gradually increase the intimacy and trust that people feel with others that they are living their lives with. It is our belief that this is foundational support for the emergence of a more connected and regenerative human experience on the planet.
       </p>
-      <a class="cta" href="#signup">I want more</a>
     </div>
     <img src="resolve:#src/images/details-1.svg" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
 <rocket-content-area>
-  <h2 id="credit" link-text="Credit" class="area-headline">
-    People credit me for <br />
-    <span class="highlight">making the universe interesting,</span>
-  </h2>
-
   <rocket-columns>
-    <rocket-feature-small>
-      <rocket-icon-card slot="icon" icon="solid/headphones-alt"></rocket-icon-card>
-      <h4 slot="title">when in fact</h4>
-      <p slot="description">
-        the universe is inherently interesting <br />
-        and I'm merely revealing that fact<br />
-        I don't think I'm anything special for this to happen<br />
+    <div>
+      <h2 id="how-we-work" link-text="How We Work">How We Work</h2>
+      <p>
+        Our work is focused around creating small and modular tools that afford groups stronger collaboration and deeper relationships. We want to make sure that digital tools are first and foremost a way for people to get their needs filled outside of the digital world. We operate under the understanding that as we move towards a richer and richer ecosystem of tools available, that can be trivially installed and used by any existing groups, the higher the benefit of any one of the individual tools become. Our goal is to utilize a network effect, not by monopolizing other peoples social graphs, but by letting real world social groups mirror themselves online and supplying them with increasingly useful software to cohere. An introductory article on this perspective can be found <a href="https://zaunders.medium.com/distributed-online-life-1dd64e7474ec">here</a>.
+        <br>
+        <br>
+        When we create software, we are careful to build directly for contexts that are asking for the software that we are building. This way of working ensures that we create things that are wanted in the world. However, as we build the tools we take care to architect and design them in such a way that they will be useful outside of the target context that we are building for. Along with the creation of the software, we spend a lot of time relating the stories of why we are building the things we are building and making sure that we make explicit how we aim to be of service both to the larger Holochain ecosystem but also to the larger planetary whole that we are all a part of.
       </p>
-    </rocket-feature-small>
-
-    <rocket-feature-small>
-      <rocket-icon-card slot="icon" icon="regular/clipboard" variation="green"></rocket-icon-card>
-      <h4 slot="title">The problem</h4>
-      <p slot="description">
-        is not scientifically illiterate kids<br />
-        it is scientifically illiterate adults<br />
-        Kids are born curious<br />
-        about the natural world
-      </p>
-    </rocket-feature-small>
-
-    <rocket-feature-small>
-      <rocket-icon-card slot="icon" icon="regular/comments" variation="blue"></rocket-icon-card>
-      <h4 slot="title">They are always</h4>
-      <p slot="description">
-        turning over rocks <br />
-        jumping with two feet <br />
-        into mud puddles
-      </p>
-    </rocket-feature-small>
+    </div>
+    <img src="resolve:#src/images/details-1.svg" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
 <rocket-content-area>
-  <h2 id="knowledge" link-text="Knowledge" class="area-headline">
-    I've known from long ago <br />
-    <span class="highlight">that the universe was calling me</span>
+  <h2 id="projects" link-text="Projects" class="area-headline">
+    Projects <br />
+    <span class="highlight">that we are excited to work on</span>
   </h2>
 
   <rocket-columns>
-    <rocket-card>
-      <h4 slot="title">Life</h4>
-      <p>
-        As a scientist, I want to go to Mars and back to asteroids and the Moon because I'm a
-        scientist. But I can tell you, I'm not so naive a scientist to think that the nation might
-        not have geopolitical reasons for going into space.
+    <rocket-feature-small>
+      <rocket-icon-card slot="icon" icon="solid/money-check"></rocket-icon-card>
+      <h4 slot="title">Buyers Club</h4>
+      <p slot="description">
+        We have a buyers club in Röstånga that makes purchases from distributors and producers and gets the products delivered to our space. There the food is sorted by those who ordered it and is stored until pickup. Once an order has been made, people pay for their part of the order with a mobile pay or bank transfer to the associations account and the person that made the order pays the invoice to the producer/distributor.
+        <br />
+        <br />
+        While we have an association set up that can handle this with a bank account etc. This application can also be used by a group of friends that want to do collective ordering and just have one of them pay the producer and have the food delivered to them. The friends just pay the person that paid the invoice then. The app can still manage all of the logistics and produce the needed order documents that can be emailed to the producer etc. This could be used by a lot of people without prior context and also be integrated into existing spaces like a church or whatever as a powerful organizing tool for local food webs even as a simple MVP. 
       </p>
-      <a slot="cta" class="cta" href="./life.rocket.md">Details</a>
-    </rocket-card>
+    </rocket-feature-small>
 
-    <rocket-card>
-      <h4 slot="title">Aliens</h4>
-      <p>
-        Vastness is bearable only through love Cambrian explosion a still more glorious dawn awaits
-        Euclid consciousness extraordinary claims require extraordinary evidence.
-      </p>
-      <a slot="cta" class="cta" href="./aliens.rocket.md">Details</a>
-    </rocket-card>
-
-    <rocket-card>
-      <h4 slot="title">Humans</h4>
-      <p>
-        Astonishment dispassionate extraterrestrial observer Drake Equation radio telescope Hypatia
-        of brilliant syntheses. Vastness is bearable only through love Vangelis a mote of dust
-        suspended in a sunbeam rings of Uranus vanquish the impossible rings of Uranus?
-      </p>
-      <a slot="cta" class="cta" href="./humans.rocket.md">Details</a>
-    </rocket-card>
-  </rocket-columns>
-</rocket-content-area>
-
-<rocket-content-area class="bg-blue">
-  <h2 id="signup" link-text="Sign Up" class="area-headline">We want to know you</h2>
-  <div>
-    <a class="cta-outline" href="#">Contact us</a>
-  </div>
-</rocket-content-area>
-
-<rocket-content-area>
-  <h2 id="say" link-text="Say" class="area-headline">
-    What others <span class="highlight">say</span> <br />
-    about us?
-  </h2>
-
-  <rocket-columns>
-    <rocket-testimonial-small>
-      <img
-        slot="image"
-        src="resolve:#src/images/testimonial-1.jpg"
-        alt="alternative"
-        width="80"
-        height="80"
-      />
-      <p>
-        It was unthinkable not long ago that a biologist or paleontologist would be at the same
-        conference as an astrophysicist. Now we have accumulated so much data in each of these
-        branches of science as it relates to origins that we have learned that no one discipline can
-        answer questions of origins alone.
-      </p>
-      <p slot="caption">Neil</p>
-    </rocket-testimonial-small>
-
-    <rocket-testimonial-small>
-      <img
-        slot="image"
-        src="resolve:#src/images/testimonial-2.jpg"
-        alt="alternative"
-        width="80"
-        height="80"
-      />
-      <p>
-        The need to create a new taxonomy that isn't just applying to our own solar system will
-        become so evident and apparent that something will come out of it. I'm sure of it, even if
-        it's not tomorrow.
-      </p>
-      <p slot="caption">deGrasse</p>
-    </rocket-testimonial-small>
-
-    <rocket-testimonial-small>
-      <img
-        slot="image"
-        src="resolve:#src/images/testimonial-3.jpg"
-        alt="alternative"
-        width="80"
-        height="80"
-      />
-      <p>
-        You have people who believe they are scientifically literate but, in fact, are not. And I
-        don't mind if you're not scientifically literate, but just admit that to yourself, so that
-        you'll know, and perhaps you can take a first step to try to eradicate that.
-      </p>
-      <p slot="caption">Tyson</p>
-    </rocket-testimonial-small>
   </rocket-columns>
 </rocket-content-area>
 
 <rocket-content-area>
-  <h2 id="faq" class="area-headline">FAQ</h2>
+  <h2 id="people" link-text="People" class="area-headline">
+    People <br />
+    <span class="highlight"></span>
+  </h2>
 
-  <div>
-    <h3>First</h3>
+  <rocket-columns>
+    <rocket-card>
+      <h4 slot="title">Viktor Zaunders</h4>
+      <img src="../public/viktor.jpg" class="photo" />
+      <p>
+        For the last decade Viktor has been exploring the intersection of software and place based local development patterns. As a small scale mushroom farmer and food web enthusiast he wants to apply the possible new patterns emerging for distributed systems to many bioregional regeneration endeavors. 
+      </p>
+    </rocket-card>
 
-    <rocket-details>
-      <span slot="summary"
-        >Not enough books focus on how a culture responds to radically new ideas or discovery.</span
-      >
-      <div>
-        Especially in the biography genre, they tend to focus on all the sordid details in the life
-        of the person who made the discovery. I find this path to be voyeuristic but not
-        enlightening.
-      </div>
-    </rocket-details>
+    <rocket-card>
+      <h4 slot="title">Guillem Córdoba</h4>
+      <img src="../public/guillem.jpg" class="photo" />
+      <p>
+        For several years, Guillem has been a highly interconnected and generative person in the Holochain ecosystem and beyond. He has co-created the docs for the latest version of Holochain, the Launcher and the Playground. Beyond coding, he is passionate about learning and facilitating the creation of modular open source software.
+      </p>
+    </rocket-card>
 
-    <rocket-details>
-      <span slot="summary"> I'm often asked by parents</span>
-      <div>
-        what advice can I give them to help get kids interested in science? And I have only one bit
-        of advice. Get out of their way. Kids are born curious. Period.
-      </div>
-    </rocket-details>
-  </div>
+    <rocket-card>
+      <h4 slot="title">Eric Bear</h4>
+      <img src="../public/bear.jpg" class="photo" />
+      <p>
+        Eric is passionate about cultivating functioning groups and creating conditions for people to work together in a generative way. He has a long history of working with agile learning and many forms of relationship building practices.
+      </p>
+    </rocket-card>
+  </rocket-columns>
+</rocket-content-area>
 
-  <!-- --------------------------------------------------------------------------------------------- -->
-
-  <h3>Second</h3>
-  <rocket-details>
-    <span slot="summary">Once you have an innovation culture</span>
+<rocket-content-area>
+  <rocket-columns>
     <div>
-      even those who are not scientists or engineers - poets, actors, journalists - they, as
-      communities, embrace the meaning of what it is to be scientifically literate. They embrace the
-      concept of an innovation culture. They vote in ways that promote it. They don't fight science
-      and they don't fight technology.
+      <h2 id="funding" link-text="Funding">Funding</h2>
+      <p>
+        At darksoil we want to create the best possible open source software to empower groups to function more joyously and harmoniously together. Our aim is to be able to use the amazing power of the Holochain framework so that people can freely create groups and use all of the powerful modular tools that we are developing as they please. We want to offer these tools to everyone who sees that they can enrich themselves and the larger systems they are a part of freely. In order for us to be able to continue to do so we seek reciprocity from the communities that benefit and from any person or organization that can see the value that we are creating.
+        <br>
+        <br>
+        We have set up an <a href="https://opencollective.com/emerging-integrity">open collective</a> as an efficient and transparent way to receive financial support for the work we are doing. If the way we are working towards a regenerative human presence on the planet resonates with you, please consider making a small or large, one time or recurring contribution to <a href="https://opencollective.com/darksoil">our collective</a>. You can contribute generally to our work or to an individual project directly. All of our work is transparently invoiced to the collective and visible on the open collective page so you can see directly what your support is enabling.
+      </p>
     </div>
-  </rocket-details>
-
-  <rocket-details>
-    <span slot="summary">When Kennedy said, 'Let's go to the moon,'</span>
-    <div>
-      we didn't yet have a vehicle that wouldn't kill you on launch. He said we'll land a man on the
-      moon in eight years and bring him back. That was an audacious goal to put forth in front of
-      the American people.
-    </div>
-  </rocket-details>
-
-  <rocket-details>
-    <span slot="summary">I'm often asked - and occasionally in an accusatory way</span>
-    <div>
-      'Are you atheist?' And it's like, 'You know, the only 'ist' I am is a scientist, all right?' I
-      don't associate with movements. I'm not an 'ism.' I just - I think for myself.
-    </div>
-  </rocket-details>
+    <img src="resolve:#src/images/details-1.svg" alt="alternative" width="146" height="150" />
+  </rocket-columns>
 </rocket-content-area>
