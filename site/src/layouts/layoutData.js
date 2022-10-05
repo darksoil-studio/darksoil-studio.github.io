@@ -22,11 +22,9 @@ export const layoutData = {
       <rocket-columns>
         <div>
           <strong>Find Us</strong><br />
-          Modern Web<br />
-          Internet 12<br />
-          0000 Web<br />
-          <a href="#">hello@modern-web.dev</a><br />
-          <a href="#">0000 / 11223344</a>
+          <br />
+          email:<br />
+          
         </div>
 
         <div class="legal">
