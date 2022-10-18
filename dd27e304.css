@@ -22,6 +22,10 @@ a {
   color: var(--theme-secondary-light);
 }
 
+a.rocket-card {
+  color: var(--theme-dark);
+}
+
 .highlight {
   color: var(--theme-secondary);
 }
