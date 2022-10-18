@@ -19,7 +19,7 @@ rocket-rotating-text {
 }
 
 a {
-  color: var(--theme-secondary);
+  color: var(--theme-secondary-light);
 }
 
 .highlight {
@@ -35,7 +35,7 @@ rocket-header-scroll-menu a {
 }
 
 a.cta {
-  background-color: var(--theme-secondary);
+  background-color: var(--theme-secondary-light);
 }
 
 rocket-header-scroll-menu {
@@ -82,7 +82,7 @@ footer a {
 }
 
 rocket-header-scroll-menu a.active, rocket-header-scroll-menu a:hover {
-  color: var(--theme-dark);
+  color: var(--theme-light);
 }
 
 h1 {
