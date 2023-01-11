@@ -3,22 +3,34 @@
   "h1": "darksoil studio",
   "headlinesWithId": [
     {
-      "text": "About Us",
-      "id": "about-us",
+      "text": "what we do",
+      "id": "what-we-do",
       "level": 2,
-      "rawText": "About Us"
+      "rawText": "what we do"
     },
     {
-      "text": "How We Work",
-      "id": "how-we-work",
+      "text": "now building",
+      "id": "now_building",
       "level": 2,
-      "rawText": "How We Work"
+      "rawText": "now building"
     },
     {
-      "text": "Projects",
-      "id": "projects",
+      "text": "approach to software",
+      "id": "approach",
       "level": 2,
-      "rawText": "Projects \n    that we are excited to work on"
+      "rawText": "approach to software"
+    },
+    {
+      "text": "stories",
+      "id": "stories",
+      "level": 2,
+      "rawText": "stories"
+    },
+    {
+      "text": "projects on deck",
+      "id": "projects_on_deck",
+      "level": 2,
+      "rawText": "projects on deck"
     },
     {
       "text": "People",
@@ -27,10 +39,10 @@
       "rawText": "People"
     },
     {
-      "text": "Funding",
-      "id": "funding",
+      "text": "work with us",
+      "id": "work-with-us",
       "level": 2,
-      "rawText": "Funding"
+      "rawText": "work with us"
     }
   ],
   "name": "darksoil studio",
@@ -61,5 +73,5 @@
     "block-blue": "@rocket/spark/block-blue.js::BlockBlue",
     "block-features": "@rocket/spark/block-features.js::BlockFeatures"
   },
-  "description": "Everyone can code a website!"
+  "description": "We create little interoperable apps for place-based groups to fulfill their basic needs"
 }
