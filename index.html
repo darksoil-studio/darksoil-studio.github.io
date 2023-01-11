@@ -123,17 +123,19 @@
     <!--/lit-part--></template>
         <!--lit-part--><!--lit-part BcJtb4Vqdro=-->
             <!--lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#about-us"><!--lit-node 0--><!--lit-part-->About Us<!--/lit-part--></a>
+                <a class="headline-link" href="/#what-we-do"><!--lit-node 0--><!--lit-part-->what we do<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#how-we-work"><!--lit-node 0--><!--lit-part-->How We Work<!--/lit-part--></a>
+                <a class="headline-link" href="/#now_building"><!--lit-node 0--><!--lit-part-->now building<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#approach"><!--lit-node 0--><!--lit-part-->approach to software<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
                 <a class="headline-link" href="/#stories"><!--lit-node 0--><!--lit-part-->stories<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#projects"><!--lit-node 0--><!--lit-part-->Projects<!--/lit-part--></a>
+                <a class="headline-link" href="/#projects_on_deck"><!--lit-node 0--><!--lit-part-->projects on deck<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#people"><!--lit-node 0--><!--lit-part-->People<!--/lit-part--></a>
+                <a class="headline-link" href="/#people"><!--lit-node 0--><!--lit-part-->people<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#funding"><!--lit-node 0--><!--lit-part-->Funding<!--/lit-part--></a>
+                <a class="headline-link" href="/#work-with-us"><!--lit-node 0--><!--lit-part-->work with us<!--/lit-part--></a>
               <!--/lit-part--><!--/lit-part-->
           <!--/lit-part--><!--lit-part sunBzc/zSlo=--><div style="display: inline-block"><rocket-social-link style="--primary-text-color: white; --primary-color: var(--theme-secondary); " name="Github" url="https://github.com/darksoil-studio"><template shadowroot="open"><style>
       :host {
@@ -178,7 +180,7 @@
     <!--/lit-part--></template></rocket-social-link></div><!--/lit-part--><!--/lit-part-->
       </rocket-header-scroll-menu>
     <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part MQoVRXyKrLw=-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part yZnei0nAVDU=-->
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -228,7 +230,7 @@
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div style="padding-top: 100px">
       <h1>darksoil studio</h1>
-      <p>We create simple peer to peer apps for place-based communities to meet their real, non-digital needs.</p>
+      <p>WWe make simple peer to peer apps for groups of people to meet their non-digital needs.</p>
     </div>
 
   </rocket-columns>
@@ -282,18 +284,148 @@
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="about-us" link-text="About Us">what we do</h2>
+      <h2 id="what-we-do" link-text="what we do">what we do</h2>
       <p>
-        We make tools for people to grow deep dark soil, ecologically and socially.
+        We make tools for people to grow deep dark soil, ecologically and socially. 
         <br>
         <br>
-        We build small, interoperable, fully distributed apps that enable groups to access emergent properties for organizing, collaborating, and connecting. We build open source software on Holochain.
+        We build small, interoperable, fully distributed apps that enable groups to access emergent properties for organizing, collaborating, and connecting. We build open source software on Holochain. 
+        <br>
+        <br>
+        We also build tools to increase the accessibility and functionality of the Holochain core codebase.
       </p>
     </div>
     <img src="24e4a1ca.png" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <h2 id="now_building" link-text="now building" class="area-headline">
+    now building <br>
+  </h2>
+
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
+      <slot name="title"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
+    <!--/lit-part--></template>
+      <h4 slot="title">fixie</h4>
+      <p>
+        <a href="">collect your bugs to give hApps hugs</a>
+        <br>
+        <br>
+        Oh, it’s just a fully distributed issue tracker to save many thousands of hours of work for devs who are building Holochain Apps. Making debugging of distributed apps orders of magnitudes easier. nbd.
+
+      </p>
+    
+    </rocket-card>
+
+
+    <rocket-card><template shadowroot="open"><style>
+      :host {
+        margin-bottom: 5rem;
+        padding: 3rem 1rem;
+        border: 1px solid #9fa3ae;
+        border-radius: 20px;
+        background-color: #ffffff;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        min-width: 0;
+        word-wrap: break-word;
+        background-color: #fff;
+        background-clip: border-box;
+        min-width: 20ch;
+      }
+    </style><!--lit-part LRZXgDQ2Npw=-->
+      <slot name="title"></slot>
+      <slot></slot>
+      <slot name="cta"></slot>
+    <!--/lit-part--></template>
+      <h4 slot="title">gather</h4>
+      <p>
+        <a href="https://github.com/darksoil-studio/gather">I can see that you are free<br>
+          and you can see the same of me<br>
+          so we agree we’d like to be<br>
+          out on the court at 2:03
+          </a>
+        <br>
+        <br>
+        Software for co-creating, accessing, and managing emergent events. It could be a meeting for a project, practice session for a martial art, gaming session, hobby hangout, or a big celebration. Gather lets you see and actualize previously invisible possibilities for coming together with the people in your life around the things you care about.
+      </p>
+    
+    </rocket-card>
+
+  </rocket-columns>
+</rocket-content-area>
+
+
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -342,23 +474,27 @@
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="how-we-work" link-text="How We Work">approach to making software</h2>
+      <h2 id="approach" link-text="approach to software">approach to software</h2>
       <p>
-        As we architect and build tools for people in place-based communities, we take care that our software be easily adapted for and by others.   
+        We make it simple for existing groups to make self-sovereign digital spaces that are owned and evolvable by the group itself.   
         <br>
         <br>
-        Our applications help groups access the dynamics and nuances that matter to them in their digital spaces. This enables us to see and engage with each other and our respective groups with more acuity and less administrative burden to make more of what we want happen. 
+        We build software for ourselves and the groups we’re a part of, taking care that it be easily adaptable for and by others. 
         <br>
         <br>
-        Our software works with a network effect, not in the usual sense of monopolizing other people’s social graphs, but by allowing existing networks of people to see and engage with themselves in richer ways. On a darksoil app your social reality doesn’t live in someone else’s custody, but in your own. When you have a group of people coming together with this kind of agency, new properties and possibilities for the individuals and group’s expression emerge.
+        darksoil applications make it easier to see and engage with more nuance and acuity to do/create/have more of what we want with our groups with less administrative burden.
         <br>
         <br>
-        We seek and foster systems that are conducive to growing trust in and accountability to ourselves, each other and the places we live. All of the meaningful change that we work towards requires an increase in trust between people so growing trust is at the heart of what we want our applications to support. People connected through trust is the social soil that thriving communities come alive from. 
+        We test our software with our communities; our farms, villages, movement collectives, hackerspaces, businesses, cooperatives, friend groups, etc. We need the things we’re building because it’s a headache that we don’t already have them. When what we build works for our communities, we partner with people to adapt and integrate it to work for their communities.
+        <br>
+        <br>
+        Sometimes, when we’re inspired by the partnership, we make things for others before we make them for ourselves.
       </p>
     </div>
     <img src="e755163f.jpg" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
+
 
 <rocket-content-area><template shadowroot="open"><style>
       :host {
@@ -410,13 +546,13 @@
     <div>
       <h2 id="stories" link-text="stories">stories</h2>
       <p>
-        We tell stories to bridge the gap between where we are now and the world that we’re building these tools to live in.   
+        We tell stories about our lives now and in the very near future; stories about our homes, businesses, villages, etc.   
         <br>
         <br>
-        We tell stories about our lives in the very near future; about our homes, businesses, villages, etc. 
+        We tell stories for you to imagine using our technology in your life in the very near future. 
         <br>
         <br>
-        We tell stories for people to imagine using them in their world.  
+        We tell stories to bridge the gap between where we are now and the worlds that we’re building these tools to live in.
       </p>
     </div>
     <img src="e755163f.jpg" alt="alternative" width="146" height="150">
@@ -452,10 +588,6 @@
         <slot></slot>
       </div>
     <!--/lit-part--></template>
-  <h2 id="projects" link-text="Projects" class="area-headline">
-    Projects <br>
-  </h2>
-
   <rocket-columns><template shadowroot="open"><style>
       #content {
         display: flex;
@@ -474,101 +606,40 @@
         }
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-    <rocket-card><template shadowroot="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-      <h4 slot="title">gather</h4>
+    <div>
+      <h2 id="projects_on_deck" link-text="projects on deck">projects on deck</h2>
       <p>
-        <a href="https://github.com/darksoil-studio/gather">Event creation and management</a>
+        </p><h3>apps</h3>
+        <a href="">co-budget</a> - (port to holochain)
         <br>
+        coach - 
         <br>
-        Software for co-creating, accessing, managing events. Weavable into the social contexts you care about, supporting the relationships you want to grow. Helping to make things happen where you are.
-      </p>
-    
-    </rocket-card>
+        mutual-credit - basic mutual credit module
+        <br>
+        learn - peer to peer learning pathways
+        <br>
+        bookie - bookings module
+        <br>
+        plenty - collective purchasing of food
+        <br>
+        tooltool - tool sharing
+        <br>
+        ourtime - scheduling of group tasks
+        <br>
 
-    <rocket-card><template shadowroot="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-      <h4 slot="title">plenty</h4>
-      <p>
-        <a href="https://hackmd.io/@zaunders/H1AkT3yU5">Local collective purchasing of food</a>
+        <h3>holochain core tooling</h3>
+        mobile - mobile support for holochain
         <br>
+        hApp designer hApp - simplify app creation
         <br>
-        A tool for groups to purchase food directly from producers with as little overhead for both parties as possible. This way of sourcing food is built on trust and builds trust. Both in the groups that start using this tool and between the producers and us as customers. These relationships are what enable us to bring our values into our food supply.
-      </p>
-    
-    </rocket-card>
-
-    <rocket-card><template shadowroot="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-      <h4 slot="title">Bookie</h4>
-      <p>
-        <a href="https://hackmd.io/@6-hJufPpTtyYR7BQhAo1BQ/r1h6lE0J9">Bookings and sharing module</a>
+        story: how does Holochain work - graphical descriptions
         <br>
+        puzzles - 
         <br>
-         Software for enabling bookings of things like rooms, tools or vehicles. 
-      </p>
-    
-    </rocket-card>
+        scotty panel -
+      <p></p>
+    </div>
+    <img src="6fec2023.jpg" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
@@ -601,7 +672,7 @@
         <slot></slot>
       </div>
     <!--/lit-part--></template>
-  <h2 id="people" link-text="People" class="area-headline">
+  <h2 id="people" link-text="people" class="area-headline">
     People <br>
     <span class="highlight"></span>
   </h2>
@@ -649,7 +720,11 @@
       <h4 slot="title">Viktor Zaunders</h4>
       <img src="eed27bd1.jpg" class="photo">
       <p>
-        For the last decade Viktor has been exploring the intersection of software and place based local development patterns. As a small scale mushroom farmer and food web enthusiast he wants to apply the possible new patterns emerging for distributed systems to many bioregional regeneration endeavors. 
+        Viktor translates real world needs into application architectures. 
+        <br><br>
+        Viktor is a primary user of darksoil software. He uses and weaves it into his own local enterprises, mushroom farm, food cooperative, coworking space, and food sovereignty networks. 
+        <br><br>
+        Viktor is motivated by the desire to create new ways of organizing human collaboration so that he and his kids can much more easily contribute to life creating conditions for life.
       </p>
     </rocket-card>
 
@@ -678,7 +753,11 @@
       <h4 slot="title">Guillem Córdoba</h4>
       <img src="ce2a8c3c.jpg" class="photo">
       <p>
-        For several years, Guillem has been a highly interconnected and generative person in the Holochain ecosystem and beyond. He has co-created the docs for the latest version of Holochain, the Launcher and the Playground. Beyond coding, he is passionate about learning and facilitating the creation of modular open source software.
+        Guillem writes exquisite code for our darksoil applications. 
+        <br><br>
+        He has been foundational for teaching the growing Holochain dev community how to effectively code hApps and has built lots of beautiful core developer tools like the <a href="https://github.com/holochain/launcher">launcher</a>, <a href="https://developer.holochain.org/install/#scaffold-your-first-holochain-app">scaffolding</a> and <a href="https://holochain-gym.github.io/">gym</a>. 
+        <br><br>
+        Passionate about learning and teaching, Guillem is moved by a desire to support the creative and collaborative side of all people.
       </p>
     </rocket-card>
 
@@ -707,7 +786,11 @@
       <h4 slot="title">Eric Bear</h4>
       <img src="b0a6f77a.jpg" class="photo">
       <p>
-        Eric is passionate about cultivating functioning groups and creating conditions for people to work together in a generative way. He has a long history of working with agile learning and many forms of relationship building practices.
+        Bear develops our team and business. 
+        <br><br>
+        He and upholding strategies and connections internally and with our partners, with an emphasis on relationships as the foundation for human systems. He cofounded a global network of schools called <a href="http://agilelearningcenters.org/">Agile Learning Centers</a> and is the director of ecosystem growth at Holochain. 
+        <br><br>
+        Bear wants to be a good ant by fostering play, relationship and agency in the world.
       </p>
     </rocket-card>
   </rocket-columns>
@@ -761,7 +844,7 @@
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="funding" link-text="Funding">Funding</h2>
+      <h2 id="work-with-us" link-text="work with us">work with us</h2>
       <p>
         At darksoil we want to create the best possible open source software to empower groups to function more joyously and harmoniously together. 
         <br>
