@@ -133,9 +133,9 @@
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
                 <a class="headline-link" href="/#projects_on_deck"><!--lit-node 0--><!--lit-part-->projects on deck<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#people"><!--lit-node 0--><!--lit-part-->people<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
                 <a class="headline-link" href="/#work-with-us"><!--lit-node 0--><!--lit-part-->work with us<!--/lit-part--></a>
+              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
+                <a class="headline-link" href="/#people"><!--lit-node 0--><!--lit-part-->people<!--/lit-part--></a>
               <!--/lit-part--><!--/lit-part-->
           <!--/lit-part--><!--lit-part sunBzc/zSlo=--><div style="display: inline-block"><rocket-social-link style="--primary-text-color: white; --primary-color: var(--theme-secondary); " name="Github" url="https://github.com/darksoil-studio"><template shadowroot="open"><style>
       :host {
@@ -180,7 +180,7 @@
     <!--/lit-part--></template></rocket-social-link></div><!--/lit-part--><!--/lit-part-->
       </rocket-header-scroll-menu>
     <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part iG6R2dDrN1s=-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part eZExK1p7HR0=-->
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -644,6 +644,75 @@
   </rocket-columns>
 </rocket-content-area>
 
+
+<rocket-content-area><template shadowroot="open"><style>
+      :host {
+        display: block;
+        padding: var(--rocket-content-area-padding, 0);
+      }
+
+      :host([no-padding]) {
+        padding: 0;
+      }
+
+      /** rocket-content-area */
+      #rocket-content-area {
+        padding: 0 20px;
+        display: block;
+        justify-content: space-between;
+        align-items: center;
+      }
+      @media screen and (min-width: 1024px) {
+        #rocket-content-area {
+          max-width: 1200px;
+          margin: 0 auto;
+          position: relative;
+        }
+      }
+    </style><!--lit-part W4dslNFFQo4=-->
+      <div id="rocket-content-area">
+        <slot></slot>
+      </div>
+    <!--/lit-part--></template>
+  <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
+    <div>
+      <h2 id="work-with-us" link-text="work with us">work with us</h2>
+      <p>
+        Fund something you need on the lists above, or something you need that should be on the lists. 
+        <br>
+        <br>
+        Contract us to build our software into your pre-existing system and maintain it. 
+        <br>
+        <br>
+        Partner with us to build a business around our software, like a meetup.com alternative built around gather.
+        <br>
+        <br>
+        Contribute to projects through the <a href="https://opencollective.com/darksoil">open collective</a>.
+       
+        
+      </p>
+    </div>
+    <img src="6fec2023.jpg" alt="alternative" width="146" height="150">
+  </rocket-columns>
+</rocket-content-area>
+
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -797,82 +866,6 @@
   </rocket-columns>
 </rocket-content-area>
 
-<rocket-content-area><template shadowroot="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-  <rocket-columns><template shadowroot="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-    <div>
-      <h2 id="work-with-us" link-text="work with us">work with us</h2>
-      <p>
-        At darksoil we create the best possible software to enable groups to function more joyously and harmoniously together.
-        <br>
-        <br>
-        </p><li>you can fund something that we (you and darksoil) want to make. It could be one of the lists above, or something you need that should be on those lists.
-        </li>
-        <br>
-        <br>
-        <li>you can contract us to build our software into your pre-existing system and maintain it. 
-        </li>
-        <br>
-        <br>
-        <li>you can partner with us to build a business around our software, like a meetup.com alternative built around gather.
-        </li>
-        <br>
-        <br>
-        <li>You can sponsor one of our projects and request features, contribute Sponsors are also invited to recurring calls where we discuss where we are going and listen to your needs for alignment.
-        </li>
-        <br>
-        <br>
-        Support is also appreciated at our <a href="https://opencollective.com/darksoil">open collective</a>
-        
-      <p></p>
-    </div>
-    <img src="6fec2023.jpg" alt="alternative" width="146" height="150">
-  </rocket-columns>
-</rocket-content-area>
 <!--/lit-part--><!--/lit-part--></main><!--/lit-part--> <!--lit-part ylGgZbYd3gg=-->
       <footer id="main-footer"><!--lit-part--><!--lit-part r2tZAIW1AgA=-->
   <!--/lit-part--><!--/lit-part--></footer>
