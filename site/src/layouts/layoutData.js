@@ -20,11 +20,11 @@ export const layoutData = {
     <div
       style="display: flex; position: absolute; margin-top: -22px; justify-contents: center; align-items: center"
     >
-      <rocket-social-link
+      <custom-social-link
         style="--primary-text-color: white; --primary-color: var(white); "
         name="Github"
         url="https://github.com/darksoil-studio"
-      ></rocket-social-link>
+      ></custom-social-link>
       <custom-social-link
         style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
         name="OpenCollective"
@@ -32,7 +32,7 @@ export const layoutData = {
       ></custom-social-link>
       <custom-social-link
         style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
-        name="Ghost"
+        name="Substack"
         url="https://substack.com/profile/5969055-darksoil"
       ></custom-social-link>
     </div>

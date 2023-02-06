@@ -21,5 +21,8 @@
   "@rocket/template-name": "Landing Page (@rocket/spark Theme)",
   "imports": {
     "#src/*": "./site/src/*"
+  },
+  "dependencies": {
+    "simple-icons": "^8.4.0"
   }
 }

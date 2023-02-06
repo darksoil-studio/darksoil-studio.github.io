@@ -10,7 +10,7 @@ function getIcon(brandName) {
   const brand = brandName.toLowerCase();
   const fileContent = readFileSync(
     new URL(
-      `../../../node_modules/super-tiny-icons/images/svg/${brand}.svg`,
+      `../../../node_modules/simple-icons/icons/${brand}.svg`,
       import.meta.url
     ),
     "utf8"
@@ -43,7 +43,7 @@ export class CustomSocialLink extends LitElement {
         slot="social"
       >
         <span class="sr-only">${this.name}</span>
-        ${getIcon(this.name)}
+        <img src="https://cdn.simpleicons.org/${this.name.toLowerCase()}/white"
       </a>
     `;
   }
