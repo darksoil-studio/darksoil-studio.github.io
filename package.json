@@ -15,7 +15,8 @@
     "@rocket/components": "^0.2.0",
     "@rocket/engine": "^0.2.0",
     "@rocket/spark": "^0.2.0",
-    "lit": "^2.3.0"
+    "lit": "^2.3.0",
+    "super-tiny-icons": "^0.4.0"
   },
   "@rocket/template-name": "Landing Page (@rocket/spark Theme)",
   "imports": {

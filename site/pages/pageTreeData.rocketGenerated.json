@@ -33,16 +33,22 @@
       "rawText": "projects on deck"
     },
     {
-      "text": "People",
-      "id": "people",
-      "level": 2,
-      "rawText": "People"
-    },
-    {
       "text": "work with us",
       "id": "work-with-us",
       "level": 2,
       "rawText": "work with us"
+    },
+    {
+      "text": "people",
+      "id": "people",
+      "level": 2,
+      "rawText": "people"
+    },
+    {
+      "text": "connect",
+      "id": "connect",
+      "level": 2,
+      "rawText": "connect"
     }
   ],
   "name": "darksoil studio",
