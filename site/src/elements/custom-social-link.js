@@ -1,22 +1,4 @@
-import { readFileSync } from "fs";
 import { LitElement, html, css } from "lit";
-import { unsafeHTML } from "lit/directives/unsafe-html.js";
-
-/**
- * @param {string} brandName
- * @returns {import('lit/directive.js').DirectiveResult}
- */
-function getIcon(brandName) {
-  const brand = brandName.toLowerCase();
-  const fileContent = readFileSync(
-    new URL(
-      `../../../node_modules/simple-icons/icons/${brand}.svg`,
-      import.meta.url
-    ),
-    "utf8"
-  );
-  return unsafeHTML(fileContent.toString());
-}
 
 export class CustomSocialLink extends LitElement {
   static properties = {
