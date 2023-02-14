@@ -244,7 +244,7 @@
   </div><!--/lit-part--><!--/lit-part-->
       </rocket-header-scroll-menu>
     <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part 4ktGCjzscNs=-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part gUQS85CEOkY=-->
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -890,6 +890,25 @@
         Passionate about learning and teaching, Guillem is moved by a desire to support the creative and collaborative side of all people.
       </p>
     </rocket-card>
+      </rocket-columns>
+    <rocket-columns><template shadowroot="open"><style>
+      #content {
+        display: flex;
+        gap: var(--space-m, 2rem);
+        flex-direction: column;
+        flex-wrap: wrap;
+      }
+      ::slotted(*) {
+        flex: 1;
+        height: auto;
+      }
+
+      @media (min-width: 600px) {
+        #content {
+          flex-direction: row;
+        }
+      }
+    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
 
     <rocket-card><template shadowroot="open"><style>
       :host {
