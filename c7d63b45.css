@@ -10,8 +10,8 @@ body {
   --theme-light: #6d6d6d;
   --theme-on-dark: #ffffff;
   --theme-secondary: #073809;
-  --theme-secondary-light: #8BC34A;
-  --default-headline-color:  white;
+  --theme-secondary-light: #8bc34a;
+  --default-headline-color: white;
 }
 
 rocket-rotating-text {
@@ -30,7 +30,8 @@ a.rocket-card {
   color: var(--theme-secondary);
 }
 
-p, summary {
+p,
+summary {
   color: white !important;
 }
 
@@ -46,20 +47,16 @@ rocket-header-scroll-menu {
   background: var(--theme-secondary);
 }
 
-
 main > *:nth-child(2n) {
-  background: var(--theme-dark) !important;
+  background: none !important;
 }
 main > *:nth-child(2n + 1) {
-  background: var(--theme-primary) !important;
+  background: none !important;
 }
 
-main > *:nth-child(1) {
-  background-image: url(/darksoil.jpg) !important;
-  background-repeat: no-repeat !important;
-  background-size: cover !important;
-  background-position: top left !important;
-  height: 300px;
+main {
+  background-image: url(/rocky-wall.png) !important;
+  background-color: black;
 }
 
 rocket-card {
@@ -85,7 +82,8 @@ footer a {
   color: #fff;
 }
 
-rocket-header-scroll-menu a.active, rocket-header-scroll-menu a:hover {
+rocket-header-scroll-menu a.active,
+rocket-header-scroll-menu a:hover {
   color: var(--theme-light);
 }
 
