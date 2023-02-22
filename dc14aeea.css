@@ -85,12 +85,12 @@ body {
 }
 .parallax__layer--back {
   transform: translateZ(-9px) scale(11);
-  height: 2000px;
+  height: 2500px;
 }
 .darksoil-background {
   filter: brightness(40%);
   background-image: url(/darksoil.jpg) !important;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
 
