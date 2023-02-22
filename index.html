@@ -40,7 +40,7 @@
         <link rel="stylesheet" href="8be09000.css">
         <link rel="stylesheet" href="1d5ad776.css">
         <link rel="stylesheet" href="eb933c4b.css">
-      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="c7d63b45.css"><!--/lit-part--><!--/lit-part-->
+      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="24216771.css"><!--/lit-part--><!--/lit-part-->
       
 <link rel="preload" href="./9c17c836.js" as="script" crossorigin="anonymous" />
 </head>
@@ -128,8 +128,6 @@
                 <a class="headline-link" href="/#now_building"><!--lit-node 0--><!--lit-part-->now building<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
                 <a class="headline-link" href="/#approach"><!--lit-node 0--><!--lit-part-->approach to software<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <a class="headline-link" href="/#stories"><!--lit-node 0--><!--lit-part-->stories<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
                 <a class="headline-link" href="/#projects_on_deck"><!--lit-node 0--><!--lit-part-->projects on deck<!--/lit-part--></a>
               <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
@@ -244,7 +242,11 @@
   </div><!--/lit-part--><!--/lit-part-->
       </rocket-header-scroll-menu>
     <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part gUQS85CEOkY=-->
+        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part pKqFQAAqZCM=--><div class="parallax">
+  <div class="parallax__layer parallax__layer--back darksoil-background">
+  </div>
+  <div class="parallax__layer parallax__layer--base">
+
 <rocket-content-area><template shadowroot="open"><style>
       :host {
         display: block;
@@ -292,7 +294,7 @@
         }
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-    <div style="padding-top: 100px">
+    <div style="height: 100vh; display: flex; flex-direction: column; align-items:start; justify-content: center">
       <h1>darksoil studio</h1>
       <p>We make simple peer to peer apps for groups of people to meet their non-digital needs.</p>
     </div>
@@ -359,7 +361,6 @@
         We also build tools to increase the accessibility and functionality of the Holochain core codebase.
       </p>
     </div>
-    <img src="24e4a1ca.png" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
@@ -519,6 +520,7 @@
         <slot></slot>
       </div>
     <!--/lit-part--></template>
+      <h2 id="approach" link-text="approach to software">approach to software</h2>
   <rocket-columns><template shadowroot="open"><style>
       #content {
         display: flex;
@@ -538,7 +540,6 @@
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="approach" link-text="approach to software">approach to software</h2>
       <p>
         We make it simple for existing groups to make self-sovereign digital spaces that are owned and evolvable by the group itself.   
         <br>
@@ -555,60 +556,8 @@
         Sometimes, when we’re inspired by the partnership, we make things for others before we make them for ourselves.
       </p>
     </div>
-    <img src="e755163f.jpg" alt="alternative" width="146" height="150">
-  </rocket-columns>
-</rocket-content-area>
-
-
-<rocket-content-area><template shadowroot="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-  <rocket-columns><template shadowroot="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="stories" link-text="stories">stories</h2>
+      <h3>stories</h3>
       <p>
         We tell stories about our lives now and in the very near future; stories about our homes, businesses, villages, etc.   
         <br>
@@ -619,7 +568,6 @@
         We tell stories to bridge the gap between where we are now and the worlds that we’re building these tools to live in.
       </p>
     </div>
-    <img src="e755163f.jpg" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
@@ -652,6 +600,7 @@
         <slot></slot>
       </div>
     <!--/lit-part--></template>
+      <h2 id="projects_on_deck" link-text="projects on deck">projects on deck</h2>
   <rocket-columns><template shadowroot="open"><style>
       #content {
         display: flex;
@@ -671,7 +620,6 @@
       }
     </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
     <div>
-      <h2 id="projects_on_deck" link-text="projects on deck">projects on deck</h2>
       <p>
         </p><h3>apps &amp; modules</h3>
         <br>
@@ -689,7 +637,7 @@
         <br>
         ourtime - scheduling of group tasks
         <br>
-
+</div><div>
         <h3>holochain core tooling</h3>
         mobile - mobile support for holochain
         <br>
@@ -700,7 +648,6 @@
         puzzles &amp; scotty panel - playground extentions
       <p></p>
     </div>
-    <img src="6fec2023.jpg" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
@@ -769,7 +716,6 @@
         
       </p>
     </div>
-    <img src="6fec2023.jpg" alt="alternative" width="146" height="150">
   </rocket-columns>
 </rocket-content-area>
 
@@ -1039,6 +985,9 @@
     </div>
   </rocket-columns>
 </rocket-content-area>
+
+  </div>
+</div>
 <!--/lit-part--><!--/lit-part--></main><!--/lit-part--> <!--lit-part ylGgZbYd3gg=-->
       <footer id=" main-footer"=""><!--lit-part--><!--lit-part BRUAAAUVAAA=--><!----><!--/lit-part--><!--/lit-part-->
     <!--/lit-part-->
@@ -1048,7 +997,7 @@
       
     
       
-    </a></p></div></rocket-columns></rocket-content-area></main>
+    </a></p></div></rocket-columns></rocket-content-area></div></div></main>
 <script type="module" src="./9c17c836.js"></script>
 
 </body><!--/lit-part--></html>
