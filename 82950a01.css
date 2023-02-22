@@ -47,6 +47,7 @@ rocket-header-scroll-menu {
   position: absolute;
   left: 0;
   right: 0;
+  --rocket-header-scroll-menu-padding-right: 392px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     0deg,
