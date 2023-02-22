@@ -26,10 +26,14 @@ export async function registerCustomElements() {
   export const title = 'darksoil studio';
   export const description = 'We create little interoperable apps for place-based groups to fulfill their basic needs';
 </script>
+<div class="parallax">
+  <div class="parallax__layer parallax__layer--back darksoil-background">
+  </div>
+  <div class="parallax__layer parallax__layer--base">
 
 <rocket-content-area>
   <rocket-columns>
-    <div style="padding-top: 100px">
+    <div style="height: 100vh; display: flex; flex-direction: column; align-items:start; justify-content: center">
       <h1>darksoil studio</h1>
       <p>We make simple peer to peer apps for groups of people to meet their non-digital needs.</p>
     </div>
@@ -51,7 +55,6 @@ export async function registerCustomElements() {
         We also build tools to increase the accessibility and functionality of the Holochain core codebase.
       </p>
     </div>
-    <img src="resolve:#src/images/darksoilAI.png" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
@@ -96,9 +99,9 @@ export async function registerCustomElements() {
 
 
 <rocket-content-area>
+      <h2 id="approach" link-text="approach to software">approach to software</h2>
   <rocket-columns>
     <div>
-      <h2 id="approach" link-text="approach to software">approach to software</h2>
       <p>
         We make it simple for existing groups to make self-sovereign digital spaces that are owned and evolvable by the group itself.   
         <br>
@@ -115,15 +118,8 @@ export async function registerCustomElements() {
         Sometimes, when we’re inspired by the partnership, we make things for others before we make them for ourselves.
       </p>
     </div>
-    <img src="resolve:#src/images/toolslarger.jpg" alt="alternative" width="146" height="150" />
-  </rocket-columns>
-</rocket-content-area>
-
-
-<rocket-content-area>
-  <rocket-columns>
     <div>
-      <h2 id="stories" link-text="stories">stories</h2>
+      <h3>stories</h3>
       <p>
         We tell stories about our lives now and in the very near future; stories about our homes, businesses, villages, etc.   
         <br>
@@ -134,14 +130,13 @@ export async function registerCustomElements() {
         We tell stories to bridge the gap between where we are now and the worlds that we’re building these tools to live in.
       </p>
     </div>
-    <img src="resolve:#src/images/toolslarger.jpg" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
 <rocket-content-area>
+      <h2 id="projects_on_deck" link-text="projects on deck">projects on deck</h2>
   <rocket-columns>
     <div>
-      <h2 id="projects_on_deck" link-text="projects on deck">projects on deck</h2>
       <p>
         <h3>apps & modules</h3>
         <br>
@@ -159,7 +154,7 @@ export async function registerCustomElements() {
         <br>
         ourtime - scheduling of group tasks
         <br>
-
+</div><div>
         <h3>holochain core tooling</h3>
         mobile - mobile support for holochain
         <br>
@@ -170,7 +165,6 @@ export async function registerCustomElements() {
         puzzles & scotty panel - playground extentions
       </p>
     </div>
-    <img src="resolve:#src/images/water2.jpg" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
@@ -194,7 +188,6 @@ export async function registerCustomElements() {
         
       </p>
     </div>
-    <img src="resolve:#src/images/water2.jpg" alt="alternative" width="146" height="150" />
   </rocket-columns>
 </rocket-content-area>
 
@@ -273,3 +266,6 @@ export async function registerCustomElements() {
     </div>
   </rocket-columns>
 </rocket-content-area>
+
+  </div>
+</div>
