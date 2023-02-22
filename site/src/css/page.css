@@ -19,11 +19,11 @@ rocket-rotating-text {
 }
 
 a {
-  color: var(--theme-secondary-light);
+  color: white;
 }
 
 a.rocket-card {
-  color: var(--theme-dark);
+  color: white;
 }
 
 .highlight {
@@ -104,15 +104,20 @@ h2 {
   font-size: 48px !important;
 }
 
+p {
+  text-align: justify;
+}
+
 rocket-content-area {
   padding: 20px;
   min-height: 400px;
 }
 
 rocket-card {
+  border: none;
   background-color: rgba(150, 150, 150, 0.2);
   min-width: 300px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .photo {
