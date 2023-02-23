@@ -210,6 +210,10 @@ rocket-columns rocket-card {
   justify-content: center;
 }
 
+.poem {
+  padding: 20px;
+}
+
 @media screen and (min-width: 1024px) {
   rocket-header-scroll-menu {
     --rocket-header-scroll-menu-text-align: right;
@@ -229,7 +233,7 @@ rocket-columns rocket-card {
     margin-top: -13px;
   }
 }
-@media screen and (max-width: 481px) {
+@media screen and (max-width: 599px) {
   rocket-header-scroll-menu {
     top: -18px;
   }
