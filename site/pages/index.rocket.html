@@ -1,20 +1,20 @@
 <script type="module" server>
-  /* START - Rocket auto generated - do not touch */
-  export const sourceRelativeFilePath = "index.rocket.html";
-  import { components } from "./recursive.data.js";
-  export { components };
-  export async function registerCustomElements() {
-    // server-only components
-    // prettier-ignore
-    customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
-    // prettier-ignore
-    customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
-    // prettier-ignore
-    customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
-    // prettier-ignore
-    customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-  }
-  /* END - Rocket auto generated - do not touch */
+/* START - Rocket auto generated - do not touch */
+export const sourceRelativeFilePath = 'index.rocket.html';
+import { components } from './recursive.data.js';
+export { components };
+export async function registerCustomElements() {
+  // server-only components
+  // prettier-ignore
+  customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+  // prettier-ignore
+  customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
+  // prettier-ignore
+  customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+  // prettier-ignore
+  customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+}
+/* END - Rocket auto generated - do not touch */
 
   import "#src/elements/custom-social-link.js";
   import { LayoutHome } from "@rocket/spark";
@@ -186,9 +186,22 @@
 
       <rocket-columns>
         <rocket-card>
-          <h4 slot="title">fixie</h4>
+          <div slot="title" class="row card-title">
+            <h4>fixie</h4>
+            <div class="row">
+              <custom-social-link
+                style="
+                  margin-left: 16px;
+                  --primary-text-color: white;
+                  --primary-color: var(white);
+                "
+                name="OpenCollective"
+                url="https://opencollective.com/darksoil/projects/fixie"
+              ></custom-social-link>
+            </div>
+          </div>
           <br />
-          <a href="">collect your bugs to give hApps hugs</a>
+          <p>collect your bugs to give hApps hugs</p>
           <br />
           <p>
             Oh, it’s just a fully distributed issue tracker to save many
@@ -199,14 +212,32 @@
         </rocket-card>
 
         <rocket-card>
-          <h4 slot="title">gather</h4>
+          <div slot="title" class="row card-title">
+            <h4>gather</h4>
+            <div class="row">
+              <custom-social-link
+                style="
+                  margin-left: 16px;
+                  --primary-text-color: white;
+                  --primary-color: var(white);
+                "
+                name="Github"
+                url="https://github.com/darksoil-studio/gather"
+              ></custom-social-link>
+              <custom-social-link
+                style="--primary-text-color: white; --primary-color: var(white)"
+                name="OpenCollective"
+                url="https://opencollective.com/darksoil/projects/gather"
+              ></custom-social-link>
+            </div>
+          </div>
           <br />
-          <a href="https://github.com/darksoil-studio/gather"
-            >I can see that you are free<br />
+          <p>
+            I can see that you are free<br />
             and you can see the same of me<br />
             so we agree we’d like to be<br />
             out on the court at 2:03
-          </a>
+          </p>
           <br />
           <p>
             Software for co-creating, accessing, and managing emergent events.
