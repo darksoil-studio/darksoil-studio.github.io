@@ -3,17 +3,21 @@
 export const sourceRelativeFilePath = 'index.rocket.html';
 import { components } from './recursive.data.js';
 export { components };
-export async function registerCustomElements() {
-  // server-only components
+  export async function registerCustomElements() {
+    // server-only components
+    // prettier-ignore
   // prettier-ignore
-  customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+    customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+    // prettier-ignore
   // prettier-ignore
-  customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
+    customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
+    // prettier-ignore
   // prettier-ignore
-  customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+    customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+    // prettier-ignore
   // prettier-ignore
-  customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-}
+    customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+  }
 /* END - Rocket auto generated - do not touch */
 
   import "#src/elements/custom-social-link.js";
@@ -161,7 +165,7 @@ export async function registerCustomElements() {
               class="colum"
               style="align-items: center; justify-content: center"
             >
-              <p>
+              <p class="poem">
                 playing around,<br />
                 just having fun,<br />
                 you'll understand,<br />
@@ -201,7 +205,7 @@ export async function registerCustomElements() {
             </div>
           </div>
           <br />
-          <p>collect your bugs to give hApps hugs</p>
+          <p class="poem">collect your bugs to give hApps hugs</p>
           <br />
           <p>
             Oh, it’s just a fully distributed issue tracker to save many
@@ -232,7 +236,7 @@ export async function registerCustomElements() {
             </div>
           </div>
           <br />
-          <p>
+          <p class="poem">
             I can see that you are free<br />
             and you can see the same of me<br />
             so we agree we’d like to be<br />
