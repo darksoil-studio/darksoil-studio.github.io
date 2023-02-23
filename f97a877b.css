@@ -195,6 +195,21 @@ rocket-header-scroll-menu a:nth-child(2) {
   display: none;
 }
 
+rocket-columns div,
+rocket-columns rocket-card {
+  display: flex;
+  align-items: center;
+}
+
+.card-title {
+  row-gap: 16px;
+
+  flex-flow: wrap;
+  align-self: center;
+  align-items: center;
+  justify-content: center;
+}
+
 @media screen and (min-width: 1024px) {
   rocket-header-scroll-menu {
     --rocket-header-scroll-menu-text-align: right;
@@ -213,14 +228,6 @@ rocket-header-scroll-menu a:nth-child(2) {
   .custom-social-links {
     margin-top: -13px;
   }
-}
-.card-title {
-  row-gap: 16px;
-
-  flex-flow: column;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
 }
 @media screen and (max-width: 481px) {
   rocket-header-scroll-menu {
