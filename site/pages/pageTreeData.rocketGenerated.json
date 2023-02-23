@@ -9,6 +9,12 @@
       "rawText": "what we do"
     },
     {
+      "text": "projects",
+      "id": "projects",
+      "level": 2,
+      "rawText": "projects"
+    },
+    {
       "text": "now building",
       "id": "now_building",
       "level": 2,

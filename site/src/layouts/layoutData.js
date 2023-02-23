@@ -18,8 +18,14 @@ export const layoutData = {
 
   header__100: html` <div style="display: inline-block; position: relative">
     <div
-      style="display: flex; position: absolute; margin-top: -22px; justify-contents: center; align-items: center"
+      class="custom-social-links"
+      style="display: flex; position: absolute; justify-content: center; align-items: center; margin-left: 8px"
     >
+      <custom-social-link
+        style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
+        name="OpenCollective"
+        url="https://opencollective.com/darksoil"
+      ></custom-social-link>
       <custom-social-link
         style="--primary-text-color: white; --primary-color: var(white); "
         name="Github"
@@ -27,13 +33,18 @@ export const layoutData = {
       ></custom-social-link>
       <custom-social-link
         style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
-        name="OpenCollective"
-        url="https://opencollective.com/darksoil"
-      ></custom-social-link>
-      <custom-social-link
-        style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
         name="Substack"
         url="https://substack.com/profile/5969055-darksoil"
+      ></custom-social-link>
+      <custom-social-link
+        style="--primary-text-color: white; --primary-color: var(white); "
+        name="YouTube"
+        url="https://www.youtube.com/@darksoilstudio"
+      ></custom-social-link>
+      <custom-social-link
+        style="--primary-text-color: white; --primary-color: var(white); "
+        name="gmail"
+        url="mailto:hello@darksoilstudio"
       ></custom-social-link>
     </div>
   </div>`,
