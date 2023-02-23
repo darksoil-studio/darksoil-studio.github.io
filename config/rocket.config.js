@@ -8,11 +8,15 @@ export default /** @type {import('@rocket/cli').RocketCliOptions} */ {
   longFileHeaderComment: "// prettier-ignore",
   presets: [rocketSpark()],
   setupDevServerAndBuildPlugins: [
-    addPlugin(replace, {
-      'await import("crypto")': "undefined",
-      "import { ScopedElementsMixin } from '@open-wc/scoped-elements';": `import pkg from '@open-wc/scoped-elements';
-const { ScopedElementsMixin } = pkg;`,
-      delimiters: ["", ""],
-    }),
+    addPlugin(
+      replace,
+      {
+        'await import("crypto")': "undefined",
+        "import { ScopedElementsMixin } from '@open-wc/scoped-elements';": `import pkg from '@open-wc/scoped-elements';
+        const { ScopedElementsMixin } = pkg;`,
+        delimiters: ["", ""],
+      },
+      { location: "top" }
+    ),
   ],
 };

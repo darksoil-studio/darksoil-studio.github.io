@@ -27,6 +27,8 @@
   "dependencies": {
     "@holochain-playground/elements": "^0.1.4",
     "@holochain-playground/simulator": "^0.1.1",
+    "@scoped-elements/cytoscape": "^0.1.1",
+    "lit-svelte-stores": "^0.2.3",
     "simple-icons": "^8.4.0"
   }
 }
