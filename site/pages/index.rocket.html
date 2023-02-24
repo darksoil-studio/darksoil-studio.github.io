@@ -1,20 +1,20 @@
 <script type="module" server>
-/* START - Rocket auto generated - do not touch */
-export const sourceRelativeFilePath = 'index.rocket.html';
-import { components } from './recursive.data.js';
-export { components };
-export async function registerCustomElements() {
-  // server-only components
-  // prettier-ignore
-  customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
-  // prettier-ignore
-  customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
-  // prettier-ignore
-  customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
-  // prettier-ignore
-  customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-}
-/* END - Rocket auto generated - do not touch */
+  /* START - Rocket auto generated - do not touch */
+  export const sourceRelativeFilePath = "index.rocket.html";
+  import { components } from "./recursive.data.js";
+  export { components };
+  export async function registerCustomElements() {
+    // server-only components
+    // prettier-ignore
+    customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+    // prettier-ignore
+    customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
+    // prettier-ignore
+    customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+    // prettier-ignore
+    customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+  }
+  /* END - Rocket auto generated - do not touch */
 
   import "#src/elements/custom-social-link.js";
   import { LayoutHome } from "@rocket/spark";
@@ -82,7 +82,7 @@ export async function registerCustomElements() {
           "
         >
           <h1>darksoil studio</h1>
-          <p style="margin-top: 32px">
+          <p style="margin-top: 32px; max-width: 1000px">
             We make simple peer to peer apps for groups of people to meet their
             non-digital needs.
           </p>
@@ -112,7 +112,13 @@ export async function registerCustomElements() {
     </rocket-content-area>
 
     <rocket-content-area>
-      <h2 id="projects" link-text="projects" class="area-headline">projects</h2>
+      <h2
+        id="things-weve-made"
+        link-text="things we've made"
+        class="area-headline"
+      >
+        things we've made
+      </h2>
       <br />
 
       <rocket-columns>

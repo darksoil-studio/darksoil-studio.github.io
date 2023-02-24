@@ -30,6 +30,10 @@ a.rocket-card {
   color: var(--theme-secondary);
 }
 
+p {
+  font-size: 20px;
+}
+
 p,
 summary {
   color: white !important;
