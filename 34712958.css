@@ -50,7 +50,7 @@ a.cta {
 rocket-header-scroll-menu {
   position: absolute;
   width: 100vw;
-  height: 108px;
+  height: 110px;
   background: rgb(2, 0, 36);
   background: linear-gradient(
     0deg,
@@ -104,10 +104,13 @@ h1 {
 }
 
 h2 {
-  text-align: center;
+  text-align: left !important;
   font-size: 48px !important;
+  margin-bottom: 40px !important;
 }
-
+h3 {
+  margin-top: 0 !important;
+}
 p {
   text-align: justify;
 }
@@ -130,7 +133,8 @@ rocket-card {
   border: none;
   background-color: rgba(150, 150, 150, 0.2);
   min-width: 300px;
-  border-radius: 4px;
+  max-width: 500px;
+  border-radius: 16px;
   padding: 3rem 3rem;
 }
 
@@ -138,18 +142,12 @@ body {
   background-color: black;
 }
 
-rocket-card > a {
-  text-align: center;
-}
-
-rocket-content-area div {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
 rocket-content-area p {
   max-width: 800px;
+}
+
+rocket-columns rocket-card {
+  display: flex;
 }
 
 .photo {
@@ -199,23 +197,17 @@ rocket-header-scroll-menu a:nth-child(2) {
   display: none;
 }
 
-rocket-columns div,
-rocket-columns rocket-card {
-  display: flex;
-  align-items: center;
-}
-
 .card-title {
   row-gap: 16px;
+  margin-bottom: 16px;
 
   flex-flow: wrap;
-  align-self: center;
-  align-items: center;
-  justify-content: center;
+  align-self: start;
 }
 
 .poem {
-  padding: 20px;
+  height: 140px;
+  display: flex;
 }
 
 @media screen and (min-width: 1024px) {
