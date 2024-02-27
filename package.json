@@ -5,8 +5,8 @@
   "description": "A landing page based on the spark theme",
   "type": "module",
   "scripts": {
-    "start": "NODE_DEBUG=engine:rendering rocket start --open",
-    "build": "rocket build",
+    "start": "NODE_DEBUG=engine:rendering ./node_modules/.bin/rocket start --open",
+    "build": "./node_modules/.bin/rocket build",
     "dev": "npm start",
     "preview": "rocket preview --open"
   },
