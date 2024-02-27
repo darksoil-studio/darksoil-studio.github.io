@@ -1,20 +1,20 @@
 <script type="module" server>
-  /* START - Rocket auto generated - do not touch */
-  export const sourceRelativeFilePath = "index.rocket.html";
-  import { components } from "./recursive.data.js";
-  export { components };
-  export async function registerCustomElements() {
-    // server-only components
-    // prettier-ignore
-    customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
-    // prettier-ignore
-    customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
-    // prettier-ignore
-    customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
-    // prettier-ignore
-    customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-  }
-  /* END - Rocket auto generated - do not touch */
+/* START - Rocket auto generated - do not touch */
+export const sourceRelativeFilePath = 'index.rocket.html';
+import { components } from './recursive.data.js';
+export { components };
+export async function registerCustomElements() {
+  // server-only components
+  // prettier-ignore
+  customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+  // prettier-ignore
+  customElements.define('rocket-header-scroll-menu', await import('@rocket/components/header-scroll-menu.js').then(m => m.RocketHeaderScrollMenu));
+  // prettier-ignore
+  customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+  // prettier-ignore
+  customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+}
+/* END - Rocket auto generated - do not touch */
 
   import "#src/elements/custom-social-link.js";
   import { LayoutHome } from "@rocket/spark";
@@ -400,25 +400,6 @@
           </p>
         </rocket-card>
 
-        <rocket-card>
-          <h4 slot="title">Matthias Meier</h4>
-          <img src="../public/matthias.jpg" class="photo" />
-          <p>
-            Matthias develops beautiful applications and modules for darksoil.
-            <br /><br />
-            He is one of the main contributors to the Holochain
-            <a href="https://github.com/holochain/launcher">launcher</a> and the
-            membrane management tool
-            <a href="https://github.com/lightningrodlabs/we">We</a>. He examines
-            fundamental assumptions and explores their implications in detail in
-            projects he is working with to ensure they are as sound and stable
-            as possible. <br /><br />
-            He recently became aware of the fact that once he dies, the
-            molecules his body is comprised of will become part of the world
-            around him. Which is why he intends to create the world he will be
-            looking forward dying into.
-          </p>
-        </rocket-card>
       </rocket-columns>
     </rocket-content-area>
 

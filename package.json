@@ -11,12 +11,14 @@
     "preview": "rocket preview --open"
   },
   "devDependencies": {
+    "@babel/preset-env": "^7.23.9",
     "@rocket/cli": "^0.20.4",
     "@rocket/components": "^0.2.0",
     "@rocket/engine": "^0.2.7",
     "@rocket/spark": "^0.2.0",
     "@rollup/plugin-replace": "^5.0.2",
-    "lit": "^2.3.0",
+    "@webcomponents/template-shadowroot": "^0.2.1",
+    "lit": "^3.0.0",
     "plugins-manager": "^0.3.1",
     "super-tiny-icons": "^0.4.0"
   },
