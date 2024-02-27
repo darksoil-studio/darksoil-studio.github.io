@@ -10,10 +10,13 @@ jobs:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - uses: cachix/install-nix-action@v25
+        with:
+          nix_path: nixpkgs=channel:nixos-unstable
+
       - name: Install and Build 🔧 
         run: |
-          npm install
-          npm run build
+          nix develop --command bash -c "npm i && npm run build"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
