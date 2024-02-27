@@ -10,7 +10,16 @@
     "dev": "npm start",
     "preview": "rocket preview --open"
   },
-  "devDependencies": {
+  "@rocket/template-name": "Landing Page (@rocket/spark Theme)",
+  "imports": {
+    "#src/*": "./site/src/*"
+  },
+  "dependencies": {
+    "@holochain-playground/elements": "^0.1.4",
+    "@holochain-playground/simulator": "^0.1.1",
+    "@scoped-elements/cytoscape": "^0.1.1",
+    "lit-svelte-stores": "^0.2.3",
+    "simple-icons": "^8.4.0",
     "@babel/preset-env": "^7.23.9",
     "@rocket/cli": "^0.21.0",
     "@rocket/components": "^0.2.0",
@@ -23,16 +32,5 @@
     "lit": "^3.0.0",
     "plugins-manager": "^0.3.1",
     "super-tiny-icons": "^0.4.0"
-  },
-  "@rocket/template-name": "Landing Page (@rocket/spark Theme)",
-  "imports": {
-    "#src/*": "./site/src/*"
-  },
-  "dependencies": {
-    "@holochain-playground/elements": "^0.1.4",
-    "@holochain-playground/simulator": "^0.1.1",
-    "@scoped-elements/cytoscape": "^0.1.1",
-    "lit-svelte-stores": "^0.2.3",
-    "simple-icons": "^8.4.0"
   }
 }
