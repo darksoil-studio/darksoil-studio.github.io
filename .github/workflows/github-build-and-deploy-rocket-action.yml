@@ -16,7 +16,7 @@ jobs:
 
       - name: Install and Build 🔧 
         run: |
-          nix develop --command bash -c "npm i && npm run build"
+          nix develop --command bash -c "npm i && ls node_modules && ls node_modules/.bin && npm run build"
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4.3.3
