@@ -13,9 +13,9 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.23.9",
-    "@rocket/cli": "^0.21.0",
-    "@rocket/engine": "^0.2.7",
-    "@rocket/spark": "^0.2.0",
+    "@rocket/cli": "file:~/projects/rocket/packages/cli",
+    "@rocket/engine": "file:~/projects/rocket/packages/engine",
+    "@rocket/spark": "file:~/projects/rocket/presets/spark",
     "@rollup/plugin-replace": "^5.0.2",
     "@web/dev-server": "^0.4.3",
     "@web/dev-server-rollup": "^0.6.1",
@@ -29,11 +29,10 @@
   "dependencies": {
     "@holochain-playground/elements": "^0.1.4",
     "@holochain-playground/simulator": "^0.1.1",
-    "@rocket/components": "^0.2.0",
+    "@rocket/components": "file:~/projects/rocket/packages/components",
     "@scoped-elements/cytoscape": "^0.1.1",
     "@webcomponents/template-shadowroot": "^0.2.1",
     "lit": "^3.0.0",
-    "lit-svelte-stores": "^0.2.3",
     "simple-icons": "^8.4.0",
     "super-tiny-icons": "^0.4.0"
   }
