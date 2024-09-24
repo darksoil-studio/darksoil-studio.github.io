@@ -1,16 +1,31 @@
 body {
   color: white !important;
+  font-family: "Rubik", sans-serif;
+  margin: 0;
 }
 
 :root {
-  --theme-primary: #424242;
-  --theme-on-primary: #ffffff;
-  --theme-dark: #1b1b1b;
+  /* Teal */
+  --sl-color-teal-50: hsl(166.2 76.5% 96.7%);
+  --sl-color-teal-100: hsl(167.2 85.5% 89.2%);
+  --sl-color-teal-200: hsl(168.4 83.8% 78.2%);
+  --sl-color-teal-300: hsl(170.6 76.9% 64.3%);
+  --sl-color-teal-400: hsl(172.5 66% 50.4%);
+  --sl-color-teal-500: hsl(173.4 80.4% 40%);
+  --sl-color-teal-600: hsl(174.7 83.9% 31.6%);
+  --sl-color-teal-700: hsl(175.3 77.4% 26.1%);
+  --sl-color-teal-800: hsl(176.1 69.4% 21.8%);
+  --sl-color-teal-900: hsl(175.9 60.8% 19%);
+  --sl-color-teal-950: hsl(176.5 58.6% 11.4%);
+
+  --theme-primary: var(--sl-color-teal-600);
+  --theme-on-primary: white;
+  --theme-dark: var(--sl-color-teal-600);
   --theme-on-dark: #ffffff;
-  --theme-light: #6d6d6d;
+  --theme-light: var(--sl-color-teal-600);
   --theme-on-dark: #ffffff;
-  --theme-secondary: #073809;
-  --theme-secondary-light: #8bc34a;
+  --theme-secondary: var(--sl-color-teal-800);
+  --theme-secondary-light: #f97316;
   --default-headline-color: white;
 }
 
@@ -41,10 +56,10 @@ summary {
 
 rocket-header-scroll-menu a {
   color: white;
-}
-
-a.cta {
-  background-color: var(--theme-secondary-light);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 0.25rem;
 }
 
 rocket-header-scroll-menu {
@@ -89,11 +104,11 @@ body {
 }
 .parallax__layer--back {
   transform: translateZ(-9px) scale(11);
-  height: 2500px;
+  height: 1700px;
 }
 .darksoil-background {
   filter: brightness(40%);
-  background-image: url(/darksoil.jpg) !important;
+  background-image: url(https://raw.githubusercontent.com/darksoil-studio/media/e4c4813fb38b265c75011f02389668e01fda3618/images/darksoil.jpg) !important;
   background-size: cover;
   background-position: center;
 }
@@ -173,7 +188,7 @@ rocket-header-scroll-menu a:hover {
 }
 
 .custom-social-links {
-  margin-top: -22px;
+  /*margin-top: 10px;*/
 }
 
 h1 {
@@ -203,6 +218,7 @@ rocket-header-scroll-menu a:nth-child(2) {
 
   flex-flow: wrap;
   align-self: start;
+  align-items: center;
 }
 
 .poem {
@@ -226,7 +242,7 @@ rocket-header-scroll-menu a:nth-child(2) {
   }
 
   .custom-social-links {
-    margin-top: -13px;
+    /*margin-top: -13px;*/
   }
 }
 @media screen and (max-width: 599px) {
@@ -246,4 +262,36 @@ rocket-header-scroll-menu a:nth-child(2) {
     padding: 1rem;
     min-width: 250px;
   }
+}
+
+a.cta {
+  display: inline-block;
+  padding: 1.625rem 2.625rem 1.625rem 2.625rem;
+  border: 1px solid #272556;
+  border-radius: 30px;
+  background-color: #272556;
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 0;
+  text-decoration: none;
+  transition: all 0.2s;
+}
+a.cta:hover {
+  background-color: transparent;
+  color: #272556; /* needs to stay here because of the color property of a tag */
+  text-decoration: none;
+}
+
+a.cta {
+  background-color: var(--theme-primary);
+}
+
+a.cta:hover {
+  background-color: var(--theme-secondary);
+}
+
+h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
 }
