@@ -231,7 +231,7 @@ rocket-header-scroll-menu a:nth-child(2) {
 @media screen and (min-width: 1024px) {
   rocket-header-scroll-menu {
     --rocket-header-scroll-menu-text-align: right;
-    --rocket-header-scroll-menu-padding-right: 34ch;
+    /*--rocket-header-scroll-menu-padding-right: 34ch;*/
   }
   rocket-header-scroll-menu a:nth-child(2) {
     display: inline;
