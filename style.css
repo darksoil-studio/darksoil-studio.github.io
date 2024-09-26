@@ -167,10 +167,12 @@ rocket-columns rocket-card {
 
 .photo {
   text-align: center;
-  width: 64%;
+  width: 70%;
   align-self: center;
   border-radius: 50%;
   padding-top: 8px;
+  object-fit: contain;
+
 }
 
 footer {
