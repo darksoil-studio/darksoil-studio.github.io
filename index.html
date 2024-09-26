@@ -1,1584 +1,481 @@
-<!DOCTYPE html><!--lit-node 0--><html lang="en-US"><!--lit-part 9o6GLDmg6E0=--><head>
-        <!--lit-part--><!--lit-part wHArAiekrZo=-->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-        <title>darksoil studio</title>
-        <!--lit-node 4--><meta property="og:title" content="darksoil studio">
-
-        <meta name="generator" content="rocket 0.1">
-
-        <!--lit-node 6--><meta name="description" content="We create little interoperable apps for place-based groups to fulfill their basic needs">
-        <!--lit-node 7--><meta property="og:description" content="We create little interoperable apps for place-based groups to fulfill their basic needs">
-
-        <!--lit-node 8--><link rel="canonical" href="http://localhost:8080/">
-        <!--lit-node 9--><meta property="og:url" content="http://localhost:8080/">
-      <!--/lit-part--><!--lit-part mTa6YEdoIjs=-->
-      <link rel="icon" href="assets/favicon.ico" sizes="any"><!-- 32x32 -->
-      <link rel="icon" href="assets/icon.svg" type="image/svg+xml">
-      <link rel="apple-touch-icon" href="assets/apple-touch-icon.png"><!-- 180x180 -->
-      <link rel="manifest" href="assets/site.webmanifest">
-    <!--/lit-part--><!--lit-part gQKDxErJms8=-->
-      <!--lit-node 0--><meta property="og:site_name" content="darksoil studio">
-      <meta property="og:type" content="website">
-      <meta name="twitter:card" content="summary_large_image">
-    <!--/lit-part--><!--lit-part LESIcIqrZBY=-->
-      <style>
-        body[dsd-pending] {
-          display: none;
-        }
-      </style>
-      <noscript>
-        <style>
-          body[dsd-pending] {
-            display: block;
-          }
-        </style>
-      </noscript>
-    <!--/lit-part--><!--lit-part KprR0CQ20eY=-->
-        <link rel="preload" href="/fonts/Rubik-VariableFont_wght.woff2" as="font" type="font/woff2" crossorigin="">
-        <link rel="stylesheet" href="353fed00.css">
-        <link rel="stylesheet" href="777d7c40.css">
-        <link rel="stylesheet" href="b1167108.css">
-      <!--/lit-part--><!--lit-part KpwPUg/hUAU=--><link rel="stylesheet" href="db4c1fad.css"><!--/lit-part--><!--/lit-part-->
-      
-<link rel="preload" href="./e7b9d35f.js" as="script" crossorigin="anonymous" />
-</head>
-    <!--/lit-part--> <!--lit-part Cr9DEFJbx3I=-->
-      <!--lit-node 0--><body class="  " layout="layout">
-        <!--lit-part--><!--lit-part 8lPOZJw2lXs=-->
-      <script>
-        if (HTMLTemplateElement.prototype.hasOwnProperty('shadowRoot')) {
-          document.body.removeAttribute('dsd-pending');
-        }
-      </script>
-    <!--/lit-part--><!--/lit-part--> <!--lit-part 9t4rvBmcMJY=-->
-      <rocket-header-scroll-menu><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: flex;
-        align-items: center;
-        position: sticky;
-        height: 100px;
-        top: -50px; /* height - .header-inner height => 100-50 = 50 */
-        z-index: 100;
-      }
-
-      .header-inner {
-        height: 50px;
-        position: sticky;
-        top: 0;
-        width: 100%;
-        padding-right: var(--rocket-header-scroll-menu-padding-right, 0);
-        text-align: var(--rocket-header-scroll-menu-text-align, center);
-      }
-
-      ::slotted(a) {
-        text-decoration: none;
-        padding: 0.25rem;
-        line-height: 50px;
-      }
-
-      @media screen and (min-width: 1024px) {
-        ::slotted(a) {
-          padding: 0.75rem;
-        }
-      }
-    </style><!--lit-part VitTU4kFaCU=-->
-      <div class="header-inner">
-        <!--lit-node 1--><rocket-content-area no-padding="" defer-hydration=""><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
+<html>
+  <head>
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    
+    <title>darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <script type="module" crossorigin src="./assets/index-e7890ab6.js"></script>
+    <link rel="stylesheet" href="./assets/index-307de1b2.css">
+  </head>
+  <body>
+    <!--a.class links-->
+    <rocket-header-scroll-menu>
+    <div style="display: flex;
+    flex-direction: row;
+    margin-top: 10px;
+    align-items: center;">
+      <div style="flex: 1; display: flex; justify-content: left;">
+        <a href="#what-we-do">what we do</a>
+        <a href="#things-weve-made">things we've made</a>
+        <a href="#now_building">now building</a>
+        <a href="#approach">approach to software</a>
+        <a href="#projects_on_deck">projects on deck</a>
+        <a href="#work-with-us">work with us</a>
+        <a href="#people">people</a>
+        <a href="#connect">connect</a>
       </div>
-    <!--/lit-part--></template>
-          <div class="header-logo"></div>
-          <nav class="header-navigation">
-            <slot id="content"></slot>
-          </nav>
+      <div
+        class="custom-social-links"
+        style="display: flex; justify-content: center; align-items: center; margin-left: 8px"
+      >
+        <custom-social-link
+          style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
+          name="OpenCollective"
+          url="https://opencollective.com/darksoil"
+        ></custom-social-link>
+        <custom-social-link
+          style="--primary-text-color: white; --primary-color: var(white); "
+          name="Github"
+          url="https://github.com/darksoil-studio"
+        ></custom-social-link>
+        <custom-social-link
+          style="--primary-text-color: white; --primary-color: var(--theme-secondary); "
+          name="Substack"
+          url="https://substack.com/profile/5969055-darksoil"
+        ></custom-social-link>
+        <custom-social-link
+          style="--primary-text-color: white; --primary-color: var(white); "
+          name="YouTube"
+          url="https://www.youtube.com/@darksoilstudio"
+        ></custom-social-link>
+        <custom-social-link
+          style="--primary-text-color: white; --primary-color: var(white); "
+          name="gmail"
+          url="mailto:hello@darksoilstudio"
+        ></custom-social-link>
+      </div>
+    </div>
+  </rocket-header-scroll-menu>
+    <div class="parallax">
+      <div class="parallax__layer parallax__layer--back darksoil-background"></div>
+      <div class="parallax__layer parallax__layer--base">
+        <rocket-content-area style="padding-top: 20px">
+          <rocket-columns>
+            <div
+              style="
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                justify-content: center;
+              "
+            >
+              <h1>darksoil studio</h1>
+              <p style="margin-top: 32px; max-width: 1000px">
+                We make simple peer to peer apps for groups of people to meet their
+                non-digital needs.
+              </p>
+            </div>
+          </rocket-columns>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="what-we-do" link-text="what we do">what we do</h2>
+          <p>
+            We make tools for people to grow deep dark soil, ecologically and
+            socially.
+            <br />
+            <br />
+            We build small, interoperable, fully distributed apps that enable groups
+            to access emergent properties for organizing, collaborating, and
+            connecting. We build open source software on Holochain.
+            <br />
+            <br />
+            We also build tools to increase the accessibility and functionality of
+            the Holochain core codebase.
+          </p>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2
+            id="things-weve-made"
+            link-text="things we've made"
+            class="area-headline"
+          >
+            things we've made
+          </h2>
+    
+          <rocket-columns>
+            <div>
+              <rocket-card>
+                <div slot="title" class="row card-title">
+                  <h4>p2p Shipyard</h4>
+                  <div class="row">
+                    <custom-social-link
+                      style="
+                        margin-left: 16px;
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="readthedocs"
+                      url="https://darksoil.studio/p2p-shipyard"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="substack"
+                      url="https://darksoil.substack.com/p/1a72fe01-304f-46cc-b44c-99ea3bb7e830"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="Github"
+                      url="https://github.com/darksoil-studio/p2p-shipyard"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="OpenCollective"
+                      url="https://opencollective.com/darksoil/projects/p2p-shipyard"
+                    ></custom-social-link>
+                  </div>
+                </div>
+                <p class="poem">
+                  Get your apps shipped out with ease<br />
+                  Peer to peer for all? Yes please!
+                </p>
+                <p>
+                  The p2p Shipyard is a toolset to ship cross-platform p2p apps. It
+                  enables holochain apps to target mobile! We are in the process of
+                  raising funds for it through a retroactive crowdfunding. Learn
+                  more about it <a href="">here!</a>
+                </p>
+              </rocket-card>
+            </div>
+            <div>
+              <rocket-card>
+                <div slot="title" class="row card-title">
+                  <h4>holochain playground</h4>
+                  <div class="row">
+                    <custom-social-link
+                      style="
+                        margin-left: 16px;
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="Cytoscape.js"
+                      url="https://darksoil.studio/holochain-playground"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="Github"
+                      url="https://github.com/darksoil-studio/holochain-playground"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="OpenCollective"
+                      url="https://opencollective.com/darksoil/projects/playground"
+                    ></custom-social-link>
+                    <custom-social-link
+                      style="
+                        --primary-text-color: white;
+                        --primary-color: var(white);
+                      "
+                      name="npm"
+                      url="https://npmjs.com/package/@holochain-playground/cli"
+                    ></custom-social-link>
+                  </div>
+                </div>
+                <p class="poem">
+                  a playground place so you can say:<br />
+                  with holochain it's fun to play!
+                </p>
+                <p>
+                  The playground is a suite of tools to simulate, introspect, and
+                  play around holochain. It enables developers and architects to see
+                  and interact with what's happening behind the scenes.
+                </p>
+              </rocket-card>
+            </div>
+          </rocket-columns>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="now_building" link-text="now building" class="area-headline">
+            now building <br />
+          </h2>
+    
+          <rocket-columns>
+            <rocket-card>
+              <div slot="title" class="row card-title">
+                <h4>plenty</h4>
+                <div class="row">
+                  <custom-social-link
+                    style="
+                      margin-left: 16px;
+                      --primary-text-color: white;
+                      --primary-color: var(white);
+                    "
+                    name="Github"
+                    url="https://github.com/darksoil-studio/plenty"
+                  ></custom-social-link>
+                  <custom-social-link
+                    style="--primary-text-color: white; --primary-color: var(white)"
+                    name="OpenCollective"
+                    url="https://opencollective.com/darksoil/projects/plenty"
+                  ></custom-social-link>
+                </div>
+              </div>
+              <p class="poem">
+                if you look after the worms<br />
+                we'll support you supporting the germs<br />
+                soil into food, feeding you, feeding me<br />
+                delicious meals for my family<br />
+              </p>
+              <p>
+                plenty is a peer-to-peer app to manage food buyers clubs, so that
+                eating amazing food from locally sourced producers becomes joyful,
+                easy and cheap.
+              </p>
+            </rocket-card>
+    
+            <rocket-card>
+              <div slot="title" class="row card-title">
+                <h4>gather</h4>
+                <div class="row">
+                  <custom-social-link
+                    style="
+                      margin-left: 16px;
+                      --primary-text-color: white;
+                      --primary-color: var(white);
+                    "
+                    name="Github"
+                    url="https://github.com/darksoil-studio/gather"
+                  ></custom-social-link>
+                  <custom-social-link
+                    style="--primary-text-color: white; --primary-color: var(white)"
+                    name="OpenCollective"
+                    url="https://opencollective.com/darksoil/projects/wegather"
+                  ></custom-social-link>
+                </div>
+              </div>
+              <p class="poem">
+                I can see that you are free<br />
+                and you can see the same of me<br />
+                so we agree we'd like to be<br />
+                out in the park at 2:03
+              </p>
+              <p>
+                Software for co-creating, accessing, and managing emergent events.
+                It could be a meeting for a project, practice session for a martial
+                art, gaming session, hobby hangout, or a big celebration. Gather
+                lets you see and actualize previously invisible possibilities for
+                coming together with the people in your life around the things you
+                care about.
+              </p>
+            </rocket-card>
+          </rocket-columns>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="approach" link-text="approach to software">
+            approach to software
+          </h2>
+          <p>
+            We make it simple for existing groups to make self-sovereign digital
+            spaces that are owned and evolvable by the group itself.
+            <br />
+            <br />
+            We build software for ourselves and the groups we're a part of, taking
+            care that it be easily adaptable for and by others.
+            <br />
+            <br />
+            darksoil applications make it easier to see and engage with more nuance
+            and acuity to do/create/have more of what we want with our groups with
+            less administrative burden.
+            <br />
+            <br />
+            We test our software with our communities; our farms, villages, movement
+            collectives, hackerspaces, businesses, cooperatives, friend groups, etc.
+            We need the things we're building because it's a headache that we don't
+            already have them. When what we build works for our communities, we
+            partner with people to adapt and integrate it to work for their
+            communities.
+            <br />
+            <br />
+            Sometimes, when we're inspired by the partnership, we make things for
+            others before we make them for ourselves.
+          </p>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="projects_on_deck" link-text="projects on deck">
+            projects on deck
+          </h2>
+          <rocket-columns>
+            <div>
+              <h3>apps & modules</h3>
+              <p>
+                <strong>fixie</strong>
+                <br />
+                report and track bugs in a holochain app
+              </p>
+              <p>
+                <strong><a href="https://cobudget.com/">co-budget</a></strong
+                ><br />
+                port to holochain
+              </p>
+              <p>
+                <strong>assemble</strong>
+                <br />
+                proposals with needs, promises and commitments
+              </p>
+              <p>
+                <strong> mutual-credit</strong><br />
+                basic mutual credit module
+              </p>
+              <p><strong> learn</strong><br />peer to peer learning pathways</p>
+              <p><strong>bookie</strong><br />bookings module</p>
+              <p><strong> tooltool</strong><br />tool sharing</p>
+              <p><strong>ourtime</strong><br />scheduling of group tasks</p>
+            </div>
+            <div>
+              <h3>holochain core tooling</h3>
+              <p>
+                <strong>hApp designer hApp</strong><br />
+                simplify app creation
+              </p>
+              <p>
+                <strong>story</strong><br />
+                how does Holochain work & graphical descriptions
+              </p>
+              <p>
+                <strong>puzzles & scotty panel</strong><br />playground extentions
+              </p>
+            </div>
+          </rocket-columns>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="work-with-us" link-text="work with us">work with us</h2>
+          <p>
+            Fund something you need on the lists above, or something you need that
+            should be on the lists.
+            <br />
+            <br />
+            Contract us to build our software into your pre-existing system and
+            maintain it.
+            <br />
+            <br />
+            Partner with us to build a business around our software, like a
+            meetup.com alternative built around gather.
+            <br />
+            <br />
+            Contribute to projects through the
+            <a href="https://opencollective.com/darksoil">open collective</a>.
+          </p>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <h2 id="people" link-text="people" class="area-headline">
+            people <br />
+            <span class="highlight"></span>
+          </h2>
+    
+          <rocket-columns>
+            <rocket-card>
+              <h4 slot="title">Viktor Zaunders</h4>
+              <img src="./assets/viktor_circular-049a5878.png" class="photo" />
+              <p>
+                Viktor translates real world needs into application architectures.
+                <br /><br />
+                Viktor is a primary user of darksoil software. He uses and weaves it
+                into his own local enterprises, mushroom farm, food cooperative,
+                coworking space, and food sovereignty networks.
+                <br /><br />
+                Viktor is motivated by the desire to create new ways of organizing
+                human collaboration so that he and his kids can much more easily
+                contribute to life creating conditions for life.
+              </p>
+            </rocket-card>
+    
+            <rocket-card>
+              <h4 slot="title">Guillem Córdoba</h4>
+              <img src="./assets/guillem_circular-90e21812.png" class="photo" />
+              <p>
+                Guillem writes exquisite code for our darksoil applications.
+                <br /><br />
+                He has been foundational for teaching the growing Holochain dev
+                community how to effectively code hApps and has built lots of
+                beautiful core developer tools like the
+                <a href="https://github.com/holochain/launcher">launcher</a>,
+                <a
+                  href="https://developer.holochain.org/install/#scaffold-your-first-holochain-app"
+                  >scaffolding</a
+                >
+                and <a href="https://holochain-gym.github.io/">gym</a>. <br /><br />
+                Passionate about learning and teaching, Guillem is moved by a desire
+                to support the creative and collaborative side of all people.
+              </p>
+            </rocket-card>
+          </rocket-columns>
+          <rocket-columns>
+            <rocket-card>
+              <h4 slot="title">Eric Bear</h4>
+              <img src="./assets/bear_circular-8c96f776.png" class="photo" />
+              <p>
+                Bear develops our team and business.
+                <br /><br />
+                He is upholding strategies and connections internally and with our
+                partners, with an emphasis on relationships as the foundation for
+                human systems. He cofounded a global network of schools called
+                <a href="http://agilelearningcenters.org/"
+                  >Agile Learning Centers</a
+                >
+                and is the director of ecosystem growth at Holochain. <br /><br />
+                Bear wants to be a good ant by fostering play, relationship and
+                agency in the world.
+              </p>
+            </rocket-card>
+          </rocket-columns>
+        </rocket-content-area>
+    
+        <rocket-content-area>
+          <rocket-columns>
+            <div>
+              <h2 id="connect" link-text="connect">connect</h2>
+              <p>
+                Read our stories on
+                <a href="https://darksoil.substack.com">substack</a>.
+                <br />
+                <br />
+                Watch our conversations on
+                <a href="https://www.youtube.com/@darksoilstudio">youtube</a>.
+                <br />
+                <br />
+                Get in touch with us through
+                <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>.
+              </p>
+            </div>
+          </rocket-columns>
         </rocket-content-area>
       </div>
-    <!--/lit-part--></template>
-        <!--lit-part--><!--lit-part BcJtb4Vqdro=-->
-            <!--lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#what-we-do"><!--lit-part-->what we do<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#things-weve-made"><!--lit-part-->things we've made<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#now_building"><!--lit-part-->now building<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#approach"><!--lit-part-->approach to software<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#projects_on_deck"><!--lit-part-->projects on deck<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#work-with-us"><!--lit-part-->work with us<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#people"><!--lit-part-->people<!--/lit-part--></a>
-              <!--/lit-part--><!--lit-part mrkCe+UnZ+0=-->
-                <!--lit-node 0--><a class="headline-link" href="/#connect"><!--lit-part-->connect<!--/lit-part--></a>
-              <!--/lit-part--><!--/lit-part-->
-          <!--/lit-part--><!--lit-part Mubt8T7396I=--> <div style="display: inline-block; position: relative">
-    <div class="custom-social-links" style="display: flex; position: absolute; justify-content: center; align-items: center; margin-left: 8px">
-      <custom-social-link style="--primary-text-color: white; --primary-color: var(--theme-secondary); " name="OpenCollective" url="https://opencollective.com/darksoil"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://opencollective.com/darksoil" aria-label=" on OpenCollective" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->OpenCollective<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/opencollective/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-      <custom-social-link style="--primary-text-color: white; --primary-color: var(white); " name="Github" url="https://github.com/darksoil-studio"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://github.com/darksoil-studio" aria-label=" on Github" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Github<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/github/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-      <custom-social-link style="--primary-text-color: white; --primary-color: var(--theme-secondary); " name="Substack" url="https://substack.com/profile/5969055-darksoil"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://substack.com/profile/5969055-darksoil" aria-label=" on Substack" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Substack<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/substack/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-      <custom-social-link style="--primary-text-color: white; --primary-color: var(white); " name="YouTube" url="https://www.youtube.com/@darksoilstudio"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://www.youtube.com/@darksoilstudio" aria-label=" on YouTube" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->YouTube<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/youtube/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-      <custom-social-link style="--primary-text-color: white; --primary-color: var(white); " name="gmail" url="mailto:hello@darksoilstudio"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="mailto:hello@darksoilstudio" aria-label=" on gmail" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->gmail<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/gmail/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
     </div>
-  </div><!--/lit-part--><!--/lit-part-->
-      </rocket-header-scroll-menu>
-    <!--/lit-part-->
-        <!--lit-part UNbWrd8S5FY=--><main><!--lit-part--><!--lit-part XKVr4HwKkdg=--><div class="parallax">
-  <div class="parallax__layer parallax__layer--back darksoil-background"></div>
-  <div class="parallax__layer parallax__layer--base">
-    <rocket-content-area style="padding-top: 20px"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <div style="
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: start;
-            justify-content: center;
-          ">
-          <h1>darksoil studio</h1>
-          <p style="margin-top: 32px; max-width: 1000px">
-            We make simple peer to peer apps for groups of people to meet their
-            non-digital needs.
-          </p>
-        </div>
-      </rocket-columns>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="what-we-do" link-text="what we do">what we do</h2>
-      <p>
-        We make tools for people to grow deep dark soil, ecologically and
-        socially.
-        <br>
-        <br>
-        We build small, interoperable, fully distributed apps that enable groups
-        to access emergent properties for organizing, collaborating, and
-        connecting. We build open source software on Holochain.
-        <br>
-        <br>
-        We also build tools to increase the accessibility and functionality of
-        the Holochain core codebase.
-      </p>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="things-weve-made" link-text="things we've made" class="area-headline">
-        things we've made
-      </h2>
-
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <div>
-          <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-            <div slot="title" class="row card-title">
-              <h4>p2p Shipyard</h4>
-              <div class="row">
-                <custom-social-link style="
-                    margin-left: 16px;
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="readthedocs" url="https://darksoil.studio/p2p-shipyard"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://darksoil.studio/p2p-shipyard" aria-label=" on readthedocs" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->readthedocs<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/readthedocs/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="substack" url="https://darksoil.substack.com/p/introducing-the-p2p-shipyard"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://darksoil.substack.com/p/introducing-the-p2p-shipyard" aria-label=" on substack" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->substack<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/substack/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="Github" url="https://github.com/darksoil-studio/p2p-shipyard"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://github.com/darksoil-studio/p2p-shipyard" aria-label=" on Github" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Github<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/github/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="OpenCollective" url="https://opencollective.com/darksoil/projects/p2p-shipyard"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://opencollective.com/darksoil/projects/p2p-shipyard" aria-label=" on OpenCollective" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->OpenCollective<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/opencollective/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-              </div>
-            </div>
-            <p class="poem">
-              Get your apps shipped out with ease<br>
-              Peer to peer for all? Yes please!
-            </p>
-            <p>
-              The p2p Shipyard is a toolset to ship cross-platform p2p apps. It
-              enables holochain apps to target mobile! We are in the process of
-              raising funds for it through a retroactive crowdfunding. Learn
-              more about it <a href="">here!</a>
-            </p>
-          </rocket-card>
-        </div>
-        <div>
-          <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-            <div slot="title" class="row card-title">
-              <h4>holochain playground</h4>
-              <div class="row">
-                <custom-social-link style="
-                    margin-left: 16px;
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="Cytoscape.js" url="https://darksoil.studio/holochain-playground"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://darksoil.studio/holochain-playground" aria-label=" on Cytoscape.js" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Cytoscape.js<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/cytoscape.js/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="Github" url="https://github.com/darksoil-studio/holochain-playground"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://github.com/darksoil-studio/holochain-playground" aria-label=" on Github" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Github<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/github/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="OpenCollective" url="https://opencollective.com/darksoil/projects/playground"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://opencollective.com/darksoil/projects/playground" aria-label=" on OpenCollective" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->OpenCollective<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/opencollective/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-                <custom-social-link style="
-                    --primary-text-color: white;
-                    --primary-color: var(white);
-                  " name="npm" url="https://npmjs.com/package/@holochain-playground/cli"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://npmjs.com/package/@holochain-playground/cli" aria-label=" on npm" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->npm<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/npm/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-              </div>
-            </div>
-            <p class="poem">
-              a playground place so you can say:<br>
-              with holochain it's fun to play!
-            </p>
-            <p>
-              The playground is a suite of tools to simulate, introspect, and
-              play around holochain. It enables developers and architects to see
-              and interact with what's happening behind the scenes.
-            </p>
-          </rocket-card>
-        </div>
-      </rocket-columns>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="now_building" link-text="now building" class="area-headline">
-        now building <br>
-      </h2>
-
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-          <div slot="title" class="row card-title">
-            <h4>plenty</h4>
-            <div class="row">
-              <custom-social-link style="
-                  margin-left: 16px;
-                  --primary-text-color: white;
-                  --primary-color: var(white);
-                " name="Github" url="https://github.com/darksoil-studio/plenty"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://github.com/darksoil-studio/plenty" aria-label=" on Github" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Github<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/github/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-              <custom-social-link style="--primary-text-color: white; --primary-color: var(white)" name="OpenCollective" url="https://opencollective.com/darksoil/projects/plenty"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://opencollective.com/darksoil/projects/plenty" aria-label=" on OpenCollective" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->OpenCollective<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/opencollective/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-            </div>
-          </div>
-          <p class="poem">
-            if you look after the worms<br>
-            we’ll support you supporting the germs<br>
-            soil into food, feeding you, feeding me<br>
-            delicious meals for my family<br>
-          </p>
-          <p>
-            plenty is a peer-to-peer app to manage food buyers clubs, so that
-            eating amazing food from locally sourced producers becomes joyful,
-            easy and cheap.
-          </p>
-        </rocket-card>
-
-        <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-          <div slot="title" class="row card-title">
-            <h4>gather</h4>
-            <div class="row">
-              <custom-social-link style="
-                  margin-left: 16px;
-                  --primary-text-color: white;
-                  --primary-color: var(white);
-                " name="Github" url="https://github.com/darksoil-studio/gather"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://github.com/darksoil-studio/gather" aria-label=" on Github" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->Github<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/github/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-              <custom-social-link style="--primary-text-color: white; --primary-color: var(white)" name="OpenCollective" url="https://opencollective.com/darksoil/projects/wegather"><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        width: 30px;
-        height: 30px;
-        margin-right: 15px;
-      }
-      svg {
-        color: var(--primary-text-color);
-        transition: color 0.3s ease-in-out;
-      }
-      svg:hover {
-        color: var(--primary-color);
-      }
-      .sr-only {
-        position: absolute;
-        left: -10000px;
-        top: auto;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
-      :host([dark-background]) svg {
-        color: #fff;
-      }
-      :host([dark-background]) svg:hover {
-        color: var(--primary-text-color);
-      }
-    </style><!--lit-part INm/5Wg+P5I=-->
-      <!--lit-node 0--><a class="social-link" href="https://opencollective.com/darksoil/projects/wegather" aria-label=" on OpenCollective" rel="noopener noreferrer" target="_blank" slot="social">
-        <span class="sr-only"><!--lit-part-->OpenCollective<!--/lit-part--></span>
-        <!--lit-node 3--><img src="https://cdn.simpleicons.org/opencollective/white" <="" a="">
-    <!--/lit-part--></a></template></custom-social-link>
-            </div>
-          </div>
-          <p class="poem">
-            I can see that you are free<br>
-            and you can see the same of me<br>
-            so we agree we’d like to be<br>
-            out in the park at 2:03
-          </p>
-          <p>
-            Software for co-creating, accessing, and managing emergent events.
-            It could be a meeting for a project, practice session for a martial
-            art, gaming session, hobby hangout, or a big celebration. Gather
-            lets you see and actualize previously invisible possibilities for
-            coming together with the people in your life around the things you
-            care about.
-          </p>
-        </rocket-card>
-      </rocket-columns>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="approach" link-text="approach to software">
-        approach to software
-      </h2>
-      <p>
-        We make it simple for existing groups to make self-sovereign digital
-        spaces that are owned and evolvable by the group itself.
-        <br>
-        <br>
-        We build software for ourselves and the groups we’re a part of, taking
-        care that it be easily adaptable for and by others.
-        <br>
-        <br>
-        darksoil applications make it easier to see and engage with more nuance
-        and acuity to do/create/have more of what we want with our groups with
-        less administrative burden.
-        <br>
-        <br>
-        We test our software with our communities; our farms, villages, movement
-        collectives, hackerspaces, businesses, cooperatives, friend groups, etc.
-        We need the things we’re building because it’s a headache that we don’t
-        already have them. When what we build works for our communities, we
-        partner with people to adapt and integrate it to work for their
-        communities.
-        <br>
-        <br>
-        Sometimes, when we’re inspired by the partnership, we make things for
-        others before we make them for ourselves.
-      </p>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="projects_on_deck" link-text="projects on deck">
-        projects on deck
-      </h2>
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <div>
-          <h3>apps &amp; modules</h3>
-          <p>
-            <strong>fixie</strong>
-            <br>
-            report and track bugs in a holochain app
-          </p>
-          <p>
-            <strong><a href="https://cobudget.com/">co-budget</a></strong><br>
-            port to holochain
-          </p>
-          <p>
-            <strong>assemble</strong>
-            <br>
-            proposals with needs, promises and commitments
-          </p>
-          <p>
-            <strong> mutual-credit</strong><br>
-            basic mutual credit module
-          </p>
-          <p><strong> learn</strong><br>peer to peer learning pathways</p>
-          <p><strong>bookie</strong><br>bookings module</p>
-          <p><strong> tooltool</strong><br>tool sharing</p>
-          <p><strong>ourtime</strong><br>scheduling of group tasks</p>
-        </div>
-        <div>
-          <h3>holochain core tooling</h3>
-          <p>
-            <strong>hApp designer hApp</strong><br>
-            simplify app creation
-          </p>
-          <p>
-            <strong>story</strong><br>
-            how does Holochain work &amp; graphical descriptions
-          </p>
-          <p>
-            <strong>puzzles &amp; scotty panel</strong><br>playground extentions
-          </p>
-        </div>
-      </rocket-columns>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="work-with-us" link-text="work with us">work with us</h2>
-      <p>
-        Fund something you need on the lists above, or something you need that
-        should be on the lists.
-        <br>
-        <br>
-        Contract us to build our software into your pre-existing system and
-        maintain it.
-        <br>
-        <br>
-        Partner with us to build a business around our software, like a
-        meetup.com alternative built around gather.
-        <br>
-        <br>
-        Contribute to projects through the
-        <a href="https://opencollective.com/darksoil">open collective</a>.
-      </p>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <h2 id="people" link-text="people" class="area-headline">
-        people <br>
-        <span class="highlight"></span>
-      </h2>
-
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-          <h4 slot="title">Viktor Zaunders</h4>
-          <img src="4ab8d7ad.jpg" class="photo">
-          <p>
-            Viktor translates real world needs into application architectures.
-            <br><br>
-            Viktor is a primary user of darksoil software. He uses and weaves it
-            into his own local enterprises, mushroom farm, food cooperative,
-            coworking space, and food sovereignty networks.
-            <br><br>
-            Viktor is motivated by the desire to create new ways of organizing
-            human collaboration so that he and his kids can much more easily
-            contribute to life creating conditions for life.
-          </p>
-        </rocket-card>
-
-        <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-          <h4 slot="title">Guillem Córdoba</h4>
-          <img src="8e4bd623.jpg" class="photo">
-          <p>
-            Guillem writes exquisite code for our darksoil applications.
-            <br><br>
-            He has been foundational for teaching the growing Holochain dev
-            community how to effectively code hApps and has built lots of
-            beautiful core developer tools like the
-            <a href="https://github.com/holochain/launcher">launcher</a>,
-            <a href="https://developer.holochain.org/install/#scaffold-your-first-holochain-app">scaffolding</a>
-            and <a href="https://holochain-gym.github.io/">gym</a>. <br><br>
-            Passionate about learning and teaching, Guillem is moved by a desire
-            to support the creative and collaborative side of all people.
-          </p>
-        </rocket-card>
-      </rocket-columns>
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <rocket-card><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        margin-bottom: 5rem;
-        padding: 3rem 1rem;
-        border: 1px solid #9fa3ae;
-        border-radius: 20px;
-        background-color: #ffffff;
-        text-align: center;
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        min-width: 0;
-        word-wrap: break-word;
-        background-color: #fff;
-        background-clip: border-box;
-        min-width: 20ch;
-      }
-    </style><!--lit-part LRZXgDQ2Npw=-->
-      <slot name="title"></slot>
-      <slot></slot>
-      <slot name="cta"></slot>
-    <!--/lit-part--></template>
-          <h4 slot="title">Eric Bear</h4>
-          <img src="50dc3b3c.jpg" class="photo">
-          <p>
-            Bear develops our team and business.
-            <br><br>
-            He is upholding strategies and connections internally and with our
-            partners, with an emphasis on relationships as the foundation for
-            human systems. He cofounded a global network of schools called
-            <a href="http://agilelearningcenters.org/">Agile Learning Centers</a>
-            and is the director of ecosystem growth at Holochain. <br><br>
-            Bear wants to be a good ant by fostering play, relationship and
-            agency in the world.
-          </p>
-        </rocket-card>
-      </rocket-columns>
-    </rocket-content-area>
-
-    <rocket-content-area><template shadowroot="open" shadowrootmode="open"><style>
-      :host {
-        display: block;
-        padding: var(--rocket-content-area-padding, 0);
-      }
-
-      :host([no-padding]) {
-        padding: 0;
-      }
-
-      /** rocket-content-area */
-      #rocket-content-area {
-        padding: 0 20px;
-        display: block;
-        justify-content: space-between;
-        align-items: center;
-      }
-      @media screen and (min-width: 1024px) {
-        #rocket-content-area {
-          max-width: 1200px;
-          margin: 0 auto;
-          position: relative;
-        }
-      }
-    </style><!--lit-part W4dslNFFQo4=-->
-      <div id="rocket-content-area">
-        <slot></slot>
-      </div>
-    <!--/lit-part--></template>
-      <rocket-columns><template shadowroot="open" shadowrootmode="open"><style>
-      #content {
-        display: flex;
-        gap: var(--space-m, 2rem);
-        flex-direction: column;
-        flex-wrap: wrap;
-      }
-      ::slotted(*) {
-        flex: 1;
-        height: auto;
-      }
-
-      @media (min-width: 600px) {
-        #content {
-          flex-direction: row;
-        }
-      }
-    </style><!--lit-part tgsi20BuArw=--> <slot id="content"></slot> <!--/lit-part--></template>
-        <div>
-          <h2 id="connect" link-text="connect">connect</h2>
-          <p>
-            Read our stories on
-            <a href="https://darksoil.substack.com">substack</a>.
-            <br>
-            <br>
-            Watch our conversations on
-            <a href="https://www.youtube.com/@darksoilstudio">youtube</a>.
-            <br>
-            <br>
-            Get in touch with us through
-            <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>.
-          </p>
-        </div>
-      </rocket-columns>
-    </rocket-content-area>
-  </div>
-</div>
-<!--/lit-part--><!--/lit-part--></main><!--/lit-part--> <!--lit-part ylGgZbYd3gg=-->
-      <footer id="main-footer"><!--lit-part--><!--lit-part BRUAAAUVAAA=--><!----><!--/lit-part--><!--/lit-part--></footer>
-    <!--/lit-part-->
-        <!--lit-part--><!--lit-part ode3Yst/eRo=-->
-      
-    <!--/lit-part--><!--/lit-part-->
-      
     
-      
-    
-<script type="module" src="./e7b9d35f.js"></script>
-
-</body><!--/lit-part--></html>
+  </body>
+</html>
