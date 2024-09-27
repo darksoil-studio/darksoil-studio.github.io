@@ -139,6 +139,8 @@ rocket-content-area {
   display: flex;
   flex-direction: row;
 }
+
+
 .column {
   display: flex;
   flex-direction: column;
@@ -263,7 +265,13 @@ rocket-header-scroll-menu a:nth-child(2) {
   rocket-card {
     padding: 1rem;
     min-width: 250px;
+    
   }
+  rocket-content-area {
+    flex-direction: column;
+  }
+ 
+
 }
 
 a.cta {
