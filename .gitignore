@@ -20,6 +20,6 @@ yarn-error.log*
 *-converted-md-source.js
 _site
 _site-dev
-
+dist/
 
 .direnv/
