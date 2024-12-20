@@ -240,16 +240,16 @@ rocket-header-scroll-menu a:nth-child(2) {
     display: inline;
   }
 }
-
+/*
 @media screen and (max-width: 1481px) {
   rocket-header-scroll-menu a {
     display: none !important;
   }
 
   .custom-social-links {
-    /*margin-top: -13px;*/
+    margin-top: -13px;
   }
-}
+}*/
 @media screen and (max-width: 599px) {
   rocket-header-scroll-menu {
     top: -18px;
@@ -318,4 +318,8 @@ h4 {
   cursor: pointer;
   text-align: center;
   
+}
+
+.black-background {
+  background-color: black;
 }
