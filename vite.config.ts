@@ -1,10 +1,10 @@
-/* import { defineConfig } from 'vite';
+import { defineConfig } from 'vite';
 
 export default defineConfig({
   base: ''
 });
-*/
 
+/*
 import { resolve } from 'path' 
 import { defineConfig } from 'vite';
 
@@ -18,5 +18,5 @@ export default defineConfig({
       },
     },
   },
-});
+});*/
 
