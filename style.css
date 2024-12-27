@@ -212,11 +212,11 @@ h1 {
 .bg-blue > div {
   text-align: center;
 }
-
+/*
 rocket-header-scroll-menu a:nth-child(2) {
   display: none;
 }
-
+*/
 .card-title {
   row-gap: 16px;
   margin-bottom: 16px;
@@ -309,15 +309,19 @@ h4 {
 
 .button {
   display: inline-block;
-  padding: 10px 20px;
-  background-color: #0e540b;
-  color: white;
-  text-decoration: none;
-  border-radius: 4px;
-  border: none;
-  cursor: pointer;
-  text-align: center;
-  
+    border: 1px solid transparent;
+    text-align: center;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.25s, border-color 0.25s, background-color 0.25s;
+    border-color: #3e63dd;
+    color: var(--vp-button-brand-text);
+    background-color: #3e63dd;
+    border-radius: 20px;
+    padding: 0 20px;
+    line-height: 38px;
+    font-size: 14px;
+    
 }
 
 .black-background {
