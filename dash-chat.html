@@ -1,0 +1,144 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Dash Chat - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <header>
+      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="menu-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Projects ▾</a>
+          <div class="dropdown-menu">
+            <a href="dash-chat.html">Dash Chat</a>
+            <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+            <a href="corri.html">Corri AI</a>
+            <a href="bouy-os.html">Buoy</a>
+          </div>
+        </div>
+        <a href="index.htmlindex.html#connect">Connect</a>
+        <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+        <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
+        <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+      </nav>
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="index.html">Home</a>
+          <a href="dash-chat.html">Dash Chat</a>
+          <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+          <a href="corri.html">Corri AI</a>
+          <a href="bouy-os.html">Buoy</a>
+          <a href="index.html#connect">Connect</a>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        </nav>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h2>Dash Chat</h2>
+      <p>
+        We're developing an offline-first, encrypted, peer-to-peer messaging app specifically designed for communities experiencing internet shutdowns, low connectivity, natural disasters, or unreliable network conditions.
+      </p>
+      <p>
+        With authoritarianism and network interference increasing worldwide, secure and sovereign communication without dependence on stable internet is becoming essential yet remains a challenge.
+      </p>
+      <p>
+        Dash Chat operates independently from centralized servers or stable internet, built directly with communities most affected by network disruptions, ensuring encrypted communication precisely when it matters most.
+      </p>
+      <div style="text-align: center; margin: 2em 0 1em 0;">
+        <div style="font-weight: bold; margin-bottom: 0.5em;">Supported by</div>
+        <img src="otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 180px; width: 100%; height: auto; display: block; margin: 0 auto 1em auto;" />
+
+      </div>
+      <p>
+        Darksoil is working with the OTF UXD Lab to make sure our product meets the real needs on the ground right now
+      </p>
+      <br />
+      <p><a href="https://darksoil.studio/p2pmessenger/" class="button">Go to project site</a></p>
+    </rocket-content-area>
+
+    <footer>
+        <p class="legal">
+            © 2025 darksoil studio. All rights reserved.
+        </p>
+    </footer>
+
+    <script type="module">
+      export async function registerCustomElements() {
+        // server-only components
+        // prettier-ignore
+        customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+        // prettier-ignore
+        customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+        // prettier-ignore
+        customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
+      }
+
+      registerCustomElements();
+      import "./custom-social-link.js";
+    </script>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const closeMobileMenu = document.querySelector('.close-mobile-menu');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Hamburger opens overlay
+        if (hamburger && mobileOverlay) {
+          hamburger.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            hamburger.setAttribute('aria-expanded', true);
+          });
+        }
+        if (closeMobileMenu && mobileOverlay) {
+          closeMobileMenu.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          });
+        }
+        // Close overlay when clicking outside nav
+        mobileOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileOverlay) {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          }
+        });
+
+        // Desktop dropdown logic only
+        if (dropdown && dropdownToggle && dropdownMenu) {
+          dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+          });
+          document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
+          dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              dropdown.classList.remove('open');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html> 

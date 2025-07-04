@@ -25,7 +25,7 @@ export class CustomSocialLink extends LitElement {
         slot="social"
       >
         <span class="sr-only">${this.name}</span>
-        <img src="https://cdn.simpleicons.org/${this.name.toLowerCase()}/white"
+        <img src="https://cdn.simpleicons.org/${this.name.toLowerCase()}/black" />
       </a>
     `;
   }
