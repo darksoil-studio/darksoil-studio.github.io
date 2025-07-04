@@ -1,0 +1,134 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    
+    <title>Dash Chat - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="module" crossorigin src="/assets/dash-263983df.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-db730cf2.js">
+    <link rel="stylesheet" href="/assets/custom-social-link-1a0ba304.css">
+  </head>
+  <body>
+    <header>
+      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="menu-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Projects ▾</a>
+          <div class="dropdown-menu">
+            <a href="dash-chat.html">Dash Chat</a>
+            <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+            <a href="corri.html">Corri AI</a>
+            <a href="bouy-os.html">Buoy</a>
+          </div>
+        </div>
+        <a href="index.htmlindex.html#connect">Connect</a>
+        <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+        <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
+        <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+      </nav>
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="index.html">Home</a>
+          <a href="dash-chat.html">Dash Chat</a>
+          <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+          <a href="corri.html">Corri AI</a>
+          <a href="bouy-os.html">Buoy</a>
+          <a href="index.html#connect">Connect</a>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        </nav>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h2>Dash Chat</h2>
+      <p>
+        We're developing an offline-first, encrypted, peer-to-peer messaging app specifically designed for communities experiencing internet shutdowns, low connectivity, natural disasters, or unreliable network conditions.
+      </p>
+      <p>
+        With authoritarianism and network interference increasing worldwide, secure and sovereign communication without dependence on stable internet is becoming essential yet remains a challenge.
+      </p>
+      <p>
+        Dash Chat operates independently from centralized servers or stable internet, built directly with communities most affected by network disruptions, ensuring encrypted communication precisely when it matters most.
+      </p>
+      <div style="text-align: center; margin: 2em 0 1em 0;">
+        <div style="font-weight: bold; margin-bottom: 0.5em;">Supported by</div>
+        <img src="/assets/otf-logo-d4e437d2.webp" alt="OTF UXD Lab Logo" style="max-width: 180px; width: 100%; height: auto; display: block; margin: 0 auto 1em auto;" />
+
+      </div>
+      <p>
+        We’re conducting extensive user research and UI/UX design with Decent Design, supported by OTF’s User Experience and Discovery Lab. Our research carefully addresses specific needs, contexts, and user priorities, ensuring we develop technology transparently and responsibly.
+      </p>
+      <br />
+      <p><a href="https://darksoil.studio/p2pmessenger/" class="button">Go to project site</a></p>
+    </rocket-content-area>
+
+    <footer>
+        <p class="legal">
+            © 2025 darksoil studio. All rights reserved.
+        </p>
+    </footer>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const closeMobileMenu = document.querySelector('.close-mobile-menu');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
+
+        // Hamburger opens overlay
+        if (hamburger && mobileOverlay) {
+          hamburger.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            hamburger.setAttribute('aria-expanded', true);
+          });
+        }
+        if (closeMobileMenu && mobileOverlay) {
+          closeMobileMenu.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          });
+        }
+        // Close overlay when clicking outside nav
+        mobileOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileOverlay) {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          }
+        });
+
+        // Desktop dropdown logic only
+        if (dropdown && dropdownToggle && dropdownMenu) {
+          dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+          });
+          document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
+          dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              dropdown.classList.remove('open');
+            });
+          });
+        }
+      });
+    </script>
+  </body>
+</html> 
