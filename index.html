@@ -6,534 +6,213 @@
       rel="stylesheet"
     />
     
-    <title>darksoil studio</title>
+    <title>Darksoil Studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="./assets/index-714773a5.js"></script>
-    <link rel="stylesheet" href="./assets/index-b749d23c.css">
+    <script type="module" crossorigin src="./assets/index-846a2e4d.js"></script>
+    <link rel="stylesheet" href="./assets/index-1a0ba304.css">
   </head>
   <body>
-    <!--a.class links-->
-    <rocket-header-scroll-menu>
-      <div
-        style="
-          display: flex;
-          flex-direction: row;
-          margin-top: 10px;
-          align-items: center;
-        "
-      >
-        <div style="flex: 1; display: flex; justify-content: right">
-          <a style="padding-left: 20px; padding-right: 20px" href="#people"
-            >about</a
-          >
-          <a
-            style="padding-left: 20px; padding-right: 20px"
-            href="https://darksoil.studio/hc-dev-training"
-            >training</a
-          >
-          <a style="padding-left: 20px; padding-right: 20px" href="#connect"
-            >contact</a
-          >
+    <header>
+      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="menu-links">
+        <a href="index.html">Home</a>
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle">Projects ▾</a>
+          <div class="dropdown-menu">
+            <a href="dash-chat.html">Dash Chat</a>
+            <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+            <a href="corri.html">Corri AI</a>
+            <a href="bouy-os.html">Buoy</a>
+          </div>
         </div>
-        <div
-          class="custom-social-links"
-          style="
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 8px;
-          "
-        >
-          <custom-social-link
-            style="
-              --primary-text-color: white;
-              --primary-color: var(--theme-secondary);
-            "
-            name="OpenCollective"
-            url="https://opencollective.com/darksoil"
-          ></custom-social-link>
-          <custom-social-link
-            style="--primary-text-color: white; --primary-color: var(white)"
-            name="Github"
-            url="https://github.com/darksoil-studio"
-          ></custom-social-link>
-          <custom-social-link
-            style="
-              --primary-text-color: white;
-              --primary-color: var(--theme-secondary);
-            "
-            name="Substack"
-            url="https://substack.com/profile/5969055-darksoil"
-          ></custom-social-link>
-          <custom-social-link
-            style="--primary-text-color: white; --primary-color: var(white)"
-            name="YouTube"
-            url="https://www.youtube.com/@darksoilstudio"
-          ></custom-social-link>
-          <custom-social-link
-            style="--primary-text-color: white; --primary-color: var(white)"
-            name="gmail"
-            url="mailto:hello@darksoilstudio"
-          ></custom-social-link>
+        <a href="index.html#connect">Connect</a>
+        <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+        <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
+        <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+      </nav>
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="index.html">Home</a>
+          <a href="dash-chat.html">Dash Chat</a>
+          <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+          <a href="corri.html">Corri AI</a>
+          <a href="bouy-os.html">Buoy</a>
+          <a href="index.html#connect">Connect</a>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+        </nav>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h1>Darksoil Studio</h1>
+    </rocket-content-area>
+
+    <rocket-content-area>
+      <h2 id="what-we-do">What We Do</h2>
+      <p>
+        We build distributed, peer-to-peer technologies that empower communities to coordinate, communicate, and collaborate — even when networks go down or centralized platforms fail.<br><br>
+        We build the infrastructure we need to build the apps we want. And we share those tools with others who care about sovereignty, resilience, and keeping the web human-scaled.
+      </p>
+    </rocket-content-area>
+
+    <rocket-content-area>
+      <h2>Tenents</h2>
+      <p><strong>Together</strong><br>
+      Tools for human connection, shared purpose, and joyful collaboration — woven without centralized threads.
+      </p>
+      <p><strong>Alive</strong><br>
+      Digital infrastructures that nourish living systems, supporting ecological health and bioregional resilience.
+      </p>
+      <p><strong>Unbound</strong><br>
+      Technology that defends autonomy and keeps communities communicating when the world tries to silence them.
+      </p>
+    </rocket-content-area>
+
+    <rocket-content-area>
+      <h2 id="things-weve-made">Projects</h2>
+
+      <rocket-columns>
+          <rocket-card>
+            <div slot="title" class="card-title">
+              <h4>p2p Shipyard</h4>
+            </div>
+            <p>
+                Peer-to-peer made easy.<br><br>
+                A full-stack developer suite for building, shipping, and maintaining local-first, peer-to-peer apps across platforms. From interoperable modules and zero-config developer environments to seamless cross-platform publishing, p2p Shipyard lets you focus on your app, not the infrastructure.<br><br>
+                Build, ship and maintain your decentralized software faster and more reliably.<br><br>
+                <a href="https://darksoil.studio/p2p-shipyard">Go to the p2p Shipyard page</a>
+              </p>
+          </rocket-card>
+          <rocket-card>
+            <div slot="title" class="card-title">
+              <h4>Corri AI</h4>
+            </div>
+            <p>
+              Community matchmaker.<br><br>
+
+              Edgy is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
+
+              It's intelligent coordination for groups to discover and act on their potential.<br><br>
+              <a href="corri.html">Go to Corri AI page</a>
+            </p>
+          </rocket-card>
+          <rocket-card>
+            <div slot="title" class="card-title">
+              <h4>Dash Chat</h4>
+            </div>
+            <p>
+              Shutdown-resistant messaging for a decentralized world.<br><br>
+              Dash Chat is an offline-first, encrypted, peer-to-peer messaging app designed for communities facing unreliable networks, internet shutdowns, and oppressive digital environments. Built on Holochain and integrated with cutting-edge p2p technologies like IROH, Dash Chat keeps conversations flowing—even without internet access—while protecting privacy and sovereignty.<br><br>
+              It's secure messaging that works where others can't.<br><br>
+              <a href="dash-chat.html">Go to Dash Chat page</a>
+            </p>
+          </rocket-card>
+      </rocket-columns>
+    </rocket-content-area>
+
+
+    <rocket-content-area>
+      <h2 id="people">People</h2>
+      <rocket-columns>
+        <rocket-card>
+          <img src="./assets/eric_bw-beaa6e7f.png" class="photo" />
+          <h4 slot="title">Eric Bear</h4>
+          <p style="text-align: center;">CEO</p>
+        </rocket-card>
+        <rocket-card>
+          <img src="./assets/guillem_bw-5cf615eb.png" class="photo" />
+          <h4 slot="title">Guillem Córdoba</h4>
+          <p style="text-align: center;">CTO</p>
+        </rocket-card>
+        <rocket-card>
+          <img src="./assets/viktor_bw-a17024fc.png" class="photo" />
+          <h4 slot="title">Viktor Zaunders</h4>
+          <p style="text-align: center;">CFO</p>
+        </rocket-card>
+        <rocket-card>
+          <img src="./assets/michael_bw-5c920678.png" class="photo" />
+          <h4 slot="title">Michael Dougherty</h4>
+          <p style="text-align: center;">Director of AI Engineering</p>
+        </rocket-card>
+      </rocket-columns>
+    </rocket-content-area>
+
+    <rocket-content-area>
+        <h2 id="connect">Connect</h2>
+        <p>
+          Contact us at: <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>
+        </p>
+        <div class="custom-social-links">
+          <custom-social-link name="OpenCollective" url="https://opencollective.com/darksoil"></custom-social-link>
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+          <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
+          <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
         </div>
-      </div>
-    </rocket-header-scroll-menu>
-    <div class="parallax">
-      <div
-        class="parallax__layer parallax__layer--back darksoil-background"
-      ></div>
-      <div class="parallax__layer parallax__layer--base">
-        <rocket-content-area style="padding-top: 20px">
-          <rocket-columns>
-            <div
-              style="
-                height: 100vh;
-                display: flex;
-                flex-direction: column;
-                align-items: start;
-                justify-content: center;
-              "
-            >
-              <h1>darksoil studio</h1>
-              <p style="margin-top: 32px; max-width: 1000px">
-                We make simple peer to peer apps for groups of people to meet
-                their non-digital needs.
-              </p>
-            </div>
-          </rocket-columns>
-        </rocket-content-area>
+    </rocket-content-area>
 
-        <rocket-content-area>
-          <h2 id="news" link-text="Train with us" class="area-headline">
-            Holochain Developer Training
-          </h2>
-          <p>Learn how to build Holochain apps in 2 weeks.</p>
-          <a href="https://darksoil.studio/hc-dev-training/"
-            ><div class="button">Learn more</div></a
-          >
+    <footer>
+        <p class="legal">
+            © 2025 darksoil studio. All rights reserved.
+        </p>
+    </footer>
 
-          <!--<rocket-columns>
-            <rocket-card>
-              <div slot="title" class="row card-title">
-                <h4>Holochain Developer Course</h4>
-              </div>
-              <p>We are now opening applications for our Holochain developer course.</p>
-              <a href="https://darksoil.studio/hc-dev-training/"><p>Check out the course page and apply!</p></a>
-            </rocket-card>
     
-            
-          </rocket-columns>-->
-        </rocket-content-area>
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
+        const closeMobileMenu = document.querySelector('.close-mobile-menu');
+        const dropdown = document.querySelector('.dropdown');
+        const dropdownToggle = document.querySelector('.dropdown-toggle');
+        const dropdownMenu = document.querySelector('.dropdown-menu');
 
-        <rocket-content-area>
-          <h2 id="what-we-do" link-text="what we do">what we do</h2>
-          <p>
-            We make tools for people to grow deep dark soil, ecologically and
-            socially.
-            <br />
-            <br />
-            We build small, interoperable, fully distributed apps that enable
-            groups to access emergent properties for organizing, collaborating,
-            and connecting. We build open source software on Holochain.
-            <br />
-            <br />
-            We also build tools to increase the accessibility and functionality
-            of the Holochain core codebase.
-          </p>
-        </rocket-content-area>
+        // Hamburger opens overlay
+        if (hamburger && mobileOverlay) {
+          hamburger.addEventListener('click', () => {
+            mobileOverlay.classList.add('open');
+            hamburger.setAttribute('aria-expanded', true);
+          });
+        }
+        if (closeMobileMenu && mobileOverlay) {
+          closeMobileMenu.addEventListener('click', () => {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          });
+        }
+        // Close overlay when clicking outside nav
+        mobileOverlay.addEventListener('click', (e) => {
+          if (e.target === mobileOverlay) {
+            mobileOverlay.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', false);
+          }
+        });
 
-        <rocket-content-area>
-          <h2
-            id="things-weve-made"
-            link-text="things we've made"
-            class="area-headline"
-          >
-            things we've made
-          </h2>
-
-          <rocket-columns>
-            <div>
-              <rocket-card>
-                <div slot="title" class="row card-title">
-                  <h4>p2p Shipyard</h4>
-                  <div class="row">
-                    <custom-social-link
-                      style="
-                        margin-left: 16px;
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="readthedocs"
-                      url="https://darksoil.studio/p2p-shipyard"
-                    ></custom-social-link>
-                    <custom-social-link
-                      style="
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="substack"
-                      url="https://darksoil.substack.com/p/1a72fe01-304f-46cc-b44c-99ea3bb7e830"
-                    ></custom-social-link>
-
-                  </div>
-                </div>
-                <p class="poem">
-                  Get your apps shipped out with ease<br />
-                  Peer to peer for all? Yes please!
-                </p>
-                <p>
-                  The p2p Shipyard is a toolset to ship cross-platform p2p apps.
-                  It enables holochain apps to target mobile! <br /><br />
-                  <a
-                    href="https://darksoil.studio/p2p-shipyard"
-                    >Go to the p2p Shipyard page</a
-                  >
-                </p>
-              </rocket-card>
-            </div>
-            <div>
-              <rocket-card>
-                <div slot="title" class="row card-title">
-                  <h4>holochain playground</h4>
-                  <div class="row">
-                    <custom-social-link
-                      style="
-                        margin-left: 16px;
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="Cytoscape.js"
-                      url="https://darksoil.studio/holochain-playground"
-                    ></custom-social-link>
-                    <custom-social-link
-                      style="
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="Github"
-                      url="https://github.com/darksoil-studio/holochain-playground"
-                    ></custom-social-link>
-                    <custom-social-link
-                      style="
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="OpenCollective"
-                      url="https://opencollective.com/darksoil/projects/playground"
-                    ></custom-social-link>
-                    <custom-social-link
-                      style="
-                        --primary-text-color: white;
-                        --primary-color: var(white);
-                      "
-                      name="npm"
-                      url="https://npmjs.com/package/@holochain-playground/cli"
-                    ></custom-social-link>
-                  </div>
-                </div>
-                <p class="poem">
-                  a playground place so you can say:<br />
-                  with holochain it's fun to play!
-                </p>
-                <p>
-                  The playground is a suite of tools to simulate, introspect,
-                  and play around holochain. It enables developers and
-                  architects to see and interact with what's happening behind
-                  the scenes.
-                </p>
-              </rocket-card>
-            </div>
-          </rocket-columns>
-        </rocket-content-area>
-
-        <!--<rocket-content-area>
-          <h2 id="now_building" link-text="now building" class="area-headline">
-            now building <br />
-          </h2>
-
-          <rocket-columns>
-            <rocket-card>
-              <div slot="title" class="row card-title">
-                <h4>plenty</h4>
-                <div class="row">
-                  <custom-social-link
-                    style="
-                      margin-left: 16px;
-                      --primary-text-color: white;
-                      --primary-color: var(white);
-                    "
-                    name="Github"
-                    url="https://github.com/darksoil-studio/plenty"
-                  ></custom-social-link>
-                  <custom-social-link
-                    style="
-                      --primary-text-color: white;
-                      --primary-color: var(white);
-                    "
-                    name="OpenCollective"
-                    url="https://opencollective.com/darksoil/projects/plenty"
-                  ></custom-social-link>
-                </div>
-              </div>
-              <p class="poem">
-                if you look after the worms<br />
-                we'll support you supporting the germs<br />
-                soil into food, feeding you, feeding me<br />
-                delicious meals for my family<br />
-              </p>
-              <p>
-                plenty is a peer-to-peer app to manage food buyers clubs, so
-                that eating amazing food from locally sourced producers becomes
-                joyful, easy and cheap.
-              </p>
-            </rocket-card>
-
-            <rocket-card>
-              <div slot="title" class="row card-title">
-                <h4>gather</h4>
-                <div class="row">
-                  <custom-social-link
-                    style="
-                      margin-left: 16px;
-                      --primary-text-color: white;
-                      --primary-color: var(white);
-                    "
-                    name="Github"
-                    url="https://github.com/darksoil-studio/gather"
-                  ></custom-social-link>
-                  <custom-social-link
-                    style="
-                      --primary-text-color: white;
-                      --primary-color: var(white);
-                    "
-                    name="OpenCollective"
-                    url="https://opencollective.com/darksoil/projects/wegather"
-                  ></custom-social-link>
-                </div>
-              </div>
-              <p class="poem">
-                I can see that you are free<br />
-                and you can see the same of me<br />
-                so we agree we'd like to be<br />
-                out in the park at 2:03
-              </p>
-              <p>
-                Software for co-creating, accessing, and managing emergent
-                events. It could be a meeting for a project, practice session
-                for a martial art, gaming session, hobby hangout, or a big
-                celebration. Gather lets you see and actualize previously
-                invisible possibilities for coming together with the people in
-                your life around the things you care about.
-              </p>
-            </rocket-card>
-          </rocket-columns>
-        </rocket-content-area>-->
-
-        <rocket-content-area>
-          <h2 id="approach" link-text="approach to software">
-            approach to software
-          </h2>
-          <p>
-            We make it simple for existing groups to make self-sovereign digital
-            spaces that are owned and evolvable by the group itself.
-            <br />
-            <br />
-            We build software for ourselves and the groups we're a part of,
-            taking care that it be easily adaptable for and by others.
-            <br />
-            <br />
-            darksoil applications make it easier to see and engage with more
-            nuance and acuity to do/create/have more of what we want with our
-            groups with less administrative burden.
-            <br />
-            <br />
-            We test our software with our communities; our farms, villages,
-            movement collectives, hackerspaces, businesses, cooperatives, friend
-            groups, etc. We need the things we're building because it's a
-            headache that we don't already have them. When what we build works
-            for our communities, we partner with people to adapt and integrate
-            it to work for their communities.
-            <br />
-            <br />
-            Sometimes, when we're inspired by the partnership, we make things
-            for others before we make them for ourselves.
-          </p>
-        </rocket-content-area>
-
-        <rocket-content-area>
-          <h2 id="projects_on_deck" link-text="projects on deck">
-            projects on deck
-          </h2>
-          <rocket-columns>
-            <div>
-              <h3>apps & modules</h3>
-              <p>
-                <strong>fixie</strong>
-                <br />
-                report and track bugs in a holochain app
-              </p>
-              <p>
-                <strong><a href="https://cobudget.com/">co-budget</a></strong
-                ><br />
-                port to holochain
-              </p>
-              <p>
-                <strong>assemble</strong>
-                <br />
-                proposals with needs, promises and commitments
-              </p>
-              <p>
-                <strong> mutual-credit</strong><br />
-                basic mutual credit module
-              </p>
-              <p><strong> learn</strong><br />peer to peer learning pathways</p>
-              <p><strong>bookie</strong><br />bookings module</p>
-              <p><strong> tooltool</strong><br />tool sharing</p>
-              <p><strong>ourtime</strong><br />scheduling of group tasks</p>
-            </div>
-            <div>
-              <h3>holochain core tooling</h3>
-              <p>
-                <strong>hApp designer hApp</strong><br />
-                simplify app creation
-              </p>
-              <p>
-                <strong>story</strong><br />
-                how does Holochain work & graphical descriptions
-              </p>
-              <p>
-                <strong>puzzles & scotty panel</strong><br />playground
-                extentions
-              </p>
-            </div>
-          </rocket-columns>
-        </rocket-content-area>
-
-        <rocket-content-area>
-          <h2 id="work-with-us" link-text="work with us">work with us</h2>
-          <p>
-            Fund something you need on the lists above, or something you need
-            that should be on the lists.
-            <br />
-            <br />
-            Contract us to build our software into your pre-existing system and
-            maintain it.
-            <br />
-            <br />
-            Partner with us to build a business around our software, like a
-            meetup.com alternative built around gather.
-            <br />
-            <br />
-            Contribute to projects through the
-            <a href="https://opencollective.com/darksoil">open collective</a>.
-            <br />
-            <br />
-            Need help building holochain apps?
-            <a href="https://buy.stripe.com/00g03k0fQ6aG5pe9AD"
-              >Contact us to figure out the details and buy a support ticket</a
-            >.
-          </p>
-        </rocket-content-area>
-
-        <rocket-content-area>
-          <h2 id="people" link-text="people" class="area-headline">
-            people <br />
-            <span class="highlight"></span>
-          </h2>
-
-          <rocket-columns>
-            <rocket-card>
-              <h4 slot="title">Eric Bear</h4>
-              <img src="./assets/eric_bw-beaa6e7f.png" class="photo" />
-              <p style="text-align: center;">CEO</p>
-              <!--<p>
-                Bear develops our team and business.
-                <br /><br />
-                He is upholding strategies and connections internally and with
-                our partners, with an emphasis on relationships as the
-                foundation for human systems. He cofounded a global network of
-                schools called
-                <a href="http://agilelearningcenters.org/"
-                  >Agile Learning Centers</a
-                >
-                and was the director of ecosystem growth at Holochain.
-                <br /><br />
-                Bear wants to be a good ant by fostering play, relationship and
-                agency in the world.
-              </p>-->
-            </rocket-card>
-
-            <rocket-card>
-              <h4 slot="title">Guillem Córdoba</h4>
-              <img src="./assets/guillem_bw-5cf615eb.png" class="photo" />
-              <p style="text-align: center;">CTO</p>
-              <!--<p>
-                Guillem writes exquisite code for our darksoil applications.
-                <br /><br />
-                He has been foundational for teaching the growing Holochain dev
-                community how to effectively code hApps and has built lots of
-                beautiful core developer tools like the
-                <a href="https://github.com/holochain/launcher">launcher</a>,
-                <a
-                  href="https://developer.holochain.org/install/#scaffold-your-first-holochain-app"
-                  >scaffolding</a
-                >
-                and <a href="https://holochain-gym.github.io/">gym</a>.
-                <br /><br />
-                Passionate about learning and teaching, Guillem is moved by a
-                desire to support the creative and collaborative side of all
-                people.
-              </p>-->
-            </rocket-card>
-          </rocket-columns>
-          <rocket-columns>
-            <rocket-card>
-              <h4 slot="title">Viktor Zaunders</h4>
-              <img src="./assets/viktor_bw-a17024fc.png" class="photo" />
-              <p style="text-align: center;">CFO</p>
-              <!--<p>
-                Viktor translates real world needs into application
-                architectures.
-                <br /><br />
-                Viktor is a primary user of darksoil software. He uses and
-                weaves it into his own local enterprises, mushroom farm, food
-                cooperative, coworking space, and food sovereignty networks.
-                <br /><br />
-                Viktor is motivated by the desire to create new ways of
-                organizing human collaboration so that he and his kids can much
-                more easily contribute to life creating conditions for life.
-              </p>-->
-            </rocket-card>
-            <rocket-card>
-              <h4 slot="title">Michael Dougherty</h4>
-              <img src="./assets/michael_bw-5c920678.png" class="photo" />
-              <p style="text-align: center;">Developer</p>
-            </rocket-card>
-          </rocket-columns>
-        </rocket-content-area>
-
-        <rocket-content-area>
-          <rocket-columns>
-            <div>
-              <h2 id="connect" link-text="connect">connect</h2>
-              <p>
-                Read our stories on
-                <a href="https://darksoil.substack.com">substack</a>.
-                <br />
-                <br />
-                Watch our conversations on
-                <a href="https://www.youtube.com/@darksoilstudio">youtube</a>.
-                <br />
-                <br />
-                Get in touch with us through
-                <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a
-                >.
-              </p>
-            </div>
-          </rocket-columns>
-        </rocket-content-area>
-      </div>
-    </div>
-    
+        // Desktop dropdown logic only
+        if (dropdown && dropdownToggle && dropdownMenu) {
+          dropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            dropdown.classList.toggle('open');
+          });
+          document.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+              dropdown.classList.remove('open');
+            }
+          });
+          dropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              dropdown.classList.remove('open');
+            });
+          });
+        }
+      });
+    </script>
   </body>
 </html>
+
