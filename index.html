@@ -188,12 +188,14 @@
           hamburger.addEventListener('click', () => {
             mobileOverlay.classList.add('open');
             hamburger.setAttribute('aria-expanded', true);
+            document.body.classList.add('mobile-menu-open');
           });
         }
         if (closeMobileMenu && mobileOverlay) {
           closeMobileMenu.addEventListener('click', () => {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           });
         }
         // Close overlay when clicking outside nav
@@ -201,6 +203,7 @@
           if (e.target === mobileOverlay) {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           }
         });
 
