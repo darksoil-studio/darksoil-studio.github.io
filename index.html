@@ -8,9 +8,9 @@
     
     <title>Darksoil Studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="/assets/main-263983df.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-db730cf2.js">
-    <link rel="stylesheet" href="/assets/custom-social-link-1a0ba304.css">
+    <script type="module" crossorigin src="/assets/main-684a9e21.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-a45c882d.js">
+    <link rel="stylesheet" href="/assets/custom-social-link-9210e48a.css">
   </head>
   <body>
     <header>
@@ -63,7 +63,7 @@
     </rocket-content-area>
 
     <rocket-content-area>
-      <h2>Tenets</h2>
+      <h2>Tenents</h2>
       <p><strong>Together</strong><br>
       Tools for human connection, shared purpose, and joyful collaboration — woven without centralized threads.
       </p>
@@ -97,7 +97,7 @@
             <p>
               Community matchmaker.<br><br>
 
-              Corri is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
+              Edgy is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
 
               It's intelligent coordination for groups to discover and act on their potential.<br><br>
               <a href="corri.html">Go to Corri AI page</a>
@@ -178,12 +178,14 @@
           hamburger.addEventListener('click', () => {
             mobileOverlay.classList.add('open');
             hamburger.setAttribute('aria-expanded', true);
+            document.body.classList.add('mobile-menu-open');
           });
         }
         if (closeMobileMenu && mobileOverlay) {
           closeMobileMenu.addEventListener('click', () => {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           });
         }
         // Close overlay when clicking outside nav
@@ -191,6 +193,7 @@
           if (e.target === mobileOverlay) {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           }
         });
 

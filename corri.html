@@ -8,9 +8,9 @@
     
     <title>Corri AI - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="/assets/corri-263983df.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-db730cf2.js">
-    <link rel="stylesheet" href="/assets/custom-social-link-1a0ba304.css">
+    <script type="module" crossorigin src="/assets/corri-684a9e21.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-a45c882d.js">
+    <link rel="stylesheet" href="/assets/custom-social-link-9210e48a.css">
   </head>
   <body>
     <header>
@@ -57,9 +57,22 @@
         Corri is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Corri connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
         It's intelligent coordination for groups to discover and act on their potential.
       </p>
-      <p style="margin-top: 2em; font-weight: bold;">
-        Interested? Reach out to us at <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a> to schedule a demo!
-      </p>
+      <h3 style="margin-top: 2em; text-align: center;">Use the form below to reach out to schedule a demo!</h3>
+      <form
+        action="https://formspree.io/f/mldllpnb"
+        method="POST"
+        style="max-width: 500px; margin: 2em auto; display: flex; flex-direction: column; gap: 1em;"
+      >
+        <label for="name">Name *</label>
+        <input type="text" id="name" name="name" required style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
+        <label for="email">Email *</label>
+        <input type="email" id="email" name="email" required style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
+        <label for="use-case">What would you like to use Corri for?</label>
+        <textarea id="use-case" name="use-case" rows="4" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+        <label for="organization">Are you inquiring as part of an organisation?</label>
+        <textarea id="organization" name="organization" rows="3" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical;"></textarea>
+        <button type="submit" class="button" style="width: 100%; margin-top: 1em;">Submit</button>
+      </form>
     </rocket-content-area>
 
     <footer>
