@@ -373,8 +373,28 @@ h4 {
 @media screen and (max-width: 768px) {
   .hamburger-menu {
     display: block;
-    position: relative;
+    position: absolute;
+    right: 16px;
+    top: 20px;
+    margin-left: 0;
+    margin-right: 8px;
     z-index: 3001;
+  }
+  .mobile-menu-overlay.open ~ .hamburger-menu,
+  .mobile-menu-overlay.open + .hamburger-menu,
+  .mobile-menu-overlay.open .hamburger-menu {
+    display: none;
+  }
+  /* Alternative approach: hide hamburger when overlay is open */
+  body:has(.mobile-menu-overlay.open) .hamburger-menu {
+    display: none;
+  }
+  /* Hide hamburger when mobile menu is open */
+  body.mobile-menu-open .hamburger-menu {
+    display: none;
+  }
+  header {
+    position: relative;
   }
   .menu-links {
     display: none !important;
