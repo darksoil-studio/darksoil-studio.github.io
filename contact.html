@@ -6,7 +6,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Bouy - darksoil studio</title>
+    <title>Contact - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
@@ -47,62 +47,69 @@
       </div>
     </header>
 
-    <rocket-content-area class="buoy-page">
-      <h2>Buoy</h2>
-      <p style="font-size: 16px; color: #666; margin-top: -10px; margin-bottom: 30px;"><em>Coming soon</em></p>
+    <rocket-content-area>
+      <h2>Get in Touch</h2>
       <p>
-        Buoy is an operating system that transforms ordinary devices into reliable distributed network servers.
-      </p>
-      <p>
-        Buoy makes it easier for communities to create and manage their own local-first communications infrastructure. Instead of relying on centralized cloud infrastructure, Buoys create a local-first network that works when the cloud doesn't.
+        We'd love to hear from you. Whether you're interested in our projects, want to collaborate, 
+        or just have questions, feel free to reach out.
       </p>
 
-      <h3>How Buoy Works</h3>
+      <form class="contact-form" action="https://formspree.io/f/xzzvvnjn" method="POST">
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
 
-      <h4>Beacon</h4>
-      <p>
-        <strong>Always-online nodes</strong> help sustain public networks and distributed services.
-      </p>
-      <p class="example">
-        Set up a peer-to-peer offline payment system so transactions can happen even without internet access.
-      </p>
-      <p class="example">
-        Keep your community's social media network local, secure and resilient.
-      </p>
-      <p class="example">
-        Want to keep a calendar invite available when your device is off during an internet shutdown? That's what Beacon's for.
-      </p>
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
 
-      <h4>Safehold</h4>
-      <p>
-        <strong>Secure ephemeral data relays</strong> to hold, send, and forget your data.
-      </p>
-      <p class="example">
-        You send your friend a message, but their phone is off. Safehold holds onto the message. Then, if you go offline and your friend goes online, Safehold sends the message to your friend and deletes it. Now, only you and your friend have a copy of the message.
-      </p>
+        <div class="form-group">
+          <label for="subject">Subject</label>
+          <select id="subject" name="subject">
+            <option value="">Select a topic</option>
+            <option value="buoy">Buoy Project</option>
+            <option value="dash-chat">Dash Chat</option>
+            <option value="corri">Corri AI</option>
+            <option value="p2p-shipyard">p2p Shipyard</option>
+            <option value="collaboration">Collaboration</option>
+            <option value="general">General Inquiry</option>
+          </select>
+        </div>
 
-      <h4>Locker</h4>
-      <p>
-        A simple way to <strong>back up your data</strong> directly from your peer-to-peer apps.
-      </p>
-      <p class="example">
-        Don't want to pay cloud fees? Don't trust the tech giants with all your personal data? At the click of a button you can backup your data to your and/or your friends' Buoy device.
-      </p>
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="6" required placeholder="Tell us about your project, questions, or how we can help..."></textarea>
+        </div>
 
-      <h3>Buoy Helps You</h3>
-      <ul>
-        <li>Establish data sovereignty and reduce dependence on centralized platforms.</li>
-        <li>Maintain secure communication channels, amidst network shutdowns.</li>
-        <li>Keep your personal data backed up, accessible, and safe—without complicated setup.</li>
-      </ul>
+        <div class="form-group">
+          <button type="submit" class="submit-btn">Send Message</button>
+        </div>
+      </form>
 
-      <h3>Use Buoy</h3>
-      <p>
-        We're currently building Buoy with input from communities, users, and collaborators who need distributed technologies to work reliably in their daily lives. It's still early, but development is active, grounded in practical needs, and open to collaboration and feedback.
-      </p>
-      <p>
-        If you're interested in shaping this work or learning more about how Buoy can support your needs, please <a href="contact.html">reach out</a>.
-      </p>
+      <div class="contact-info">
+        <h3>Other Ways to Connect</h3>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <h4>GitHub</h4>
+            <p>Follow our open source work and contribute to our projects.</p>
+            <a href="https://github.com/darksoil-studio" target="_blank" rel="noopener">github.com/darksoil-studio</a>
+          </div>
+          
+          <div class="contact-method">
+            <h4>Newsletter</h4>
+            <p>Stay updated with our latest developments and insights.</p>
+            <a href="https://darksoil.substack.com" target="_blank" rel="noopener">darksoil.substack.com</a>
+          </div>
+          
+          <div class="contact-method">
+            <h4>YouTube</h4>
+            <p>Watch our tutorials, demos, and project updates.</p>
+            <a href="https://www.youtube.com/@darksoilstudio" target="_blank" rel="noopener">@darksoilstudio</a>
+          </div>
+        </div>
+      </div>
     </rocket-content-area>
 
     <footer>
@@ -173,6 +180,8 @@
             });
           });
         }
+
+
       });
     </script>
   </body>

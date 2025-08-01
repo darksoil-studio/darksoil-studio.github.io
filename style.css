@@ -267,9 +267,261 @@ h1 {
 }
 
 h4 {
-  font-size: 1.2rem;
-  font-weight: 700;
-  margin: 0 0 5px 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  margin: 30px 0 15px 0;
+  color: #333;
+}
+
+/* Buoy page specific Bauhaus elements */
+.buoy-page h3 {
+  margin-top: 60px !important;
+  margin-bottom: 30px !important;
+  font-size: 28px;
+  font-weight: 600;
+  color: #333;
+  position: relative;
+  padding-left: 20px;
+}
+
+/* Bauhaus-style element for main section headings - Buoy page only */
+.buoy-page h3::before {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: calc(50% + 4px);
+  transform: translateY(-50%);
+  width: 8px;
+  height: 8px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.buoy-page h3::after {
+  content: '';
+  position: absolute;
+  left: 3px;
+  top: 50%;
+  transform: translateY(-50%) rotate(-15deg);
+  width: 2px;
+  height: 20px;
+  background-color: #8b5a96;
+  transform-origin: center;
+  z-index: 1;
+}
+
+/* Unique colors for each main section heading - Buoy page only */
+.buoy-page h3:nth-of-type(1)::after {
+  background-color: #991b1b; /* Deep Rich Red */
+}
+
+.buoy-page h3:nth-of-type(2)::after {
+  background-color: #ca8a04; /* Sunflower Yellow */
+}
+
+.buoy-page h3:nth-of-type(3)::after {
+  background-color: #1e40af; /* Ocean Blue */
+}
+
+.buoy-page h4 {
+  margin-top: 50px !important;
+  margin-bottom: 20px !important;
+  border-left: none !important;
+  padding-left: 15px;
+  position: relative;
+}
+
+/* Minimal Bauhaus element for component headings - Buoy page only */
+.buoy-page h4::before {
+  content: '';
+  position: absolute;
+  left: -2px;
+  top: calc(50% + 5px);
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  background-color: #333;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.buoy-page h4::after {
+  content: '';
+  position: absolute;
+  left: 1px;
+  top: 50%;
+  transform: translateY(-50%) rotate(15deg);
+  width: 1px;
+  height: 10px;
+  background-color: #2d5016;
+  transform-origin: center;
+  border-radius: 0.5px;
+  box-shadow: 0 2px 0 0 #2d5016, 0 4px 0 0 #2d5016, 0 6px 0 0 #2d5016;
+  z-index: 1;
+}
+
+/* Rich colors for each component heading - Buoy page only */
+.buoy-page h4:nth-of-type(1)::after {
+  background-color: #2d5016; /* Forest Green */
+  box-shadow: 0 2px 0 0 #2d5016, 0 4px 0 0 #2d5016, 0 6px 0 0 #2d5016;
+}
+
+.buoy-page h4:nth-of-type(2)::after {
+  background-color: #8b5a96; /* Rich Pink */
+  box-shadow: 0 2px 0 0 #8b5a96, 0 4px 0 0 #8b5a96, 0 6px 0 0 #8b5a96;
+}
+
+.buoy-page h4:nth-of-type(3)::after {
+  background-color: #1e3a8a; /* Rich Blue */
+  box-shadow: 0 2px 0 0 #1e3a8a, 0 4px 0 0 #1e3a8a, 0 6px 0 0 #1e3a8a;
+}
+
+rocket-content-area p {
+  margin-bottom: 15px;
+}
+
+rocket-content-area ul {
+  margin: 15px 0 20px 20px;
+}
+
+rocket-content-area li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+}
+
+rocket-content-area strong {
+  color: #333;
+  font-weight: 600;
+}
+
+/* Contact Form Styles */
+.contact-form {
+  max-width: 600px;
+  margin: 40px 0;
+}
+
+.form-group {
+  margin-bottom: 25px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #333;
+  font-size: 16px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  font-size: 16px;
+  font-family: "Rubik", sans-serif;
+  background-color: #fff;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #333;
+  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submit-btn {
+  background-color: #333;
+  color: #fff;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  font-family: "Rubik", sans-serif;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.submit-btn:hover {
+  background-color: #555;
+}
+
+.contact-info {
+  margin-top: 60px;
+  padding-top: 40px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.contact-method {
+  padding: 25px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  border-left: 4px solid #333;
+}
+
+.contact-method h4 {
+  margin: 0 0 10px 0;
+  color: #333;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.contact-method p {
+  margin: 0 0 15px 0;
+  color: #666;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.contact-method a {
+  color: #1a0dab;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-method a:hover {
+  text-decoration: underline;
+}
+
+rocket-content-area .example {
+  font-size: 16px;
+  line-height: 1.5;
+  color: #666;
+  font-style: italic;
+  margin: 10px 0 20px 20px;
+  padding: 15px;
+  background-color: #f8f8f8;
+  border-left: 3px solid #ddd;
+  border-radius: 4px;
+}
+
+rocket-content-area .example ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+rocket-content-area .example li {
+  margin-bottom: 8px;
+  line-height: 1.5;
+  font-style: italic;
 }
 
 .black-background {
