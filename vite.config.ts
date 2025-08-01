@@ -30,8 +30,9 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         dash: resolve(__dirname, 'dash-chat.html'),
         corri: resolve(__dirname, 'corri.html'),
-        bouy: resolve(__dirname, 'bouy-os.html'),
-        // Add more pages here
+        bouy: resolve(__dirname, 'bouy-os.html'), 
+        contact: resolve(__dirname, 'contact.html')
+        // Add more pages he
       }
     }
   }
