@@ -18,32 +18,40 @@
         <span></span>
       </button>
       <nav class="menu-links">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">Projects ▾</a>
-          <div class="dropdown-menu">
-            <a href="dash-chat.html">Dash Chat</a>
-            <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
-            <a href="corri.html">Corri AI</a>
-            <a href="bouy-os.html">Buoy</a>
-          </div>
+        <div class="menu-left">
+          <a href="index.html" class="home-link">darksoil studio</a>
         </div>
-        <a href="contact.html">Connect</a>
-        <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
-        <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
-        <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
-        <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+        <div class="menu-right">
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Projects ▾</a>
+            <div class="dropdown-menu">
+              <a href="dash-chat.html">Dash Chat</a>
+              <a href="corri.html">Corri AI</a>
+              <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+              <a href="bouy-os.html">Buoy</a>
+            </div>
+          </div>
+          <a href="contact.html">Connect</a>
+          <div class="menu-separator"></div>
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">developer portal</a>
+        </div>
       </nav>
       <div class="mobile-menu-overlay">
         <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
         <nav class="mobile-menu-content">
-          <a href="index.html">Home</a>
-          <a href="dash-chat.html">Dash Chat</a>
-          <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
-          <a href="corri.html">Corri AI</a>
-          <a href="bouy-os.html">Buoy</a>
+          <a href="index.html">darksoil studio</a>
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Projects ▾</a>
+            <div class="dropdown-menu">
+              <a href="dash-chat.html">Dash Chat</a>
+              <a href="corri.html">Corri AI</a>
+              <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
+              <a href="bouy-os.html">Buoy</a>
+            </div>
+          </div>
           <a href="contact.html">Connect</a>
-          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">developer portal</a>
         </nav>
       </div>
     </header>
@@ -55,7 +63,17 @@
         or just have questions, feel free to reach out.
       </p>
 
-      <form class="contact-form" action="https://formspree.io/f/xzzvvnjn" method="POST" enctype="multipart/form-data">
+      <div class="contact-layout">
+        <div class="contact-email">
+          <h3>Email Us</h3>
+          <a href="mailto:hello@darksoil.studio" class="email-link">hello@darksoil.studio</a>
+        </div>
+        
+        <div class="contact-divider"></div>
+        
+        <div class="contact-form-section">
+          <h3>Send a Message</h3>
+          <form class="contact-form" action="https://formspree.io/f/xzzvvnjn" method="POST" enctype="multipart/form-data">
         <div class="form-group">
           <label for="name">Name *</label>
           <input type="text" id="name" name="name" required>
@@ -88,29 +106,10 @@
           <button type="submit" class="submit-btn">Send Message</button>
         </div>
       </form>
-
-      <div class="contact-info">
-        <h3>Other Ways to Connect</h3>
-        <div class="contact-methods">
-          <div class="contact-method">
-            <h4>GitHub</h4>
-            <p>Follow our open source work and contribute to our projects.</p>
-            <a href="https://github.com/darksoil-studio" target="_blank" rel="noopener">github.com/darksoil-studio</a>
-          </div>
-          
-          <div class="contact-method">
-            <h4>Newsletter</h4>
-            <p>Stay updated with our latest developments and insights.</p>
-            <a href="https://darksoil.substack.com" target="_blank" rel="noopener">darksoil.substack.com</a>
-          </div>
-          
-          <div class="contact-method">
-            <h4>YouTube</h4>
-            <p>Watch our tutorials, demos, and project updates.</p>
-            <a href="https://www.youtube.com/@darksoilstudio" target="_blank" rel="noopener">@darksoilstudio</a>
-          </div>
         </div>
       </div>
+
+
     </rocket-content-area>
 
     <footer>
