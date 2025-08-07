@@ -38,7 +38,7 @@
       <div class="mobile-menu-overlay">
         <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
         <nav class="mobile-menu-content">
-          <div class="dropdown">
+          <div class="dropdown mobile-dropdown">
             <a href="#" class="dropdown-toggle">Projects ▾</a>
             <div class="dropdown-menu">
               <a href="dash-chat.html">Dash Chat</a>
@@ -181,6 +181,11 @@
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         const dropdownMenu = document.querySelector('.dropdown-menu');
 
+        // Mobile dropdown
+        const mobileDropdown = document.querySelector('.mobile-dropdown');
+        const mobileDropdownToggle = mobileDropdown?.querySelector('.dropdown-toggle');
+        const mobileDropdownMenu = mobileDropdown?.querySelector('.dropdown-menu');
+
         // Hamburger opens overlay
         if (hamburger && mobileOverlay) {
           hamburger.addEventListener('click', () => {
@@ -204,6 +209,23 @@
             document.body.classList.remove('mobile-menu-open');
           }
         });
+
+        // Mobile dropdown logic
+        if (mobileDropdown && mobileDropdownToggle && mobileDropdownMenu) {
+          mobileDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileDropdown.classList.toggle('open');
+          });
+          mobileDropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileOverlay.classList.remove('open');
+              hamburger.setAttribute('aria-expanded', false);
+              document.body.classList.remove('mobile-menu-open');
+              mobileDropdown.classList.remove('open');
+            });
+          });
+        }
 
         // Desktop dropdown logic only
         if (dropdown && dropdownToggle && dropdownMenu) {
