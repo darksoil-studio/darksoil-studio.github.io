@@ -92,12 +92,18 @@ h1 {
 }
 
 h2 {
-  text-align: left !important;
+  text-align: left;
   font-size: 36px !important;
-  margin-bottom: 20px !important;
-  margin-top: 40px;
+  margin-bottom: 28px !important;
+  margin-top: 48px;
   border-bottom: 1px solid #eee;
-  padding-bottom: 10px;
+  padding-bottom: 12px;
+}
+
+/* Increase spacing between sections on Dash Chat page */
+rocket-content-area h3 {
+  margin-top: 56px !important;
+  margin-bottom: 18px !important;
 }
 h3 {
   margin-top: 0 !important;
