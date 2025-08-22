@@ -1,0 +1,10 @@
+# Clean URLs - redirect requests without .html to .html files
+/contact /contact.html 200
+/corri /corri.html 200
+/bouy-os /bouy-os.html 200
+/dash-chat /dash-chat.html 200
+/roadmap /roadmap.html 200
+/drapac /drapac.html 200
+
+# Handle 404s gracefully
+/* /index.html 404
