@@ -8,9 +8,9 @@
     
     <title>Darksoil Studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="/assets/main-263983df.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-db730cf2.js">
-    <link rel="stylesheet" href="/assets/custom-social-link-1a0ba304.css">
+    <script type="module" crossorigin src="/assets/main-9818747b.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-abfade8d.js">
+    <link rel="stylesheet" href="/assets/custom-social-link-c083184e.css">
   </head>
   <body>
     <header>
@@ -20,38 +20,45 @@
         <span></span>
       </button>
       <nav class="menu-links">
-        <a href="index.html">Home</a>
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle">Projects ▾</a>
-          <div class="dropdown-menu">
-            <a href="dash-chat.html">Dash Chat</a>
-            <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
-            <a href="corri.html">Corri AI</a>
-            <a href="bouy-os.html">Buoy</a>
-          </div>
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
         </div>
-        <a href="index.html#connect">Connect</a>
-        <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
-        <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
-        <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
-        <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+        <div class="menu-right">
+          <div class="dropdown">
+            <a href="#" class="dropdown-toggle">Projects ▾</a>
+            <div class="dropdown-menu">
+              <a href="/dashchat">Dash Chat</a>
+              <a href="/corri">Corri AI</a>
+              <a href="https://darksoil.studio/p2p-shipyard" target="_blank" rel="noopener">p2p Shipyard</a>
+              <a href="/bouy-os">Buoy</a>
+            </div>
+          </div>
+          <a href="/contact">Connect</a>
+          <div class="menu-separator"></div>
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">developer portal</a>
+        </div>
       </nav>
       <div class="mobile-menu-overlay">
         <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
         <nav class="mobile-menu-content">
-          <a href="index.html">Home</a>
-          <a href="dash-chat.html">Dash Chat</a>
-          <a href="https://darksoil.studio/p2p-shipyard">p2p Shipyard</a>
-          <a href="corri.html">Corri AI</a>
-          <a href="bouy-os.html">Buoy</a>
-          <a href="index.html#connect">Connect</a>
-          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">Dev</a>
+          <div class="dropdown mobile-dropdown">
+            <a href="#" class="dropdown-toggle">Projects ▾</a>
+            <div class="dropdown-menu">
+              <a href="/dashchat">Dash Chat</a>
+              <a href="/corri">Corri AI</a>
+              <a href="https://darksoil.studio/p2p-shipyard" target="_blank" rel="noopener">p2p Shipyard</a>
+              <a href="/bouy-os">Buoy</a>
+            </div>
+          </div>
+          <a href="/contact">Connect</a>
+          <a href="https://darksoil.studio/p2p-shipyard/" class="dev-btn" target="_blank" rel="noopener" title="Developer Documentation">developer portal</a>
         </nav>
       </div>
     </header>
 
     <rocket-content-area>
-      <h1>Darksoil Studio</h1>
+      <h1>darksoil studio</h1>
     </rocket-content-area>
 
     <rocket-content-area>
@@ -62,58 +69,50 @@
       </p>
     </rocket-content-area>
 
-    <rocket-content-area>
-      <h2>Tenents</h2>
-      <p><strong>Together</strong><br>
-      Tools for human connection, shared purpose, and joyful collaboration — woven without centralized threads.
-      </p>
-      <p><strong>Alive</strong><br>
-      Digital infrastructures that nourish living systems, supporting ecological health and bioregional resilience.
-      </p>
-      <p><strong>Unbound</strong><br>
-      Technology that defends autonomy and keeps communities communicating when the world tries to silence them.
-      </p>
-    </rocket-content-area>
+
 
     <rocket-content-area>
       <h2 id="things-weve-made">Projects</h2>
 
       <rocket-columns>
-          <rocket-card>
-            <div slot="title" class="card-title">
-              <h4>p2p Shipyard</h4>
-            </div>
-            <p>
-                Peer-to-peer made easy.<br><br>
-                A full-stack developer suite for building, shipping, and maintaining local-first, peer-to-peer apps across platforms. From interoperable modules and zero-config developer environments to seamless cross-platform publishing, p2p Shipyard lets you focus on your app, not the infrastructure.<br><br>
-                Build, ship and maintain your decentralized software faster and more reliably.<br><br>
-                <a href="https://darksoil.studio/p2p-shipyard">Go to the p2p Shipyard page</a>
+          <a href="/dashchat" class="project-card-link">
+            <rocket-card>
+              <div slot="title" class="card-title">
+                <h4>Dash Chat</h4>
+              </div>
+              <p>
+                Internet shutdown resilient messaging.<br><br>
+                Dash Chat is an offline-first, encrypted, peer-to-peer messaging app designed for communities facing unreliable networks, internet shutdowns, and oppressive digital environments. Built on Holochain and integrated with cutting-edge p2p technologies like IROH, Dash Chat keeps conversations flowing—even without internet access—while protecting privacy and sovereignty.<br><br>
+                It's secure messaging that works where others can't.
               </p>
-          </rocket-card>
-          <rocket-card>
-            <div slot="title" class="card-title">
-              <h4>Corri AI</h4>
-            </div>
-            <p>
-              Community matchmaker.<br><br>
+            </rocket-card>
+          </a>
+          <a href="/corri" class="project-card-link">
+            <rocket-card>
+              <div slot="title" class="card-title">
+                <h4>Corri AI</h4>
+              </div>
+              <p>
+                Community matchmaker.<br><br>
 
-              Edgy is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
+                Corri is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
 
-              It's intelligent coordination for groups to discover and act on their potential.<br><br>
-              <a href="corri.html">Go to Corri AI page</a>
-            </p>
-          </rocket-card>
-          <rocket-card>
-            <div slot="title" class="card-title">
-              <h4>Dash Chat</h4>
-            </div>
-            <p>
-              Shutdown-resistant messaging for a decentralized world.<br><br>
-              Dash Chat is an offline-first, encrypted, peer-to-peer messaging app designed for communities facing unreliable networks, internet shutdowns, and oppressive digital environments. Built on Holochain and integrated with cutting-edge p2p technologies like IROH, Dash Chat keeps conversations flowing—even without internet access—while protecting privacy and sovereignty.<br><br>
-              It's secure messaging that works where others can't.<br><br>
-              <a href="dash-chat.html">Go to Dash Chat page</a>
-            </p>
-          </rocket-card>
+                It's intelligent coordination for groups to discover and act on their potential.
+              </p>
+            </rocket-card>
+          </a>
+          <a href="https://darksoil.studio/p2p-shipyard" class="project-card-link" target="_blank" rel="noopener">
+            <rocket-card>
+              <div slot="title" class="card-title">
+                <h4>p2p Shipyard</h4>
+              </div>
+              <p>
+                  Peer-to-peer made easy.<br><br>
+                  A full-stack developer suite for building, shipping, and maintaining local-first, peer-to-peer apps across platforms. From interoperable modules and zero-config developer environments to seamless cross-platform publishing, p2p Shipyard lets you focus on your app, not the infrastructure.<br><br>
+                  Build, ship and maintain your decentralized software faster and more reliably.
+                </p>
+            </rocket-card>
+          </a>
       </rocket-columns>
     </rocket-content-area>
 
@@ -122,7 +121,7 @@
       <h2 id="people">People</h2>
       <rocket-columns>
         <rocket-card>
-          <img src="/assets/eric_bw-beaa6e7f.png" class="photo" />
+          <img src="/assets/eric_bw_circle_smile-709be6cc.png" class="photo" />
           <h4 slot="title">Eric Bear</h4>
           <p style="text-align: center;">CEO</p>
         </rocket-card>
@@ -132,7 +131,7 @@
           <p style="text-align: center;">CTO</p>
         </rocket-card>
         <rocket-card>
-          <img src="/assets/viktor_bw-a17024fc.png" class="photo" />
+          <img src="/assets/viktor_bw_circle-83e74f64.png" class="photo" />
           <h4 slot="title">Viktor Zaunders</h4>
           <p style="text-align: center;">CFO</p>
         </rocket-card>
@@ -145,10 +144,10 @@
     </rocket-content-area>
 
     <rocket-content-area>
-        <h2 id="connect">Connect</h2>
-        <p>
-          Contact us at: <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>
-        </p>
+              <h2 id="connect">Connect</h2>
+      <p>
+        Contact us at: <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>
+      </p>
         <div class="custom-social-links">
           <custom-social-link name="OpenCollective" url="https://opencollective.com/darksoil"></custom-social-link>
           <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
@@ -173,17 +172,24 @@
         const dropdownToggle = document.querySelector('.dropdown-toggle');
         const dropdownMenu = document.querySelector('.dropdown-menu');
 
+        // Mobile dropdown
+        const mobileDropdown = document.querySelector('.mobile-dropdown');
+        const mobileDropdownToggle = mobileDropdown?.querySelector('.dropdown-toggle');
+        const mobileDropdownMenu = mobileDropdown?.querySelector('.dropdown-menu');
+
         // Hamburger opens overlay
         if (hamburger && mobileOverlay) {
           hamburger.addEventListener('click', () => {
             mobileOverlay.classList.add('open');
             hamburger.setAttribute('aria-expanded', true);
+            document.body.classList.add('mobile-menu-open');
           });
         }
         if (closeMobileMenu && mobileOverlay) {
           closeMobileMenu.addEventListener('click', () => {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           });
         }
         // Close overlay when clicking outside nav
@@ -191,8 +197,26 @@
           if (e.target === mobileOverlay) {
             mobileOverlay.classList.remove('open');
             hamburger.setAttribute('aria-expanded', false);
+            document.body.classList.remove('mobile-menu-open');
           }
         });
+
+        // Mobile dropdown logic
+        if (mobileDropdown && mobileDropdownToggle && mobileDropdownMenu) {
+          mobileDropdownToggle.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            mobileDropdown.classList.toggle('open');
+          });
+          mobileDropdownMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+              mobileOverlay.classList.remove('open');
+              hamburger.setAttribute('aria-expanded', false);
+              document.body.classList.remove('mobile-menu-open');
+              mobileDropdown.classList.remove('open');
+            });
+          });
+        }
 
         // Desktop dropdown logic only
         if (dropdown && dropdownToggle && dropdownMenu) {

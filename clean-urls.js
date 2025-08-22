@@ -7,9 +7,11 @@
         '/contact',
         '/corri', 
         '/bouy-os',
-        '/dash-chat',
+        '/dashchat',
         '/roadmap',
-        '/drapac'
+        '/drapac',
+        '/p2pmessenger',
+        '/hc-intro-old'
     ];
     
     // Function to handle clean URL routing
