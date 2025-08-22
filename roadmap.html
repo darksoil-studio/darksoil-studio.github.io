@@ -1,0 +1,82 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Rubik"
+      rel="stylesheet"
+    />
+    
+    <title>Roadmap - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <style>
+      .mermaid {
+        margin-top: 40px;
+        font-family: "Rubik", sans-serif;
+      }
+      .mermaid text {
+        fill: #333;
+      }
+    </style>
+    <script type="module" crossorigin src="/assets/roadmap-5cac1ebe.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-abfade8d.js">
+    <link rel="stylesheet" href="/assets/custom-social-link-c083184e.css">
+  </head>
+  <body>
+    <header>
+      <button class="hamburger-menu" aria-label="Toggle menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <div class="menu-links">
+        <a href="index.html">Home</a>
+        <a href="dash-chat.html">Dash Chat</a>
+        <a href="https://darksoil.studio/p2p-shipyard" target="_blank" rel="noopener">p2p Shipyard</a>
+        <a href="bouy-os.html">Bouy OS</a>
+        <a href="roadmap.html">Roadmap</a>
+        <a href="contact.html">Connect</a>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h2>Roadmap</h2>
+      <div class="mermaid">
+        timeline
+          title Project Roadmap
+          May
+          June
+              : Iroh Integration
+              : Locker Integration
+          July
+              : Bluetooth
+          August
+              : Voice messages
+          September
+          October
+      </div>
+    </rocket-content-area>
+
+    <footer>
+        <p class="legal">
+            © 2024 darksoil studio. All rights reserved.
+        </p>
+    </footer>
+
+    
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        const hamburger = document.querySelector('.hamburger-menu');
+        const menuLinks = document.querySelector('.menu-links');
+
+        if (hamburger && menuLinks) {
+          hamburger.addEventListener('click', () => {
+            menuLinks.classList.toggle('is-open');
+            hamburger.classList.toggle('is-open');
+            const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
+            hamburger.setAttribute('aria-expanded', !isExpanded);
+          });
+        }
+      });
+    </script>
+  </body>
+</html> 
