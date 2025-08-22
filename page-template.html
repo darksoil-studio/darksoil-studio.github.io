@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Page Title - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <!-- Shared menu container -->
+    <div id="shared-menu-container"></div>
+
+    <!-- Page content goes here -->
+    <rocket-content-area>
+      <h1>Page Title</h1>
+      <p>Your page content here...</p>
+    </rocket-content-area>
+
+    <footer>
+      <p class="legal">
+        © 2025 darksoil studio. All rights reserved.
+      </p>
+    </footer>
+
+    <script type="module">
+      export async function registerCustomElements() {
+        // server-only components
+        // prettier-ignore
+        customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
+        // prettier-ignore
+        customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
+        // prettier-ignore
+        customElements.define('rocket-columns', await import('@rocket/components/card.js').then(m => m.RocketColumns));
+      }
+
+      registerCustomElements();
+      import "./custom-social-link.js";
+      
+      // Import and initialize shared menu
+      import { createSharedMenu, initializeSharedMenu } from './shared-menu.js';
+      
+      // Insert the shared menu
+      document.getElementById('shared-menu-container').innerHTML = createSharedMenu();
+      
+      // Initialize the shared menu functionality
+      initializeSharedMenu();
+    </script>
+  </body>
+</html>

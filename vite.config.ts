@@ -6,11 +6,11 @@ export default defineConfig({
       input: {
         main: 'index.html',
         'dash-chat': 'dash-chat.html',
-        corri: 'corri.html',
-        bouy: 'bouy-os.html', 
-        contact: 'contact.html',
-        roadmap: 'roadmap.html',
-        drapac: 'drapac.html'
+        'corri': 'corri.html',
+        'bouy-os': 'bouy-os.html', 
+        'contact': 'contact.html',
+        'roadmap': 'roadmap.html',
+        'drapac': 'drapac.html'
       }
     }
   }

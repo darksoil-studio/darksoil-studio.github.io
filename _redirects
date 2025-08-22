@@ -2,11 +2,9 @@
 /contact /contact.html 200
 /corri /corri.html 200
 /bouy-os /bouy-os.html 200
-/dashchat /dashchat/index.html 200
+/dash-chat /dash-chat.html 200
 /roadmap /roadmap.html 200
-/drapac /drapac/index.html 200
-/p2pmessenger /p2pmessenger/index.html 200
-/hc-intro-old /hc-intro-old/index.html 200
+/drapac /drapac.html 200
 
 # Handle 404s gracefully
 /* /index.html 404
