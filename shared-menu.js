@@ -15,7 +15,7 @@ export function createSharedMenu() {
           <div class="dropdown">
             <a href="#" class="dropdown-toggle">Projects ▾</a>
             <div class="dropdown-menu">
-              <a href="/dash-chat">Dash Chat</a>
+              <a href="/dashchat">Dash Chat</a>
               <a href="/corri">Corri AI</a>
               <a href="https://darksoil.studio/p2p-shipyard" target="_blank" rel="noopener">p2p Shipyard</a>
               <a href="/bouy-os">Buoy</a>
@@ -33,7 +33,7 @@ export function createSharedMenu() {
           <div class="dropdown mobile-dropdown">
             <a href="#" class="dropdown-toggle">Projects ▾</a>
             <div class="dropdown-menu">
-              <a href="/dash-chat">Dash Chat</a>
+              <a href="/dashchat">Dash Chat</a>
               <a href="/corri">Corri AI</a>
               <a href="https://darksoil.studio/p2p-shipyard" target="_blank" rel="noopener">p2p Shipyard</a>
               <a href="/bouy-os">Buoy</a>

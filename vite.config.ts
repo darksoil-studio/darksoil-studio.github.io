@@ -5,7 +5,7 @@ export default defineConfig({
     rollupOptions: {
       input: {
         main: 'index.html',
-        'dash-chat': 'dash-chat.html',
+        'dashchat': 'dashchat.html',
         'corri': 'corri.html',
         'bouy-os': 'bouy-os.html', 
         'contact': 'contact.html',

@@ -7,7 +7,7 @@
         '/contact',
         '/corri', 
         '/bouy-os',
-        '/dash-chat',
+        '/dashchat',
         '/roadmap',
         '/drapac'
     ];
