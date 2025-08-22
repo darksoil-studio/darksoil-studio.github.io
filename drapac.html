@@ -17,7 +17,16 @@
         with or without internet
       </h2>
 
-      <p style="margin: 0 0 1em 0;"><a href="https://darksoil.studio/dash-chat/" class="button">Download installer</a></p>
+      <div style="text-align: center; margin: 2em 0;">
+        <download-installer-button
+          windows-url="https://github.com/darksoil-studio/dash-chat/releases/download/untagged-e20708e8b603c95cb360/Dash.Chat_0.4.0_x64_en-US.msi"
+          nix-command="nix run github:darksoil-studio/dash-chat/untagged-e20708e8b603c95cb360"
+          macos-intel-url="https://github.com/darksoil-studio/dash-chat/releases/download/untagged-e20708e8b603c95cb360/Dash.Chat_0.4.0_x64.dmg"
+          macos-silicon-url="https://github.com/darksoil-studio/dash-chat/releases/download/untagged-e20708e8b603c95cb360/Dash.Chat_0.4.0_aarch64.dmg"
+          linux-url="https://github.com/darksoil-studio/dash-chat/releases/download/untagged-e20708e8b603c95cb360/Dash.Chat_0.4.0_amd64.AppImage"
+        >
+        </download-installer-button>
+      </div>
 
       <form
         action="https://submit-form.com/x8wivjMPt"
@@ -43,6 +52,8 @@
         <div style="font-weight: bold; margin-bottom: 0.5em;">Supported by</div>
         <img src="otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 180px; width: 100%; height: auto; display: block; margin: 0 auto 1em auto;" />
       </div>
+
+
 
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">Usability</h3>
       <p>
@@ -171,6 +182,7 @@
 
       registerCustomElements();
       import "./custom-social-link.js";
+      import "./download-installer-button.js";
       
       // Import and initialize shared menu
       import { createSharedMenu, initializeSharedMenu } from './shared-menu.js';
