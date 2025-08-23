@@ -36,7 +36,24 @@
         <h4 style="margin: 0 0 0.5em 0; text-align: center;">Stay Connected</h4>
         <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
         <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
-        <textarea id="interest" name="interest" placeholder="What's your interest in Dash Chat? (optional)" rows="4" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
+        
+        <div style="display: flex; flex-direction: column; gap: 0.5em;">
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" name="newsletter" value="yes" style="margin: 0;">
+            <span>I'd like the Newsletter (very occasional)</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" name="test-community" value="yes" style="margin: 0;">
+            <span>I'd like to test Dash Chat with my community</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" name="partnerships" value="yes" style="margin: 0;">
+            <span>I'm interested in partnerships</span>
+          </label>
+        </div>
+        
+        <input type="text" id="other" name="other" placeholder="Other" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
+        
         <button type="submit" class="button" style="width: 100%;">Subscribe</button>
       </form>
 
