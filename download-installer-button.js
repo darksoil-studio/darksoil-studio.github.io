@@ -56,29 +56,27 @@ class DownloadInstallerButton extends LitElement {
   }
 
   _detectOS() {
-    const userAgent = navigator.userAgent;
-    const platform = navigator.platform;
-    
-    if (platform.includes('Win') || userAgent.includes('Windows')) {
+    const userAgent = navigator.userAgent || '';
+    const ua = userAgent.toLowerCase();
+    const platform = (navigator.platform || '').toLowerCase();
+
+    // Windows
+    if (platform.includes('win') || ua.includes('windows')) {
       return 'Windows';
-    } else if (platform.includes('Mac')) {
-      // Check if it's Apple Silicon
-      if (navigator.userAgent.includes('Mac OS X') && navigator.userAgent.includes('AppleWebKit')) {
-        // For Apple Silicon, we can't detect it perfectly from user agent alone
-        // But we can check if it's a newer Mac (likely Silicon)
-        const isAppleSilicon = navigator.userAgent.includes('Mac OS X 10_15') || 
-                              navigator.userAgent.includes('Mac OS X 11_') || 
-                              navigator.userAgent.includes('Mac OS X 12_') ||
-                              navigator.userAgent.includes('Mac OS X 13_') ||
-                              navigator.userAgent.includes('Mac OS X 14_');
-        return isAppleSilicon ? 'MacOS Silicon' : 'MacOS Intel';
-      }
-      return 'MacOS Intel';
-    } else if (platform.includes('Linux') || userAgent.includes('Linux')) {
+    }
+
+    // macOS: default to Intel unless UA clearly indicates ARM
+    if (platform.includes('mac')) {
+      const isArm = ua.includes('arm64') || ua.includes('aarch64') || ua.includes('apple silicon') || ua.includes('apple m1') || ua.includes('apple m2') || ua.includes('apple m3') || ua.includes('apple m4');
+      return isArm ? 'MacOS Silicon' : 'MacOS Intel';
+    }
+
+    // Linux
+    if (platform.includes('linux') || ua.includes('linux')) {
       return 'Linux';
     }
-    
-    // Default fallback
+
+    // Fallback to Windows (most common desktop default)
     return 'Windows';
   }
 
@@ -97,40 +95,7 @@ class DownloadInstallerButton extends LitElement {
 
   render() {
     const browser = this._detectedOS;
-    return html`<div
-      style="
-        display: flex; 
-        flex-direction: column; 
-        align-items: center; 
-        gap: 24px; 
-        max-width: 400px;
-        margin: 0 auto;
-        padding: 32px 20px;
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-        border-radius: 16px;
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-      "
-    >
-      <div style="
-        text-align: center;
-        color: white;
-        margin-bottom: 8px;
-      ">
-        <h3 style="
-          margin: 0 0 8px 0;
-          font-size: 24px;
-          font-weight: 700;
-          color: white;
-        ">Download Dash Chat</h3>
-        <p style="
-          margin: 0;
-          font-size: 16px;
-          opacity: 0.9;
-          color: white;
-        ">Get the latest version for ${browser}</p>
-      </div>
-
-      <div style="display:flex; flex-direction: row; align-items: center; width: 100%;">
+    return html`<div style="display:flex; flex-direction: row; align-items: center; width: 100%; justify-content: center; gap: 0;">
         <a 
           href="${this.getUrlFor(browser)}" 
           class="download-button primary"
@@ -148,7 +113,6 @@ class DownloadInstallerButton extends LitElement {
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            flex: 1;
             justify-content: center;
             box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
           "
@@ -158,7 +122,7 @@ class DownloadInstallerButton extends LitElement {
           <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
             <path d="${mdiDownload}"/>
           </svg>
-          Download
+          Download for ${browser}
         </a>
         
         <sl-dropdown class="os-dropdown">
@@ -204,94 +168,54 @@ class DownloadInstallerButton extends LitElement {
                       margin: 4px 8px;
                     "
                     onmouseover="this.style.backgroundColor='#F0F7FF'"
-                    onmouseout="this.style.backgroundColor='transparent'"
+                    onmouseout="this.style.backgroundColor='#FFFFFF'"
                   >
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="#667eea">
                       <path d="${mdiDownload}"/>
                     </svg>
-                    <span style="font-weight: 600; color: #374151; font-size: 16px;">Download for ${os}</span>
+                    <span style="font-weight: 600; color: #222222; font-size: 14px;">Download for ${os}</span>
                   </sl-menu-item>
                 `,
               )}
           </sl-menu>
         </sl-dropdown>
-      </div>
-
-      ${this.nixCommand && browser === 'Linux'
-        ? html`
-            <div style="
-              width: 100%;
-              text-align: center;
-              padding: 20px;
-              background: rgba(255, 255, 255, 0.1);
-              border-radius: 12px;
-              border: 1px solid rgba(255, 255, 255, 0.2);
-              backdrop-filter: blur(10px);
-            ">
-              <span style="
-                display: block;
-                margin-bottom: 12px;
-                color: white;
-                font-size: 14px;
-                font-weight: 500;
-                opacity: 0.9;
-              ">Or install with Nix:</span>
-              <div style="
-                display: flex;
-                align-items: center;
-                gap: 8px;
-                background: rgba(255, 255, 255, 0.9);
-                border: 1px solid rgba(255, 255, 255, 0.3);
-                border-radius: 8px;
-                padding: 12px 16px;
-                font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
-                font-size: 14px;
-                color: #374151;
-              ">
-                <span style="flex: 1; text-align: left;">${this.nixCommand}</span>
-                <sl-copy-button
-                  .value=${this.nixCommand}
-                  style="
-                    --sl-color-primary-600: #667eea;
-                    --sl-color-primary-700: #764ba2;
-                  "
-                ></sl-copy-button>
-              </div>
-            </div>
-          `
-        : html``}
-    </div>`;
+      </div>`;
   }
 
   static styles = css`
+    /* Main download button: subtle blue border on hover */
     .download-button.primary:hover {
-      background: #1E40AF !important;
+      border: 2px solid #1D4ED8 !important;
     }
-    
-    .dropdown-trigger:hover {
-      background: #1E40AF !important;
-    }
-    
-    sl-menu-item:hover {
-      background-color: #F3F4F6 !important;
-    }
+
+    /* Remove all hover color changes per request */
     
     sl-dropdown::part(base) {
       border: none;
       box-shadow: none;
     }
     
-    sl-menu::part(base) {
+    sl-dropdown::part(panel) {
+      background: #FFFFFF;
       border: 1px solid #E5E7EB;
       border-radius: 8px;
       box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-      background: white;
-      padding: 8px 0;
+      padding: 4px;
+    }
+    sl-menu::part(base) {
+      background: transparent;
+      border: none;
+      box-shadow: none;
+      padding: 0;
     }
     
     sl-menu-item::part(base) {
-      border-radius: 4px;
-      margin: 2px 8px;
+      background: #FFFFFF;
+      border-radius: 6px;
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
     
     sl-copy-button::part(base) {
