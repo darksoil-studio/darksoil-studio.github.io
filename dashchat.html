@@ -184,14 +184,44 @@
       <form
         action="https://submit-form.com/x8wivjMPt"
         method="POST"
-        style="max-width: 400px; margin: 2em auto; display: flex; flex-direction: column; gap: 0.5em;"
+        style="max-width: 400px; margin: 1.5em auto 2.5em auto; display: flex; flex-direction: column; gap: 0.75em;"
+        id="stayConnectedForm"
       >
         <h4 style="margin: 0 0 0.5em 0; text-align: center;">Stay Connected</h4>
         <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
         <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
-        <textarea id="interest" name="interest" placeholder="What's your interest in Dash Chat? (optional)" rows="4" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
-        <button type="submit" class="button" style="width: 100%;">Subscribe</button>
+
+        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’d like to…</div>
+        <div style="display: flex; flex-direction: column; gap: 0.5em;">
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" style="margin: 0;">
+            <span>Get the newsletter (very occasional)</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_pilot" name="pilot" value="yes" style="margin: 0;">
+            <span>Pilot Dash Chat with my community</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_partner" name="partner" value="yes" style="margin: 0;">
+            <span>Partner or fund</span>
+          </label>
+        </div>
+
+        <div id="pilotPartnerDetails" style="display: none;">
+          <div style="margin: 0.25em 0 0.25em 0; font-size: 0.95em;">Tell us a bit?</div>
+          <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind." style="width: 100%; padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
+        </div>
+
+        <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc;"
+          onmouseover="this.style.border='2px solid #1D4ED8'"
+          onmouseout="this.style.border='1px solid #ccc'"
+        >Connect</button>
       </form>
+
+      <div id="formSuccess" style="display:none; max-width: 400px; margin: 1.5em auto 2.5em auto; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; color: #111; text-align: center;">
+        <div style="font-weight: 600; margin-bottom: 8px;">Thanks for connecting!</div>
+        <div>We received your info and will be in touch.</div>
+      </div>
     </rocket-content-area>
 
     <footer>
@@ -222,6 +252,43 @@
       
       // Initialize the shared menu functionality
       initializeSharedMenu();
+
+      // Conditional textarea for pilot/partner
+      const pilot = document.getElementById('opt_pilot');
+      const partner = document.getElementById('opt_partner');
+      const details = document.getElementById('pilotPartnerDetails');
+      function toggleDetails() {
+        if ((pilot && pilot.checked) || (partner && partner.checked)) {
+          details.style.display = 'block';
+        } else {
+          details.style.display = 'none';
+        }
+      }
+      pilot?.addEventListener('change', toggleDetails);
+      partner?.addEventListener('change', toggleDetails);
+
+      // Inline submit success
+      const form = document.getElementById('stayConnectedForm');
+      const successBox = document.getElementById('formSuccess');
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const fd = new FormData(form);
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: fd,
+          });
+          if (resp.ok) {
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+          } else {
+            alert('Sorry, there was a problem sending your message. Please try again.');
+          }
+        } catch (err) {
+          alert('Network error. Please try again.');
+        }
+      });
     </script>
   </body>
 </html> 
