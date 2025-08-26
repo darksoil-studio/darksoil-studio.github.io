@@ -6,7 +6,7 @@
     
     <title>Drapac - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="/assets/drapac-dcebafe4.js"></script>
+    <script type="module" crossorigin src="/assets/drapac-9d075b3b.js"></script>
     <link rel="modulepreload" crossorigin href="/assets/custom-social-link-bcdda2cb.js">
     <link rel="modulepreload" crossorigin href="/assets/shared-menu-60e66007.js">
     <link rel="stylesheet" href="/assets/custom-social-link-c083184e.css">
@@ -50,12 +50,13 @@
         action="https://submit-form.com/x8wivjMPt"
         method="POST"
         style="max-width: 400px; margin: 1.5em auto 2.5em auto; display: flex; flex-direction: column; gap: 0.75em;"
+        id="stayConnectedForm"
       >
         <h4 style="margin: 0 0 0.5em 0; text-align: center;">Stay Connected</h4>
         <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
         <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
 
-        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’m here to…</div>
+        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’d like to…</div>
         <div style="display: flex; flex-direction: column; gap: 0.5em;">
           <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
             <input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" style="margin: 0;">
@@ -81,6 +82,11 @@
           onmouseout="this.style.border='1px solid #ccc'"
         >Connect</button>
       </form>
+
+      <div id="formSuccess" style="display:none; max-width: 400px; margin: 1.5em auto 2.5em auto; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; color: #111; text-align: center;">
+        <div style="font-weight: 600; margin-bottom: 8px;">Thanks for connecting!</div>
+        <div>We received your info and will be in touch.</div>
+      </div>
 
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">Dash Chat is . . .</h3>
       <p>
