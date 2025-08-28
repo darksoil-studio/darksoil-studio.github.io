@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="style.css" />
     <title>Drapac - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
     <div id="shared-menu-container"></div>
@@ -72,6 +73,8 @@
           <div style="margin: 0.25em 0 0.25em 0; font-size: 0.95em;">Tell us a bit?</div>
           <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind." style="width: 100%; padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
         </div>
+
+        <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
 
         <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc;"
           onmouseover="this.style.border='2px solid #1D4ED8'"
@@ -281,6 +284,13 @@
       const successBox = document.getElementById('formSuccess');
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
+        if (typeof grecaptcha !== 'undefined') {
+          const token = grecaptcha.getResponse();
+          if (!token) {
+            alert('Please complete the reCAPTCHA.');
+            return;
+          }
+        }
         const fd = new FormData(form);
         try {
           const resp = await fetch(form.action, {
@@ -291,6 +301,7 @@
           if (resp.ok) {
             form.style.display = 'none';
             successBox.style.display = 'block';
+            if (typeof grecaptcha !== 'undefined') { grecaptcha.reset(); }
           } else {
             alert('Sorry, there was a problem sending your message. Please try again.');
           }
