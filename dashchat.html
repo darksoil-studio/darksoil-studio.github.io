@@ -16,6 +16,11 @@
 
     <rocket-content-area>
       <h1 style="font-family: 'Rubik', sans-serif; font-size: 1.8em; font-weight: 600; margin-bottom: 0.5em;">Dash Chat</h1>
+      <div style="display: flex; justify-content: flex-end; margin: 0.25em 0 0.5em 0;">
+        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.15em; padding: 6px 10px; background: #fff7ed; color: #7c2d12; border: 1px solid #fed7aa; border-radius: 8px; box-shadow: 0 1px 2px rgba(0,0,0,0.05);">
+          Now in Pre‑Alpha
+        </div>
+      </div>
       <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.4em; font-weight: 500; line-height: 1.4; padding-bottom: 40px; margin-bottom: 2em !important; text-align: center !important;">Secure chat,<br>
         <span aria-hidden="true" style="display: inline-block; margin: 0.25em 0; width: 100%; text-align: center;">
           <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
@@ -161,8 +166,56 @@
           </ul>
         </div>
       </div>
-      
-      
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="3" y="4" width="14" height="10" rx="2" fill="#1D4ED8"/>
+          <polyline points="4,5 10,10 16,5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        Stay Connected
+      </h3>
+      <form
+        action="https://submit-form.com/x8wivjMPt"
+        method="POST"
+        style="max-width: 400px; margin: 0.5em auto 2em auto; display: flex; flex-direction: column; gap: 0.75em;"
+        id="stayConnectedForm"
+      >
+        <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
+        <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
+
+        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’d like to…</div>
+        <div style="display: flex; flex-direction: column; gap: 0.5em;">
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" style="margin: 0;">
+            <span>Get the newsletter (very occasional)</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_pilot" name="pilot" value="yes" style="margin: 0;">
+            <span>Pilot Dash Chat with my community</span>
+          </label>
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_partner" name="partner" value="yes" style="margin: 0;">
+            <span>Partner or fund</span>
+          </label>
+        </div>
+
+        <div id="pilotPartnerDetails" style="display: none;">
+          <div style="margin: 0.25em 0 0.25em 0; font-size: 0.95em;">Tell us a bit?</div>
+          <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind." style="width: 100%; padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
+        </div>
+
+        <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
+
+        <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc;"
+          onmouseover="this.style.border='2px solid #1D4ED8'"
+          onmouseout="this.style.border='1px solid #ccc'"
+        >Connect</button>
+      </form>
+      <div id="formSuccess" style="display:none; max-width: 400px; margin: 0.5em auto 2em auto; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; color: #111; text-align: center;">
+        <div style="font-weight: 600; margin-bottom: 8px;">Thanks for connecting!</div>
+        <div>We received your info and will be in touch.</div>
+      </div>
+
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -260,49 +313,7 @@
       </div>
       
       
-      <form
-        action="https://submit-form.com/x8wivjMPt"
-        method="POST"
-        style="max-width: 400px; margin: 1.5em auto 2.5em auto; display: flex; flex-direction: column; gap: 0.75em;"
-        id="stayConnectedForm"
-      >
-        <h4 style="margin: 0 0 0.5em 0; text-align: center;">Stay Connected</h4>
-        <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
-        <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
-
-        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’d like to…</div>
-        <div style="display: flex; flex-direction: column; gap: 0.5em;">
-          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
-            <input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" style="margin: 0;">
-            <span>Get the newsletter (very occasional)</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
-            <input type="checkbox" id="opt_pilot" name="pilot" value="yes" style="margin: 0;">
-            <span>Pilot Dash Chat with my community</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
-            <input type="checkbox" id="opt_partner" name="partner" value="yes" style="margin: 0;">
-            <span>Partner or fund</span>
-          </label>
-        </div>
-
-        <div id="pilotPartnerDetails" style="display: none;">
-          <div style="margin: 0.25em 0 0.25em 0; font-size: 0.95em;">Tell us a bit?</div>
-          <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind." style="width: 100%; padding: 0.5em; border: 1px solid #ccc; border-radius: 4px; resize: vertical; font-family: inherit;"></textarea>
-        </div>
-
-        <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
-
-        <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc;"
-          onmouseover="this.style.border='2px solid #1D4ED8'"
-          onmouseout="this.style.border='1px solid #ccc'"
-        >Connect</button>
-      </form>
-
-      <div id="formSuccess" style="display:none; max-width: 400px; margin: 1.5em auto 2.5em auto; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; color: #111; text-align: center;">
-        <div style="font-weight: 600; margin-bottom: 8px;">Thanks for connecting!</div>
-        <div>We received your info and will be in touch.</div>
-      </div>
+      
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
