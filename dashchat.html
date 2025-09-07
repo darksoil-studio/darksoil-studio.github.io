@@ -88,54 +88,77 @@
         Dash Chat is built with end-to-end encryption and advanced security features to protect users' communications. We're implementing robust encryption protocols and security measures to ensure that messages remain private and secure, even in challenging network environments.
       </p>
       
-      <div style="margin: 1.25em 0 0.75em 0; font-weight: 600;">Roadmap</div>
-      <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #fff; display: grid; gap: 16px;">
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 0.75em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="6" height="6" fill="#1D4ED8"/>
+          <rect x="12" y="2" width="6" height="6" fill="#10B981"/>
+          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Roadmap
+      </h3>
+      <div style="display:flex; flex-wrap: wrap; gap: 8px; align-items:center; margin-bottom: 10px;">
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid #d1d5db; border-radius:999px; background:#f8fafc;">
+          <span style="font-weight:600;">Pre‑Alpha</span>
+          <span style="display:inline-flex; align-items:center; gap:4px; color:#1D4ED8; font-weight:600;">
+            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h10M10 4l6 6-6 6" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Now
+          </span>
+        </div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid #d1d5db; border-radius:999px; background:#fff;">
+          <span style="font-weight:600;">Alpha</span>
+          <span style="color:#6b7280;">Late 2026</span>
+        </div>
+        <div style="display:inline-flex; align-items:center; gap:6px; padding:6px 10px; border:1px solid #d1d5db; border-radius:999px; background:#fff;">
+          <span style="font-weight:600;">Beta</span>
+          <span style="color:#6b7280;">Mid 2026</span>
+        </div>
+      </div>
+      <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #fff; display: grid; gap: 18px;">
         <div>
-          <div style="font-weight: 600; color: #6b7280; margin-bottom: 6px;">Past</div>
+          <div style="font-weight: 700; color: #374151; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#6b7280"/><rect x="11" y="11" width="7" height="7" fill="#d1d5db"/></svg>
+            Past
+          </div>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
             <li>Community needs assessment / User research / Contextual research</li>
             <li>Secure ephemeral relay service</li>
             <li>Push notifications</li>
             <li>p2p networking integration</li>
             <li>Linked devices</li>
-            <li>Android, Mac, Linux, Windows</li>
-            <li>Google Play Store (alpha)</li>
-            <li style="margin-top: 6px; font-weight: 600; color: #1D4ED8;">Pre‑Alpha complete</li>
+            <li>Android, Mac, Linux</li>
+            <li>WiFi</li>
+            <li>Google Play Store</li>
           </ul>
         </div>
         <div>
-          <div style="font-weight: 600; color: #1D4ED8; margin-bottom: 6px;">Present</div>
+          <div style="font-weight: 700; color: #1D4ED8; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#1D4ED8"/><circle cx="14" cy="14" r="4" fill="#93c5fd"/></svg>
+            In progress
+          </div>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
             <li>UI/UX design</li>
             <li>Usability testing</li>
             <li>Visual identity</li>
+            <li>Publish research report</li>
+            <li>Community testing</li>
             <li>Bluetooth</li>
-            <li>iOS</li>
+            <li>iOS (beta version), Windows</li>
             <li>Group invite links</li>
-            <li>Routing messages in and out of shutdown zones</li>
+            <li>Routing messages in and out of shutdown zones (Starlink, satellite, etc)</li>
           </ul>
         </div>
         <div>
-          <div style="font-weight: 600; color: #10B981; margin-bottom: 6px;">Future</div>
-          <div style="font-weight: 500; color: #6b7280; margin-bottom: 4px;">Alpha — early 2026</div>
-          <ul style="margin: 0 0 10px 0; padding-left: 20px; line-height: 1.55;">
-            <li>Bluetooth</li>
-            <li>iOS</li>
-            <li>Group invite links</li>
-            <li>Routing messages in and out of shutdown zones</li>
-            <li>UI/UX design</li>
-            <li>Usability testing</li>
-            <li>Visual identity</li>
-          </ul>
-          <div style="font-weight: 500; color: #6b7280; margin-bottom: 4px;">Beta — later 2026</div>
+          <div style="font-weight: 700; color: #10B981; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 18,18 2,18" fill="#10B981"/></svg>
+            Future
+          </div>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
-            <li>Raspberry Pi always‑online nodes</li>
-            <li>Emergency relay / Local mode</li>
+            <li>Emergency relay mode</li>
+            <li>Build and field-test prototype</li>
             <li>Voice messages</li>
             <li>File sharing</li>
-            <li>Security features (disappearing messages, hidden chats, etc.)</li>
+            <li>Security features (disappearing messages, hidden chats, etc)</li>
             <li>Apple App Store</li>
-            <li>Field usability testing (offline, secure backups, encryptions)</li>
           </ul>
         </div>
       </div>
