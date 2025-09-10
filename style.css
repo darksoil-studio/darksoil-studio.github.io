@@ -624,6 +624,27 @@ rocket-content-area strong {
 }
 
 
+/* Site-wide: show hand cursor on clickable elements */
+a,
+button,
+.button,
+label,
+.cta-btn,
+.dropdown-toggle,
+.dev-btn,
+.project-card-link,
+.hamburger-menu,
+.close-mobile-menu,
+input[type="submit"],
+input[type="button"],
+input[type="checkbox"],
+input[type="radio"],
+[role="button"],
+[onclick] {
+  cursor: pointer;
+}
+
+
 
 /* Mobile responsive for contact layout */
 @media screen and (max-width: 768px) {
