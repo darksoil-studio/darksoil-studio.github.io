@@ -85,8 +85,43 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <!-- Temporarily disabled shared menu for debugging -->
-    <!-- <div id="shared-menu-container"></div> -->
+    <header>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Connect</a>
+        </nav>
+      </div>
+    </header>
 
     <rocket-content-area>
       <h1>People</h1>
@@ -211,10 +246,10 @@
       registerCustomElements();
       import "../custom-social-link.js";
 
-      // Temporarily disabled shared menu for debugging
-      // import { createSharedMenu, initializeSharedMenu } from '../shared-menu.js';
-      // document.getElementById('shared-menu-container').innerHTML = createSharedMenu();
-      // initializeSharedMenu();
+      import { initializeSharedMenu } from '../shared-menu.js';
+      
+      // Initialize menu interactions (hamburger, overlay)
+      initializeSharedMenu();
     </script>
   </body>
   </html>

@@ -10,7 +10,9 @@ export default defineConfig({
         'bouy-os': 'bouy-os.html', 
         'contact': 'contact.html',
         'roadmap': 'roadmap.html',
-        'drapac': 'drapac.html'
+        'drapac': 'drapac.html',
+        'people': 'people/index.html',
+        'blog': 'blog/index.html'
       }
     }
   }

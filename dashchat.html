@@ -1,10 +1,13 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css?family=Rubik"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preload" href="style.css" as="style" />
     <!-- No redirect: serve original page for production stability -->
     <link rel="stylesheet" href="style.css" />
     <title>Dash Chat - darksoil studio</title>
@@ -12,7 +15,29 @@
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <div id="shared-menu-container"></div>
+    <header>
+      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #93C5FD; border-radius:8px; padding:6px 10px; color:#1D4ED8; background:#DBEAFE; text-decoration:none; font-weight:600;">stay connected</a>
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #1D4ED8; border-radius:8px; padding:8px 12px; color:#1D4ED8; text-decoration:none; font-weight:600;">stay connected</a>
+          <a href="https://github.com/darksoil-studio/dash-chat" target="_blank" rel="noopener">GitHub</a>
+        </nav>
+      </div>
+    </header>
 
     <rocket-content-area>
       <div style="position: relative;">
@@ -22,17 +47,17 @@
         Secure chat,<br>
         <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
           <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
-            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
-            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
-            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
+            <circle cx="7" cy="7" r="6" fill="#10B981"/>
+            <rect x="16" y="5" width="12" height="4" fill="#1D4ED8"/>
+            <polygon points="34,3 42,7 34,11" fill="#E11D48"/>
           </svg>
         </span><br>
         like Signal,<br>
         <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
           <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
-            <circle cx="7" cy="7" r="6" fill="#10B981"/>
-            <rect x="16" y="5" width="12" height="4" fill="#1D4ED8"/>
-            <polygon points="34,3 42,7 34,11" fill="#E11D48"/>
+            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
+            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
+            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
           </svg>
         </span><br>
         with or without internet
@@ -265,8 +290,9 @@
         </svg>
         Community Partners
       </h3>
-      <div style="display:flex; align-items:center; justify-content:center; margin: 0 0 1.5em 0; text-align: center;">
+      <div style="display:flex; align-items:center; justify-content:center; gap: 40px; margin: 0 0 1.5em 0; text-align: center; flex-wrap: wrap;">
         <img src="activate_rights.png" alt="Activate Rights" style="max-width: 200px; width: 100%; height: auto; display: block;" />
+        <img src="ASL19-English (1).png" alt="ASL19" style="max-width: 200px; width: 100%; height: auto; display: block;" />
       </div>
     </rocket-content-area>
 
@@ -289,87 +315,11 @@
 
       registerCustomElements();
       import "./custom-social-link.js";
-      
-      // Import and initialize shared menu
-      import { createSharedMenu, initializeSharedMenu } from './shared-menu.js';
-      
-      // Insert the shared menu
-      document.getElementById('shared-menu-container').innerHTML = createSharedMenu();
-      
-      // Initialize the shared menu functionality
+      import { initializeSharedMenu } from './shared-menu.js';
+      // Initialize menu interactions (hamburger, overlay)
       initializeSharedMenu();
 
-      // Customize header only on the Dash Chat page
-      try {
-        const header = document.querySelector('header');
-        const nav = header?.querySelector('nav.menu-links');
-        const right = nav?.querySelector('.menu-right');
-
-        // Remove Projects dropdown, Connect, org GitHub, and Developer Portal
-        right?.querySelector('.dropdown')?.remove();
-        // remove connect by href variants or by text
-        right?.querySelector('a[href="/contact"]')?.remove();
-        right?.querySelector('a[href="contact.html"]')?.remove();
-        Array.from(right?.querySelectorAll('a') || []).forEach(a => {
-          if ((a.textContent || '').trim().toLowerCase() === 'connect') a.remove();
-        });
-        right?.querySelector('custom-social-link[name="Github"]')?.remove();
-        right?.querySelector('.dev-btn')?.remove();
-
-        // Add Stay Connected CTA
-        if (right) {
-          const stay = document.createElement('a');
-          stay.href = '#stay-connected';
-          stay.textContent = 'stay connected';
-          stay.className = 'cta-btn';
-          stay.style.border = '1px solid #93C5FD';
-          stay.style.borderRadius = '8px';
-          stay.style.padding = '6px 10px';
-          stay.style.color = '#1D4ED8';
-          stay.style.background = '#DBEAFE';
-          stay.style.textDecoration = 'none';
-          stay.style.fontWeight = '600';
-          stay.addEventListener('mouseenter', () => { stay.style.background = '#BFDBFE'; });
-          stay.addEventListener('mouseleave', () => { stay.style.background = '#DBEAFE'; });
-          right.prepend(stay);
-
-          // Add Dash Chat repo GitHub icon
-          const repo = document.createElement('custom-social-link');
-          repo.setAttribute('name', 'Github');
-          repo.setAttribute('url', 'https://github.com/darksoil-studio/dash-chat');
-          right.appendChild(repo);
-        }
-
-        // Mobile menu tweaks
-        const mobile = header?.querySelector('.mobile-menu-content');
-        if (mobile) {
-          // Remove mobile dropdown & dev portal & connect
-          mobile.querySelector('.mobile-dropdown')?.remove();
-          mobile.querySelector('a[href="contact.html"]')?.remove();
-          mobile.querySelector('.dev-btn')?.remove();
-
-          const stayM = document.createElement('a');
-          stayM.href = '#stay-connected';
-          stayM.textContent = 'stay connected';
-          stayM.className = 'cta-btn';
-          stayM.style.border = '1px solid #1D4ED8';
-          stayM.style.borderRadius = '8px';
-          stayM.style.padding = '8px 12px';
-          stayM.style.color = '#1D4ED8';
-          stayM.style.textDecoration = 'none';
-          stayM.style.fontWeight = '600';
-          mobile.appendChild(stayM);
-
-          const repoM = document.createElement('a');
-          repoM.href = 'https://github.com/darksoil-studio/dash-chat';
-          repoM.target = '_blank';
-          repoM.rel = 'noopener';
-          repoM.textContent = 'GitHub';
-          mobile.appendChild(repoM);
-        }
-      } catch (_) {
-        // no-op
-      }
+      // Header is inlined, no runtime DOM rewrites needed
 
       // Conditional textarea for pilot/partner
       const pilot = document.getElementById('opt_pilot');

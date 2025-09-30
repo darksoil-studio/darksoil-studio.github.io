@@ -1,8 +1,8 @@
 body {
-  color: black !important;
+  color: var(--text-color, black) !important;
   font-family: "Rubik", sans-serif;
   margin: 0;
-  background-color: #fcfcfc;
+  background-color: var(--background-color, #fcfcfc);
 }
 
 :root {
@@ -13,7 +13,7 @@ body {
 }
 
 a {
-  color: #1a0dab;
+  color: var(--link-color, #1a0dab);
   text-decoration: none;
 }
 
@@ -28,7 +28,7 @@ p {
 
 p,
 summary {
-  color: #333 !important;
+  color: var(--muted-text-color, #333) !important;
 }
 
 header {
@@ -46,6 +46,38 @@ header a {
   font-size: 16px;
   font-weight: normal;
   padding: 0 15px;
+}
+
+.home-link {
+  font-size: 28px !important;
+  font-weight: 600 !important;
+}
+
+/* Desktop Navigation */
+.desktop-nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.desktop-nav a {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--text-color);
+  text-decoration: none;
+  padding: 8px 0;
+  transition: color 0.2s ease;
+}
+
+.desktop-nav a:hover {
+  color: var(--link-color);
+}
+
+/* Hide desktop nav on mobile */
+@media (max-width: 768px) {
+  .desktop-nav {
+    display: none;
+  }
 }
 
 main > *:first-child {
@@ -96,7 +128,7 @@ h2 {
   font-size: 36px !important;
   margin-bottom: 28px !important;
   margin-top: 48px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid var(--border-color, #eee);
   padding-bottom: 12px;
 }
 
@@ -133,8 +165,8 @@ rocket-content-area {
 }
 
 rocket-card {
-  border: 1px solid #ddd;
-  background-color: white;
+  border: 1px solid var(--border-color, #ddd);
+  background-color: var(--card-background, #fff);
   min-width: 300px;
   max-width: 100%;
   border-radius: 8px;
@@ -144,7 +176,7 @@ rocket-card {
 }
 
 body {
-  background-color: #fcfcfc;
+  background-color: var(--background-color, #fcfcfc);
 }
 
 rocket-content-area p {
@@ -174,11 +206,11 @@ rocket-columns rocket-card {
 }
 
 footer {
-  background: #fcfcfc;
-  color: #333;
+  background: var(--background-color, #fcfcfc);
+  color: var(--text-color, #333);
   text-align: center;
   padding: 40px;
-  border-top: 1px solid #eee;
+  border-top: 1px solid var(--border-color, #eee);
   margin-top: 40px;
 }
 
@@ -188,8 +220,13 @@ footer a {
 
 header a.active,
 header a:hover {
-  color: black;
+  color: var(--link-color, #1a0dab);
   font-weight: bold;
+}
+
+/* Ensure site title remains visible on hover */
+header .home-link:hover {
+  color: var(--link-color, #1a0dab);
 }
 
 .custom-social-links {
@@ -448,20 +485,21 @@ rocket-content-area strong {
 .contact-email {
   text-align: center;
   padding: 30px;
-  background-color: #f8f9fa;
+  background-color: var(--card-background, #fff);
   border-radius: 12px;
-  border: 1px solid #e5e7eb;
+  border: 1px solid var(--border-color, #e5e7eb);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.08);
 }
 
 .contact-email h3 {
   margin: 0 0 15px 0;
-  color: #333;
+  color: var(--text-color, #333);
   font-size: 24px;
 }
 
 .contact-email p {
   margin: 0 0 20px 0;
-  color: #666;
+  color: var(--muted-text-color, #666);
   font-size: 16px;
 }
 
@@ -469,24 +507,24 @@ rocket-content-area strong {
   display: inline-block;
   font-size: 18px;
   font-weight: 600;
-  color: #1a0dab;
+  color: var(--link-color, #1a0dab);
   text-decoration: none;
   padding: 12px 24px;
-  background-color: #fff;
-  border: 2px solid #1a0dab;
+  background-color: transparent;
+  border: 2px solid var(--link-color, #1a0dab);
   border-radius: 8px;
   transition: all 0.2s ease;
 }
 
 .email-link:hover {
-  background-color: #1a0dab;
-  color: #fff;
+  background-color: var(--link-color, #1a0dab);
+  color: var(--background-color, #fcfcfc);
   text-decoration: none;
 }
 
 .contact-divider {
   width: 2px;
-  background-color: #e5e7eb;
+  background-color: var(--border-color, #e5e7eb);
   height: 100%;
   min-height: 200px;
 }
@@ -497,7 +535,7 @@ rocket-content-area strong {
 
 .contact-form-section h3 {
   margin: 0 0 25px 0;
-  color: #333;
+  color: var(--text-color, #333);
   font-size: 24px;
 }
 
@@ -514,7 +552,7 @@ rocket-content-area strong {
   display: block;
   margin-bottom: 8px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-color, #333);
   font-size: 16px;
 }
 
@@ -523,12 +561,13 @@ rocket-content-area strong {
 .form-group textarea {
   width: 100%;
   padding: 12px 15px;
-  border: 2px solid #e5e7eb;
+  border: 2px solid var(--border-color, #e5e7eb);
   border-radius: 8px;
   font-size: 16px;
   font-family: "Rubik", sans-serif;
-  background-color: #fff;
-  transition: border-color 0.2s ease;
+  background-color: var(--card-background, #fff);
+  color: var(--text-color, #111);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
   box-sizing: border-box;
 }
 
@@ -536,8 +575,8 @@ rocket-content-area strong {
 .form-group select:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #333;
-  box-shadow: 0 0 0 3px rgba(51, 51, 51, 0.1);
+  border-color: var(--link-color, #1a0dab);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--link-color, #1a0dab) 20%, transparent);
 }
 
 .form-group textarea {
@@ -545,21 +584,28 @@ rocket-content-area strong {
   min-height: 120px;
 }
 
+/* Placeholder contrast */
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: color-mix(in srgb, var(--muted-text-color, #666) 80%, transparent);
+}
+
 .submit-btn {
-  background-color: #333;
-  color: #fff;
+  background-color: transparent;
+  color: var(--link-color, #1a0dab);
   padding: 14px 28px;
-  border: none;
+  border: 2px solid var(--link-color, #1a0dab);
   border-radius: 8px;
   font-size: 16px;
   font-weight: 600;
   font-family: "Rubik", sans-serif;
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }
 
 .submit-btn:hover {
-  background-color: #555;
+  background-color: var(--link-color, #1a0dab);
+  color: var(--background-color, #fcfcfc);
 }
 
 .contact-info {
@@ -577,27 +623,28 @@ rocket-content-area strong {
 
 .contact-method {
   padding: 25px;
-  background-color: #f8f9fa;
+  background-color: var(--card-background, #fff);
   border-radius: 12px;
-  border-left: 4px solid #333;
+  border-left: 4px solid color-mix(in srgb, var(--text-color, #333) 70%, transparent);
+  border: 1px solid var(--border-color, #e5e7eb);
 }
 
 .contact-method h4 {
   margin: 0 0 10px 0;
-  color: #333;
+  color: var(--text-color, #333);
   font-size: 18px;
   font-weight: 600;
 }
 
 .contact-method p {
   margin: 0 0 15px 0;
-  color: #666;
+  color: var(--muted-text-color, #666);
   font-size: 14px;
   line-height: 1.5;
 }
 
 .contact-method a {
-  color: #1a0dab;
+  color: var(--link-color, #1a0dab);
   text-decoration: none;
   font-weight: 500;
 }
@@ -730,7 +777,7 @@ rocket-content-area .example li {
   display: block;
   width: 25px;
   height: 3px;
-  background-color: #333;
+  background-color: var(--text-color, #333);
   margin: 5px 0;
   transition: all 0.3s ease-in-out;
 }
@@ -773,8 +820,8 @@ rocket-content-area .example li {
   position: absolute;
   right: 0;
   top: 100%;
-  background: #fff;
-  border: 1px solid #eee;
+  background: var(--card-background, #fff);
+  border: 1px solid var(--border-color, #eee);
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
   min-width: 180px;
   z-index: 1002;
@@ -782,7 +829,7 @@ rocket-content-area .example li {
 }
 
 .dropdown-menu a {
-  color: #333;
+  color: var(--text-color, #333);
   padding: 12px 20px;
   text-align: left;
   display: block;
@@ -791,7 +838,7 @@ rocket-content-area .example li {
 }
 
 .dropdown-menu a:hover {
-  background: #f5f5f5;
+  background: var(--hover-surface, #f5f5f5);
 }
 
 .dropdown.open .dropdown-menu {
@@ -800,14 +847,14 @@ rocket-content-area .example li {
 
 .home-link {
   font-weight: 600;
-  color: #333;
+  color: var(--text-color, #333);
   text-decoration: none;
 }
 
 .menu-separator {
   width: 1px;
   height: 24px;
-  background: #ddd;
+  background: var(--border-color, #ddd);
   margin: 0 12px;
   align-self: center;
 }
@@ -913,7 +960,7 @@ rocket-content-area .example li {
   display: block;
 }
 .mobile-menu-content {
-  background: #fff;
+  background: var(--card-background, #fff);
   width: 100vw;
   max-width: 100vw;
   height: 100vh;
@@ -929,7 +976,7 @@ rocket-content-area .example li {
 .mobile-menu-content .dropdown-toggle {
   font-size: 1.5rem;
   margin: 0.5em 0;
-  color: #222;
+  color: var(--text-color, #222);
   text-align: center;
   text-decoration: none;
   display: block;
@@ -1016,3 +1063,35 @@ rocket-content-area .example li {
   }
 }
 
+/* Fixed light-mode stage chip colors (use same in dark mode) */
+.stage-chip { border-radius: 8px; }
+.stage-pre { background: #fff7ed !important; background-color: #fff7ed !important; color: #111 !important; }
+.stage-alpha { background: #eff6ff !important; background-color: #eff6ff !important; color: #111 !important; }
+.stage-beta { background: #ecfdf5 !important; background-color: #ecfdf5 !important; color: #111 !important; }
+.stage-chip span { color: #111 !important; }
+
+/* ================================
+   Light/Dark Theme Variables
+   ================================ */
+:root {
+  color-scheme: light dark;
+  --background-color: #fcfcfc;
+  --text-color: #111111;
+  --muted-text-color: #333333;
+  --border-color: #e5e7eb;
+  --card-background: #ffffff;
+  --link-color: #1a0dab;
+  --hover-surface: #f5f5f5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #0b0c0f;
+    --text-color: #e5e7eb;
+    --muted-text-color: #cbd5e1;
+    --border-color: #2a2f3a;
+    --card-background: #111827;
+    --link-color: #8ab4f8;
+    --hover-surface: #1f2937;
+  }
+}

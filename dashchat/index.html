@@ -3,16 +3,276 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="/" />
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      /* Complete inline CSS to prevent ANY FOUC */
+      :root {
+        --theme-primary: #333;
+        --theme-on-primary: #fcfcfc;
+        --theme-secondary: #555;
+        --default-headline-color: black;
+        --background-color: #fcfcfc;
+        --text-color: black;
+        --muted-text-color: #333;
+        --border-color: #eee;
+        --card-background: #fff;
+        --link-color: #1a0dab;
+        --hover-surface: #f5f5f5;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #0b0c0f;
+          --text-color: #e5e7eb;
+          --muted-text-color: #cbd5e1;
+          --border-color: #2a2f3a;
+          --card-background: #111827;
+          --link-color: #8ab4f8;
+          --hover-surface: #1f2937;
+        }
+      }
+      
+      /* Force hide until loaded - more aggressive */
+      html:not(.loaded) { 
+        visibility: hidden !important;
+      }
+      html:not(.loaded) * { 
+        visibility: hidden !important;
+      }
+      
+      body { 
+        margin: 0; 
+        font-family: "Rubik", sans-serif !important; 
+        background-color: var(--background-color, #fcfcfc) !important;
+        color: var(--text-color, black) !important;
+      }
+      
+      /* All critical layout styles inline */
+      * { box-sizing: border-box; }
+      
+      rocket-content-area { 
+        display: block !important; 
+        padding: 20px 40px !important;
+        max-width: 800px !important; 
+        margin: 0 auto !important; 
+        min-height: auto !important;
+      }
+      
+      h1 { 
+        margin: 0 !important;
+        font-size: 48px !important;
+        font-weight: 600 !important;
+        text-align: center !important; 
+        padding: 40px 0 !important;
+        font-family: "Rubik", sans-serif !important;
+      }
+      
+      h2 { 
+        text-align: left !important;
+        font-size: 36px !important;
+        margin-bottom: 28px !important;
+        margin-top: 48px !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+        padding-bottom: 12px !important;
+        font-family: "Rubik", sans-serif !important;
+        font-weight: 700 !important;
+      }
+      
+      h3 {
+        font-family: 'Rubik', sans-serif !important;
+        font-size: 1.5em !important;
+        font-weight: 700 !important;
+        margin: 2em 0 1em 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5em !important;
+      }
+      
+      p {
+        font-size: 18px !important;
+        line-height: 1.44 !important;
+        max-width: 800px !important;
+        color: var(--muted-text-color, #333) !important;
+        margin-bottom: 15px !important;
+      }
+      
+      a {
+        color: var(--link-color, #1a0dab) !important;
+        text-decoration: none !important;
+      }
+      
+      a:hover {
+        text-decoration: underline !important;
+      }
+      
+      /* Header styles - prevent jumping */
+      header {
+        position: static !important;
+        height: auto !important;
+        background: none !important;
+        padding: 20px 0 !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+        display: block !important;
+        background-color: var(--background-color, #fcfcfc) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        min-height: 80px !important;
+      }
+      
+      header a {
+        color: var(--text-color, #333) !important;
+        text-decoration: none !important;
+        font-size: 16px !important;
+        font-weight: normal !important;
+        padding: 0 15px !important;
+      }
+      
+      .menu-links {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        max-width: 800px !important;
+        margin: 0 auto !important;
+        padding: 0 40px !important;
+      }
+      
+      .menu-left, .menu-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 15px !important;
+      }
+      
+      .hamburger-menu {
+        display: none !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+      }
+      
+      .mobile-menu-overlay {
+        display: none !important;
+      }
+      
+      /* Form styles */
+      form {
+        max-width: 400px !important;
+        margin: 0.5em 0 2em 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 0.75em !important;
+      }
+      
+      input, select, textarea {
+        padding: 0.5em !important;
+        border: 1px solid var(--border-color, #ccc) !important;
+        border-radius: 4px !important;
+        background-color: var(--card-background, #fff) !important;
+        color: var(--text-color, black) !important;
+        font-family: inherit !important;
+      }
+      
+      button, .button {
+        display: inline-block !important;
+        border: 1px solid var(--border-color, #ccc) !important;
+        text-align: center !important;
+        font-weight: 600 !important;
+        white-space: nowrap !important;
+        transition: all 0.2s !important;
+        background-color: var(--card-background, white) !important;
+        color: var(--text-color, #333) !important;
+        border-radius: 5px !important;
+        padding: 10px 20px !important;
+        line-height: normal !important;
+        font-size: 14px !important;
+        text-decoration: none !important;
+        cursor: pointer !important;
+        font-family: inherit !important;
+      }
+      
+      label {
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5em !important;
+        cursor: pointer !important;
+        color: var(--text-color, black) !important;
+      }
+      
+      div, span {
+        color: var(--text-color, black) !important;
+      }
+      
+      /* Stage indicators */
+      [aria-label="project stage"] {
+        font-family: 'Rubik', sans-serif !important;
+        font-weight: 600 !important;
+        font-size: 1.2em !important;
+        padding: 8px 14px !important;
+        background: var(--card-background, #fff) !important;
+        color: var(--text-color, #111) !important;
+        border: 1px solid var(--border-color, #e5e7eb) !important;
+        border-radius: 8px !important;
+      }
+      
+      /* Roadmap chips */
+      .stage-pre, .stage-alpha, .stage-beta {
+        display: inline-block !important;
+        padding: 8px 16px !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+        margin: 0 8px 8px 0 !important;
+        color: black !important;
+      }
+      
+      .stage-pre { background-color: #fff7ed !important; }
+      .stage-alpha { background-color: #eff6ff !important; }
+      .stage-beta { background-color: #ecfdf5 !important; }
+      
+      /* Lists */
+      ul { margin: 15px 0 20px 20px !important; }
+      li { margin-bottom: 8px !important; line-height: 1.5 !important; }
+      
+      /* Team photos */
+      .team-photo {
+        width: 100px !important;
+        height: 100px !important;
+        border-radius: 50% !important;
+        object-fit: cover !important;
+        margin-bottom: 10px !important;
+      }
+      
+      /* Mobile responsive */
+      @media (max-width: 600px) {
+        rocket-content-area { padding: 20px !important; }
+        h1 { font-size: 36px !important; }
+        h2 { font-size: 28px !important; }
+        .menu-links { padding: 0 20px !important; }
+        .hamburger-menu { display: block !important; }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
     <title>Dash Chat - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
+    <script>
+      // Simple FOUC prevention - just show after a brief delay
+      function showContent() {
+        document.documentElement.classList.add('loaded');
+      }
+      
+      // Show immediately since we have all styles inline
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+          setTimeout(showContent, 50);
+        });
+      } else {
+        setTimeout(showContent, 50);
+      }
+    </script>
     <header>
       <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
         <span></span>
@@ -110,7 +370,7 @@
         with or without internet
       </h2>
       <div style="display: flex; justify-content: center; margin: 0.2em 0 1em 0;">
-        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: #fff7ed; color: #7c2d12; border: 1px solid #fed7aa; border-radius: 8px;">Currently in Pre‑Alpha</div>
+        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: var(--card-background, #fff); color: var(--text-color, #111); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px;">Currently in Pre‑Alpha</div>
       </div>
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -174,19 +434,19 @@
         Roadmap
       </h3>
       <div style="display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 12px;">
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#fff7ed;">
-          <span style="font-weight:600;">Pre‑Alpha</span>
+        <div class="stage-chip stage-pre" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Pre‑Alpha</span>
           <span style="display:inline-flex; align-items:center; gap:4px; color:#1D4ED8; font-weight:600;">
             <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h10M10 4l6 6-6 6" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Now
           </span>
         </div>
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#eff6ff;">
-          <span style="font-weight:600;">Alpha</span>
+        <div class="stage-chip stage-alpha" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Alpha</span>
           <span style="color:#6b7280;">Late 2026</span>
         </div>
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#ecfdf5;">
-          <span style="font-weight:600;">Beta</span>
+        <div class="stage-chip stage-beta" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Beta</span>
           <span style="color:#6b7280;">Mid 2026</span>
         </div>
       </div>
@@ -202,7 +462,7 @@
         <img src="otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto;" />
       </div>
       
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <rect x="2" y="2" width="6" height="6" fill="#10B981"/>
           <rect x="12" y="2" width="6" height="6" fill="#1D4ED8"/>
@@ -210,8 +470,9 @@
         </svg>
         Community Partners
       </h3>
-      <div style="display:flex; align-items:center; justify-content:center; gap: 12px; margin: 0 0 1.5em 0; text-align: center;">
+      <div style="display:flex; align-items:center; justify-content:center; gap: 40px; margin: 0 0 1.5em 0; text-align: center; flex-wrap: wrap;">
         <img src="../activate_rights.png" alt="Activate Rights" style="max-width: 200px; width: 100%; height: auto; display: block;" />
+        <img src="../ASL19-English (1).png" alt="ASL19" style="max-width: 200px; width: 100%; height: auto; display: block;" />
       </div>
       <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #fff; display: grid; gap: 18px;">
         <div>
@@ -232,8 +493,8 @@
           </ul>
         </div>
         <div>
-          <div style="font-weight: 700; color: #1D4ED8; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#1D4ED8"/><circle cx="14" cy="14" r="4" fill="#93c5fd"/></svg>
+          <div style="font-weight: 700; color: #60A5FA; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#60A5FA"/><circle cx="14" cy="14" r="4" fill="#BFDBFE"/></svg>
             In progress
           </div>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
@@ -525,18 +786,18 @@
         Team & Advisors
       </h3>
       <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1em; align-items: start;">
-        <div style="text-align: center;">
-          <img src="eric_bw_circle_smile.png" alt="Eric Bear" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
+        <div style="text-align: left;">
+          <img src="eric_bw_circle_smile.png" alt="Eric Bear" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
           <div style="font-weight: 600;">Eric Bear</div>
           <div style="font-size: 0.9em; color: #666;">Lead</div>
         </div>
-        <div style="text-align: center;">
-          <img src="guillem_bw.png" alt="Guillem Córdoba" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
+        <div style="text-align: left;">
+          <img src="guillem_bw.png" alt="Guillem Córdoba" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
           <div style="font-weight: 600;">Guillem Córdoba</div>
           <div style="font-size: 0.9em; color: #666;">Engineering</div>
         </div>
-        <div style="text-align: center;">
-          <div style="width: 120px; height: 120px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5em;">
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
             <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
               <rect x="4" y="36" width="24" height="24" fill="#E63946"/>
               <circle cx="48" cy="24" r="16" fill="#1D4ED8"/>
@@ -546,13 +807,13 @@
           <div style="font-weight: 600;">Jun Nguyen</div>
           <div style="font-size: 0.9em; color: #666;">UI/UX Design & Research</div>
         </div>
-        <div style="text-align: center;">
-          <img src="viktor_bw_circle.png" alt="Viktor Zaunders" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
+        <div style="text-align: left;">
+          <img src="viktor_bw_circle.png" alt="Viktor Zaunders" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
           <div style="font-weight: 600;">Viktor Zaunders</div>
           <div style="font-size: 0.9em; color: #666;">Operations</div>
         </div>
-        <div style="text-align: center;">
-          <img src="michael_bw.png" alt="Michael Dougherty" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
+        <div style="text-align: left;">
+          <img src="michael_bw.png" alt="Michael Dougherty" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
           <div style="font-weight: 600;">Michael Dougherty</div>
           <div style="font-size: 0.9em; color: #666;">Engineering</div>
         </div>
@@ -562,7 +823,7 @@
         <div style="font-weight: 600; margin-bottom: 0.5em;">Advisors</div>
         <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; align-items: start;">
           <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
                 <circle cx="7" cy="7" r="5" fill="#1D4ED8"/>
                 <rect x="12" y="12" width="8" height="8" fill="#E63946"/>
@@ -574,7 +835,7 @@
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
                 <polygon points="11,2 20,18 2,18" fill="#F59E0B"/>
               </svg>
@@ -585,7 +846,7 @@
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
                 <rect x="3" y="3" width="10" height="10" fill="#10B981"/>
                 <circle cx="16" cy="16" r="5" fill="#1D4ED8"/>
@@ -597,7 +858,7 @@
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
               <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
                 <rect x="2" y="4" width="18" height="3" fill="#E63946"/>
                 <rect x="2" y="10" width="18" height="3" fill="#F59E0B"/>
@@ -610,7 +871,7 @@
             </div>
           </div>
           <div style="display: flex; align-items: center; gap: 0.75em;">
-            <img src="../shoeb.jpeg" alt="Shoeb Abdullah" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
+            <img src="../shoeb.jpeg" alt="Shoeb Abdullah" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
             <div>
               <div style="font-weight: 600;">Shoeb Abdullah</div>
               <div style="font-size: 0.9em; color: #666;">Activate Rights</div>

@@ -1,0 +1,314 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <style>
+      /* Complete inline CSS to prevent ANY FOUC */
+      :root {
+        --theme-primary: #333;
+        --theme-on-primary: #fcfcfc;
+        --theme-secondary: #555;
+        --default-headline-color: black;
+        --background-color: #fcfcfc;
+        --text-color: black;
+        --muted-text-color: #333;
+        --border-color: #eee;
+        --card-background: #fff;
+        --link-color: #1a0dab;
+        --hover-surface: #f5f5f5;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #0b0c0f;
+          --text-color: #e5e7eb;
+          --muted-text-color: #cbd5e1;
+          --border-color: #2a2f3a;
+          --card-background: #111827;
+          --link-color: #8ab4f8;
+          --hover-surface: #1f2937;
+        }
+      }
+      
+      body { 
+        margin: 0; 
+        font-family: "Rubik", sans-serif !important; 
+        background-color: var(--background-color, #fcfcfc) !important;
+        color: var(--text-color, black) !important;
+      }
+      
+      /* All critical layout styles inline */
+      * { box-sizing: border-box; }
+      
+      rocket-content-area { 
+        display: block !important; 
+        padding: 20px 40px !important;
+        max-width: 800px !important; 
+        margin: 0 auto !important; 
+        min-height: auto !important;
+      }
+      
+      h1 { 
+        margin: 0 !important;
+        font-size: 48px !important;
+        font-weight: 600 !important;
+        text-align: center !important; 
+        padding: 40px 0 !important;
+        font-family: "Rubik", sans-serif !important;
+      }
+      
+      h2 { 
+        text-align: left !important;
+        font-size: 36px !important;
+        margin-bottom: 28px !important;
+        margin-top: 48px !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+        padding-bottom: 12px !important;
+        font-family: "Rubik", sans-serif !important;
+        font-weight: 700 !important;
+      }
+      
+      h3 {
+        font-family: 'Rubik', sans-serif !important;
+        font-size: 1.5em !important;
+        font-weight: 700 !important;
+        margin: 2em 0 1em 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 0.5em !important;
+      }
+      
+      p {
+        font-size: 18px !important;
+        line-height: 1.44 !important;
+        max-width: 800px !important;
+        color: var(--muted-text-color, #333) !important;
+        margin-bottom: 15px !important;
+      }
+      
+      a {
+        color: var(--link-color, #1a0dab) !important;
+        text-decoration: none !important;
+      }
+      
+      a:hover {
+        text-decoration: underline !important;
+      }
+      
+      /* Header styles - prevent jumping */
+      header {
+        position: static !important;
+        height: auto !important;
+        background: none !important;
+        padding: 20px 0 !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+        display: block !important;
+        background-color: var(--background-color, #fcfcfc) !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        margin: 0 !important;
+        min-height: 80px !important;
+      }
+      
+      .menu-links {
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        padding: 0 40px !important;
+        max-width: 1200px !important;
+        margin: 0 auto !important;
+      }
+      
+      .menu-left a {
+        font-size: 24px !important;
+        font-weight: 600 !important;
+        color: var(--text-color, black) !important;
+        text-decoration: none !important;
+      }
+      
+      .menu-right {
+        display: flex !important;
+        align-items: center !important;
+        gap: 20px !important;
+      }
+      
+      .desktop-nav {
+        display: flex !important;
+        align-items: center !important;
+        gap: 30px !important;
+      }
+      
+      .desktop-nav a {
+        font-size: 16px !important;
+        font-weight: 500 !important;
+        color: var(--text-color, black) !important;
+        text-decoration: none !important;
+        padding: 8px 0 !important;
+        transition: color 0.2s ease !important;
+      }
+      
+      .desktop-nav a:hover {
+        color: var(--link-color, #1a0dab) !important;
+      }
+      
+      .hamburger-menu {
+        display: none !important;
+        flex-direction: column !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        padding: 8px !important;
+      }
+      
+      .hamburger-menu span {
+        width: 25px !important;
+        height: 3px !important;
+        background-color: var(--text-color, black) !important;
+        margin: 3px 0 !important;
+        transition: 0.3s !important;
+        border-radius: 2px !important;
+      }
+      
+      .mobile-menu-overlay {
+        display: none !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        background-color: rgba(0, 0, 0, 0.5) !important;
+        z-index: 1000 !important;
+      }
+      
+      .mobile-menu-overlay.open {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        align-items: flex-end !important;
+        padding: 20px !important;
+      }
+      
+      .close-mobile-menu {
+        background: none !important;
+        border: none !important;
+        font-size: 32px !important;
+        color: white !important;
+        cursor: pointer !important;
+        margin-bottom: 20px !important;
+      }
+      
+      .mobile-menu-content {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 20px !important;
+        background-color: var(--card-background, #fff) !important;
+        padding: 30px !important;
+        border-radius: 12px !important;
+        min-width: 200px !important;
+      }
+      
+      .mobile-menu-content a {
+        font-size: 18px !important;
+        font-weight: 500 !important;
+        color: var(--text-color, black) !important;
+        text-decoration: none !important;
+        padding: 12px 0 !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+      }
+      
+      .mobile-menu-content a:last-child {
+        border-bottom: none !important;
+      }
+      
+      /* Mobile responsive */
+      @media (max-width: 768px) {
+        .desktop-nav { display: none !important; }
+        .hamburger-menu { display: flex !important; }
+        .menu-links { padding: 0 20px !important; }
+        rocket-content-area { padding: 20px !important; }
+        h1 { font-size: 36px !important; }
+        h2 { font-size: 28px !important; }
+      }
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+    <title>Blog - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  </head>
+  <body>
+    <header>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/blog">Blog</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/blog">Blog</a>
+          <a href="/contact">Connect</a>
+        </nav>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h1>Blog</h1>
+      
+      <h2>Latest Updates</h2>
+      <p>We share insights, updates, and thoughts on building resilient, human-scaled technology.</p>
+      
+      <h3>📝 Our Substack</h3>
+      <p>For our latest posts, technical deep-dives, and project updates, visit our Substack:</p>
+      <p><a href="https://darksoilstudio.substack.com" target="_blank" rel="noopener" style="display: inline-block; background-color: var(--link-color, #1a0dab); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; margin: 20px 0;">Read on Substack →</a></p>
+      
+      <h3>🎯 What We Write About</h3>
+      <ul style="color: var(--muted-text-color, #333); line-height: 1.6;">
+        <li><strong>Dash Chat Development:</strong> Progress updates, technical challenges, and design decisions</li>
+        <li><strong>Infrastructure & Sovereignty:</strong> Building resilient systems that work for people, not platforms</li>
+        <li><strong>Community & Governance:</strong> How we're building tools that communities can truly own</li>
+        <li><strong>Technical Deep-Dives:</strong> The "why" behind our architectural choices</li>
+      </ul>
+      
+      <h3>📬 Stay Updated</h3>
+      <p>Subscribe to our Substack to get notified when we publish new content. We write about the intersection of technology, sovereignty, and building tools that actually serve people.</p>
+      
+      <p style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border-color, #eee); color: var(--muted-text-color, #333); font-size: 16px;">
+        Questions or feedback? <a href="/contact">Get in touch</a> or join our community discussions.
+      </p>
+    </rocket-content-area>
+
+    <script type="module">
+      import "./custom-social-link.js";
+      import { initializeSharedMenu } from './shared-menu.js';
+      
+      // Initialize menu interactions (hamburger, overlay)
+      initializeSharedMenu();
+    </script>
+  </body>
+</html>
