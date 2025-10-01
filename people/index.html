@@ -1,0 +1,246 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <base href="/" />
+    <style>
+      /* Critical CSS to prevent FOUC */
+      :root {
+        --theme-primary: #333;
+        --theme-on-primary: #fcfcfc;
+        --theme-secondary: #555;
+        --default-headline-color: black;
+        --background-color: #fcfcfc;
+        --text-color: black;
+        --muted-text-color: #333;
+        --border-color: #eee;
+        --card-background: #fff;
+        --link-color: #1a0dab;
+        --hover-surface: #f5f5f5;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #0b0c0f;
+          --text-color: #e5e7eb;
+          --muted-text-color: #cbd5e1;
+          --border-color: #2a2f3a;
+          --card-background: #111827;
+          --link-color: #8ab4f8;
+          --hover-surface: #1f2937;
+        }
+      }
+      
+      body { 
+        margin: 0; 
+        font-family: "Rubik", sans-serif; 
+        background-color: var(--background-color, #fcfcfc);
+        color: var(--text-color, black);
+      }
+      rocket-content-area { 
+        display: block; 
+        padding: 20px 40px;
+        max-width: 800px; 
+        margin: 0 auto; 
+        min-height: auto;
+      }
+      h1 { 
+        margin: 0;
+        font-size: 48px !important;
+        font-weight: 600;
+        text-align: center; 
+        padding: 40px 0;
+      }
+      h2 { 
+        text-align: left;
+        font-size: 36px !important;
+        margin-bottom: 28px !important;
+        margin-top: 48px;
+        border-bottom: 1px solid var(--border-color, #eee);
+        padding-bottom: 12px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.44;
+        max-width: 800px;
+        color: var(--muted-text-color, #333);
+      }
+      a {
+        color: var(--link-color, #1a0dab);
+        text-decoration: none;
+      }
+      
+      @media (max-width: 600px) {
+        rocket-content-area {
+          padding: 20px;
+        }
+        h2 {
+          font-size: 28px !important;
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>People - darksoil studio</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script type="module" crossorigin src="/assets/people-d7ed1f78.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-d8ea6947.js">
+    <link rel="modulepreload" crossorigin href="/assets/shared-menu-7083a263.js">
+  </head>
+  <body>
+    <header>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/contact">Connect</a>
+        </nav>
+      </div>
+    </header>
+
+    <rocket-content-area>
+      <h1>People</h1>
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="6" cy="6" r="5" fill="#E63946"/>
+          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Team
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1em; align-items: start;">
+        <div style="text-align: left;">
+          <img src="eric_bw_circle_smile.png" alt="Eric Bear" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
+          <div style="font-weight: 600;">Eric Bear</div>
+          <div style="font-size: 0.9em; color: #666;">Lead</div>
+        </div>
+        <div style="text-align: left;">
+          <img src="guillem_bw.png" alt="Guillem Córdoba" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
+          <div style="font-weight: 600;">Guillem Córdoba</div>
+          <div style="font-size: 0.9em; color: #666;">Engineering</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
+              <rect x="4" y="36" width="24" height="24" fill="#E63946"/>
+              <circle cx="48" cy="24" r="16" fill="#1D4ED8"/>
+              <polygon points="12,8 32,8 22,24" fill="#F59E0B"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Jun Nguyen</div>
+          <div style="font-size: 0.9em; color: #666;">UI/UX Design & Research</div>
+        </div>
+        <div style="text-align: left;">
+          <img src="viktor_bw_circle.png" alt="Viktor Zaunders" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
+          <div style="font-weight: 600;">Viktor Zaunders</div>
+          <div style="font-size: 0.9em; color: #666;">Operations</div>
+        </div>
+        <div style="text-align: left;">
+          <img src="michael_bw.png" alt="Michael Dougherty" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
+          <div style="font-weight: 600;">Michael Dougherty</div>
+          <div style="font-size: 0.9em; color: #666;">Engineering</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+              <circle cx="7" cy="7" r="5" fill="#1D4ED8"/>
+              <rect x="12" y="12" width="8" height="8" fill="#E63946"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Andreas Dzialocha</div>
+          <div style="font-size: 0.9em; color: #666;">p2panda, Delta Chat</div>
+        </div>
+      </div>
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="6" cy="6" r="5" fill="#E63946"/>
+          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Advisors
+      </h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1em; align-items: start;">
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+              <rect x="3" y="3" width="10" height="10" fill="#10B981"/>
+              <circle cx="16" cy="16" r="5" fill="#1D4ED8"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Stacey Tsui</div>
+          <div style="font-size: 0.9em; color: #666;">Security Trainer</div>
+        </div>
+        <div style="text-align: left;">
+          <img src="shoeb.jpeg" alt="Shoeb Abdullah" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
+          <div style="font-weight: 600;">Shoeb Abdullah</div>
+          <div style="font-size: 0.9em; color: #666;">Activate Rights</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+              <polygon points="11,2 20,18 2,18" fill="#F59E0B"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Holmes Wilson</div>
+          <div style="font-size: 0.9em; color: #666;">Quiet</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+              <rect x="2" y="4" width="18" height="3" fill="#E63946"/>
+              <rect x="2" y="10" width="18" height="3" fill="#F59E0B"/>
+              <rect x="2" y="16" width="18" height="3" fill="#1D4ED8"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Scott Garrison</div>
+          <div style="font-size: 0.9em; color: #666;">Disaster.Radio</div>
+        </div>
+        <div style="text-align: left;">
+          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
+            <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
+              <circle cx="11" cy="11" r="8" fill="#8B5CF6"/>
+              <rect x="6" y="6" width="10" height="10" fill="#10B981"/>
+              <circle cx="11" cy="11" r="3" fill="#F59E0B"/>
+            </svg>
+          </div>
+          <div style="font-weight: 600;">Michael Suantak</div>
+          <div style="font-size: 0.9em; color: #666;">Association for Progressive Communication</div>
+        </div>
+      </div>
+    </rocket-content-area>
+
+    <footer>
+      <p class="legal">© 2025 darksoil studio. All rights reserved.</p>
+    </footer>
+
+    
+  </body>
+  </html>
+
+

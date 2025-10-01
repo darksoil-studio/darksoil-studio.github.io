@@ -1,6 +1,86 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      /* Critical CSS to prevent FOUC */
+      :root {
+        --theme-primary: #333;
+        --theme-on-primary: #fcfcfc;
+        --theme-secondary: #555;
+        --default-headline-color: black;
+        --background-color: #fcfcfc;
+        --text-color: black;
+        --muted-text-color: #333;
+        --border-color: #eee;
+        --card-background: #fff;
+        --link-color: #1a0dab;
+        --hover-surface: #f5f5f5;
+      }
+      
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --background-color: #0b0c0f;
+          --text-color: #e5e7eb;
+          --muted-text-color: #cbd5e1;
+          --border-color: #2a2f3a;
+          --card-background: #111827;
+          --link-color: #8ab4f8;
+          --hover-surface: #1f2937;
+        }
+      }
+      
+      body { 
+        margin: 0; 
+        font-family: "Rubik", sans-serif; 
+        background-color: var(--background-color, #fcfcfc);
+        color: var(--text-color, black);
+        visibility: hidden;
+      }
+      body.loaded {
+        visibility: visible;
+      }
+      rocket-content-area { 
+        display: block; 
+        padding: 20px 40px;
+        max-width: 800px; 
+        margin: 0 auto; 
+        min-height: auto;
+      }
+      h1 { 
+        margin: 0;
+        font-size: 48px !important;
+        font-weight: 600;
+        text-align: center; 
+        padding: 40px 0;
+      }
+      h2 { 
+        text-align: left;
+        font-size: 36px !important;
+        margin-bottom: 28px !important;
+        margin-top: 48px;
+        border-bottom: 1px solid var(--border-color, #eee);
+        padding-bottom: 12px;
+      }
+      p {
+        font-size: 18px;
+        line-height: 1.44;
+        max-width: 800px;
+        color: var(--muted-text-color, #333);
+      }
+      a {
+        color: var(--link-color, #1a0dab);
+        text-decoration: none;
+      }
+      
+      @media (max-width: 600px) {
+        rocket-content-area {
+          padding: 20px;
+        }
+        h2 {
+          font-size: 28px !important;
+        }
+      }
+    </style>
     <link
       href="https://fonts.googleapis.com/css?family=Rubik"
       rel="stylesheet"
@@ -8,13 +88,60 @@
     
     <title>Darksoil Studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <script type="module" crossorigin src="/assets/main-3ad8dce1.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-8da1e405.js">
-    <link rel="modulepreload" crossorigin href="/assets/shared-menu-60e66007.js">
-    <link rel="stylesheet" href="/assets/custom-social-link-8a0144db.css">
+    <script type="module" crossorigin src="/assets/main-d6fedd08.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-d8ea6947.js">
+    <link rel="modulepreload" crossorigin href="/assets/shared-menu-7083a263.js">
+    <link rel="stylesheet" href="/assets/style-98fad14d.css">
   </head>
   <body>
-    <div id="shared-menu-container"></div>
+    <script>
+      // Show body once everything is fully loaded
+      function showContent() {
+        document.body.classList.add('loaded');
+      }
+      
+      // Wait for both DOM and stylesheets to load
+      if (document.readyState === 'complete') {
+        showContent();
+      } else {
+        window.addEventListener('load', showContent);
+      }
+    </script>
+    <header>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/contact">Connect</a>
+        </nav>
+      </div>
+    </header>
 
     <rocket-content-area>
       <h1>darksoil studio</h1>
@@ -23,84 +150,28 @@
     <rocket-content-area>
       <h2 id="what-we-do">What We Do</h2>
       <p>
-        We build distributed, peer-to-peer technologies that empower communities to coordinate, communicate, and collaborate — even when networks go down or centralized platforms fail.<br><br>
-        We build the infrastructure we need to build the apps we want. And we share those tools with others who care about sovereignty, resilience, and keeping the web human-scaled.
+        We build distributed, peer-to-peer technologies that empower communities to coordinate, communicate, and collaborate — even when networks go down or centralized platforms fail.
+      </p>
+      <p>
+        We build things with and for partners for whom current technological infrastructure is insufficient, unavailable, and/or dangerous.
+      </p>
+      <p>
+        We work with people who care about sovereignty, resilience, and keeping the web human.
       </p>
     </rocket-content-area>
 
 
 
     <rocket-content-area>
-      <h2 id="things-weve-made">Projects</h2>
-
-      <rocket-columns>
-          <a href="/dashchat" class="project-card-link">
-            <rocket-card>
-              <div slot="title" class="card-title">
-                <h4>Dash Chat</h4>
-              </div>
-              <p>
-                Internet shutdown resilient messaging.<br><br>
-                Dash Chat is an offline-first, encrypted, peer-to-peer messaging app designed for communities facing unreliable networks, internet shutdowns, and oppressive digital environments. Built on Holochain and integrated with cutting-edge p2p technologies like IROH, Dash Chat keeps conversations flowing—even without internet access—while protecting privacy and sovereignty.<br><br>
-                It's secure messaging that works where others can't.
-              </p>
-            </rocket-card>
-          </a>
-          <a href="/corri" class="project-card-link">
-            <rocket-card>
-              <div slot="title" class="card-title">
-                <h4>Corri AI</h4>
-              </div>
-              <p>
-                Community matchmaker.<br><br>
-
-                Corri is a peer-to-peer, local-first AI matchmaking designed to help communities and events match needs, offers, and shared interests in real time. Whether it's conferences, teams, or residential communities, Edgy connects people around ideas, resources, and opportunities—without centralized gatekeepers.<br><br>
-
-                It's intelligent coordination for groups to discover and act on their potential.
-              </p>
-            </rocket-card>
-          </a>
-          <a href="https://darksoil.studio/p2p-shipyard" class="project-card-link" target="_blank" rel="noopener">
-            <rocket-card>
-              <div slot="title" class="card-title">
-                <h4>p2p Shipyard</h4>
-              </div>
-              <p>
-                  Peer-to-peer made easy.<br><br>
-                  A full-stack developer suite for building, shipping, and maintaining local-first, peer-to-peer apps across platforms. From interoperable modules and zero-config developer environments to seamless cross-platform publishing, p2p Shipyard lets you focus on your app, not the infrastructure.<br><br>
-                  Build, ship and maintain your decentralized software faster and more reliably.
-                </p>
-            </rocket-card>
-          </a>
-      </rocket-columns>
+      <h2 id="building-dash-chat">We’re Building Dash Chat</h2>
+      <p>
+        Dash Chat is an offline-first, end-to-end encrypted messenger that works with internet, without internet, and bridges between the two. It’s designed for communities that need secure and reliable communication even during shutdowns or unstable connectivity. 
+      </p>
+      <p style="text-align: center;">
+        <a href="/dashchat" class="cta-btn" title="Learn more about Dash Chat" style="border:1px solid #1D4ED8; border-radius:8px; padding:10px 14px; color:#1D4ED8; text-decoration:none; font-weight:600; display:inline-block;">Learn more →</a>
+      </p>
     </rocket-content-area>
 
-
-    <rocket-content-area>
-      <h2 id="people">People</h2>
-      <rocket-columns>
-        <rocket-card>
-          <img src="/assets/eric_bw_circle_smile-709be6cc.png" class="photo" />
-          <h4 slot="title">Eric Bear</h4>
-          <p style="text-align: center;">CEO</p>
-        </rocket-card>
-        <rocket-card>
-          <img src="/assets/guillem_bw-5cf615eb.png" class="photo" />
-          <h4 slot="title">Guillem Córdoba</h4>
-          <p style="text-align: center;">CTO</p>
-        </rocket-card>
-        <rocket-card>
-          <img src="/assets/viktor_bw_circle-83e74f64.png" class="photo" />
-          <h4 slot="title">Viktor Zaunders</h4>
-          <p style="text-align: center;">CFO</p>
-        </rocket-card>
-        <rocket-card>
-          <img src="/assets/michael_bw-5c920678.png" class="photo" />
-          <h4 slot="title">Michael Dougherty</h4>
-          <p style="text-align: center;">Director of AI Engineering</p>
-        </rocket-card>
-      </rocket-columns>
-    </rocket-content-area>
 
     <rocket-content-area>
               <h2 id="connect">Connect</h2>
@@ -109,9 +180,9 @@
       </p>
         <div class="custom-social-links">
           <custom-social-link name="OpenCollective" url="https://opencollective.com/darksoil"></custom-social-link>
-          <custom-social-link name="Github" url="https://github.com/darksoil-studio"></custom-social-link>
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
           <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
-          <custom-social-link name="YouTube" url="https://www.youtube.com/@darksoilstudio"></custom-social-link>
+          
         </div>
     </rocket-content-area>
 

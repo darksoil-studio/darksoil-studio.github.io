@@ -1,48 +1,85 @@
 <html>
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-      href="https://fonts.googleapis.com/css?family=Rubik"
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    
     <!-- No redirect: serve original page for production stability -->
     
     <title>Dash Chat - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-    <script type="module" crossorigin src="/assets/dashchat-c06d8375.js"></script>
-    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-8da1e405.js">
-    <link rel="modulepreload" crossorigin href="/assets/shared-menu-60e66007.js">
-    <link rel="stylesheet" href="/assets/custom-social-link-8a0144db.css">
+    <script type="module" crossorigin src="/assets/dashchat-2a472095.js"></script>
+    <link rel="modulepreload" crossorigin href="/assets/custom-social-link-d8ea6947.js">
+    <link rel="modulepreload" crossorigin href="/assets/shared-menu-7083a263.js">
+    <link rel="stylesheet" href="/assets/style-98fad14d.css">
   </head>
   <body>
-    <div id="shared-menu-container"></div>
+    <header>
+      <nav class="menu-links">
+        <div class="menu-left">
+          <a href="/" class="home-link">darksoil studio</a>
+        </div>
+        <div class="menu-right">
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
+          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
+        </div>
+      </nav>
+      
+      <!-- Mobile Menu Overlay -->
+      <div class="mobile-menu-overlay">
+        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
+        <nav class="mobile-menu-content">
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/contact">Connect</a>
+        </nav>
+      </div>
+    </header>
 
     <rocket-content-area>
       <div style="position: relative;">
         <h1 style="font-family: 'Rubik', sans-serif; font-size: calc(2.6em + 4px); font-weight: 600; margin-bottom: 0.1em;">Dash Chat</h1>
       </div>
       <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.4em; font-weight: 700; line-height: 1.4; margin-top: 0.1em !important; padding-bottom: 24px; margin-bottom: 1em !important; text-align: center !important;">
-        <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.4em 0; width: 100%; text-align: center;">
-          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
-            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
-            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
-            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
-          </svg>
-        </span>
         Secure chat,<br>
-        like Signal,<br>
-        with or without internet
-        <span aria-hidden="true" style="display: inline-block; margin: 0.4em 0 0.35em 0; width: 100%; text-align: center;">
+        <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
           <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
             <circle cx="7" cy="7" r="6" fill="#10B981"/>
             <rect x="16" y="5" width="12" height="4" fill="#1D4ED8"/>
             <polygon points="34,3 42,7 34,11" fill="#E11D48"/>
           </svg>
-        </span>
+        </span><br>
+        like Signal,<br>
+        <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
+          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
+            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
+            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
+            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
+          </svg>
+        </span><br>
+        with or without internet
       </h2>
       <div style="display: flex; justify-content: center; margin: 0.2em 0 1em 0;">
-        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: #fff7ed; color: #7c2d12; border: 1px solid #fed7aa; border-radius: 8px;">Currently in Pre‑Alpha</div>
+        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: var(--stage-prealpha-bg, #fff7ed); color: var(--stage-prealpha-text, #7c2d12); border: 1px solid var(--stage-prealpha-border, #fed7aa); border-radius: 8px;">Currently in Pre‑Alpha</div>
       </div>
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
@@ -118,23 +155,23 @@
         Current Roadmap
       </h3>
       <div style="display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 12px;">
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#fff7ed;">
-          <span style="font-weight:600;">Pre‑Alpha</span>
+        <div class="stage-chip stage-pre" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Pre‑Alpha</span>
           <span style="display:inline-flex; align-items:center; gap:4px; color:#1D4ED8; font-weight:600;">
             <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h10M10 4l6 6-6 6" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Now
           </span>
         </div>
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#eff6ff;">
-          <span style="font-weight:600;">Alpha</span>
+        <div class="stage-chip stage-alpha" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Alpha</span>
           <span style="color:#6b7280;">Late 2025</span>
         </div>
-        <div style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none; border-radius:8px; background:#ecfdf5;">
-          <span style="font-weight:600;">Beta</span>
+        <div class="stage-chip stage-beta" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Beta</span>
           <span style="color:#6b7280;">Mid 2026</span>
         </div>
       </div>
-      <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #fff; display: grid; gap: 18px;">
+      <div style="border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; padding: 16px; background: var(--card-background, #fff); display: grid; gap: 18px;">
         <div>
           <div style="font-weight: 800; font-size: 1.2em; color: #F59E0B; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
             <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#F59E0B"/><rect x="11" y="11" width="7" height="7" fill="#FCD34D"/></svg>
@@ -153,8 +190,8 @@
           </ul>
         </div>
         <div>
-          <div style="font-weight: 800; font-size: 1.2em; color: #1D4ED8; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
-            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#1D4ED8"/><circle cx="14" cy="14" r="4" fill="#93c5fd"/></svg>
+          <div style="font-weight: 800; font-size: 1.2em; color: #60A5FA; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#60A5FA"/><circle cx="14" cy="14" r="4" fill="#BFDBFE"/></svg>
             In Progress
           </div>
           <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
@@ -245,110 +282,23 @@
       </div>
 
       
+      
+      
+      
+      
+      
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <circle cx="6" cy="6" r="5" fill="#E63946"/>
-          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
+          <rect x="2" y="2" width="6" height="6" fill="#10B981"/>
+          <rect x="12" y="2" width="6" height="6" fill="#1D4ED8"/>
+          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
         </svg>
-        Team & Advisors
+        Community Partners
       </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1em; align-items: start;">
-        <div style="text-align: center;">
-          <img src="/assets/eric_bw_circle_smile-709be6cc.png" alt="Eric Bear" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
-          <div style="font-weight: 600;">Eric Bear</div>
-          <div style="font-size: 0.9em; color: #666;">Lead</div>
-        </div>
-        <div style="text-align: center;">
-          <img src="/assets/guillem_bw-5cf615eb.png" alt="Guillem Córdoba" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
-          <div style="font-weight: 600;">Guillem Córdoba</div>
-          <div style="font-size: 0.9em; color: #666;">Engineering</div>
-        </div>
-        <div style="text-align: center;">
-          <div style="width: 120px; height: 120px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 auto 0.5em;">
-            <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
-              <rect x="4" y="36" width="24" height="24" fill="#E63946"/>
-              <circle cx="48" cy="24" r="16" fill="#1D4ED8"/>
-              <polygon points="12,8 32,8 22,24" fill="#F59E0B"/>
-            </svg>
-          </div>
-          <div style="font-weight: 600;">Jun Nguyen</div>
-          <div style="font-size: 0.9em; color: #666;">UI/UX Design & Research</div>
-        </div>
-        <div style="text-align: center;">
-          <img src="/assets/viktor_bw_circle-83e74f64.png" alt="Viktor Zaunders" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
-          <div style="font-weight: 600;">Viktor Zaunders</div>
-          <div style="font-size: 0.9em; color: #666;">Operations</div>
-        </div>
-        <div style="text-align: center;">
-          <img src="/assets/michael_bw-5c920678.png" alt="Michael Dougherty" style="width: 120px; height: 120px; border-radius: 50%; object-fit: cover; display: block; margin: 0 auto 0.5em;" />
-          <div style="font-weight: 600;">Michael Dougherty</div>
-          <div style="font-size: 0.9em; color: #666;">Engineering</div>
-        </div>
+      <div style="display:flex; align-items:center; justify-content:center; gap: 40px; margin: 0 0 1.5em 0; text-align: center; flex-wrap: wrap;">
+        <img src="/assets/activate_rights-a1d760e0.png" alt="Activate Rights" style="max-width: 200px; width: 100%; height: auto; display: block;" />
+        <img src="/assets/ASL19-English (1)-57bc5871.png" alt="ASL19" style="max-width: 200px; width: 100%; height: auto; display: block;" />
       </div>
-
-      <div style="margin-top: 1.5em;">
-        <div style="font-weight: 600; margin-bottom: 0.5em;">Advisors</div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; align-items: start;">
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <circle cx="7" cy="7" r="5" fill="#1D4ED8"/>
-                <rect x="12" y="12" width="8" height="8" fill="#E63946"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Andreas Dzialocha</div>
-              <div style="font-size: 0.9em; color: #666;">p2panda, Delta Chat</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <polygon points="11,2 20,18 2,18" fill="#F59E0B"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Holmes Wilson</div>
-              <div style="font-size: 0.9em; color: #666;">Quiet</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <rect x="3" y="3" width="10" height="10" fill="#10B981"/>
-                <circle cx="16" cy="16" r="5" fill="#1D4ED8"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Stacey Tsui</div>
-              <div style="font-size: 0.9em; color: #666;">Security Trainer</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 40px; height: 40px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <rect x="2" y="4" width="18" height="3" fill="#E63946"/>
-                <rect x="2" y="10" width="18" height="3" fill="#F59E0B"/>
-                <rect x="2" y="16" width="18" height="3" fill="#1D4ED8"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Scott Garrison</div>
-              <div style="font-size: 0.9em; color: #666;">Disaster.Radio</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <img src="/assets/shoeb-b2d6326e.jpeg" alt="Shoeb Abdullah" style="width: 40px; height: 40px; border-radius: 50%; object-fit: cover;" />
-            <div>
-              <div style="font-weight: 600;">Shoeb Abdullah</div>
-              <div style="font-size: 0.9em; color: #666;">Activate Rights</div>
-            </div>
-          </div>
-        </div>
-      </div>
-      
-      
-      
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -359,18 +309,6 @@
       </h3>
       <div style="text-align: center; margin: 0 0 2em 0;">
         <img src="/assets/otf-logo-d4e437d2.webp" alt="OTF UXD Lab Logo" style="max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto;" />
-      </div>
-      
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <rect x="2" y="2" width="6" height="6" fill="#10B981"/>
-          <rect x="12" y="2" width="6" height="6" fill="#1D4ED8"/>
-          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
-        </svg>
-        Community Partners
-      </h3>
-      <div style="display:flex; align-items:center; justify-content:center; margin: 0 0 1.5em 0; text-align: center;">
-        <img src="/assets/activate_rights-a1d760e0.png" alt="Activate Rights" style="max-width: 200px; width: 100%; height: auto; display: block;" />
       </div>
     </rocket-content-area>
 
