@@ -9,7 +9,8 @@
         '/bouy-os',
         '/dashchat',
         '/roadmap',
-        '/drapac'
+        '/drapac',
+        '/people'
     ];
     
     // Function to handle clean URL routing
@@ -19,8 +20,13 @@
         
         // Check if this is a clean URL request
         if (validRoutes.includes(cleanPath)) {
-            // Redirect to the .html version
-            window.location.href = cleanPath + '.html';
+            // Special handling for pages in subdirectories
+            if (cleanPath === '/people') {
+                window.location.href = '/people/index.html';
+            } else {
+                // Redirect to the .html version
+                window.location.href = cleanPath + '.html';
+            }
         }
     }
     

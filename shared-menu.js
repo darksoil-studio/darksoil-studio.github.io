@@ -11,7 +11,6 @@ export function createSharedMenu() {
           <nav class="desktop-nav">
             <a href="/dashchat">Dash Chat</a>
             <a href="/people">People</a>
-            <a href="/blog">Blog</a>
             <a href="/contact">Connect</a>
           </nav>
           
@@ -33,7 +32,6 @@ export function createSharedMenu() {
         <nav class="mobile-menu-content">
           <a href="/dashchat">Dash Chat</a>
           <a href="/people">People</a>
-          <a href="/blog">Blog</a>
           <a href="/contact">Connect</a>
         </nav>
       </div>

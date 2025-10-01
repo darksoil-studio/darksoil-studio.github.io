@@ -49,7 +49,7 @@ header a {
 }
 
 .home-link {
-  font-size: 28px !important;
+  font-size: 16px !important;
   font-weight: 600 !important;
 }
 
@@ -71,6 +71,7 @@ header a {
 
 .desktop-nav a:hover {
   color: var(--link-color);
+  text-decoration: none;
 }
 
 /* Hide desktop nav on mobile */
@@ -221,12 +222,12 @@ footer a {
 header a.active,
 header a:hover {
   color: var(--link-color, #1a0dab);
-  font-weight: bold;
 }
 
 /* Ensure site title remains visible on hover */
 header .home-link:hover {
   color: var(--link-color, #1a0dab);
+  text-decoration: none;
 }
 
 .custom-social-links {

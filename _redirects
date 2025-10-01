@@ -5,6 +5,7 @@
 /dashchat /dashchat.html 200
 /roadmap /roadmap.html 200
 /drapac /drapac.html 200
+/people /people/index.html 200
 
 # Handle 404s gracefully
 /* /index.html 404

@@ -16,25 +16,37 @@
   </head>
   <body>
     <header>
-      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <nav class="menu-links">
         <div class="menu-left">
           <a href="/" class="home-link">darksoil studio</a>
         </div>
         <div class="menu-right">
-          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #93C5FD; border-radius:8px; padding:6px 10px; color:#1D4ED8; background:#DBEAFE; text-decoration:none; font-weight:600;">stay connected</a>
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
           <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
         </div>
       </nav>
+      
+      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay">
         <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
         <nav class="mobile-menu-content">
-          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #1D4ED8; border-radius:8px; padding:8px 12px; color:#1D4ED8; text-decoration:none; font-weight:600;">stay connected</a>
-          <a href="https://github.com/darksoil-studio/dash-chat" target="_blank" rel="noopener">GitHub</a>
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/contact">Connect</a>
         </nav>
       </div>
     </header>
@@ -273,17 +285,6 @@
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <circle cx="6" cy="6" r="5" fill="#1D4ED8"/>
-          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
-        </svg>
-        Supported by
-      </h3>
-      <div style="text-align: center; margin: 0 0 2em 0;">
-        <img src="otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto;" />
-      </div>
-      
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <rect x="2" y="2" width="6" height="6" fill="#10B981"/>
           <rect x="12" y="2" width="6" height="6" fill="#1D4ED8"/>
           <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
@@ -294,6 +295,17 @@
         <img src="activate_rights.png" alt="Activate Rights" style="max-width: 200px; width: 100%; height: auto; display: block;" />
         <img src="ASL19-English (1).png" alt="ASL19" style="max-width: 200px; width: 100%; height: auto; display: block;" />
       </div>
+      
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="6" cy="6" r="5" fill="#1D4ED8"/>
+          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Supported by
+      </h3>
+      <div style="text-align: center; margin: 0 0 2em 0;">
+        <img src="otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 200px; width: 100%; height: auto; display: block; margin: 0 auto;" />
+      </div>
     </rocket-content-area>
 
     <footer>
@@ -303,7 +315,7 @@
     </footer>
 
     <script type="module">
-      export async function registerCustomElements() {
+      async function registerCustomElements() {
         // server-only components
         // prettier-ignore
         customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));

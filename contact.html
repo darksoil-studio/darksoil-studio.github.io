@@ -97,7 +97,6 @@
           <nav class="desktop-nav">
             <a href="/dashchat">Dash Chat</a>
             <a href="/people">People</a>
-            <a href="/blog">Blog</a>
             <a href="/contact">Connect</a>
           </nav>
           
@@ -119,7 +118,6 @@
         <nav class="mobile-menu-content">
           <a href="/dashchat">Dash Chat</a>
           <a href="/people">People</a>
-          <a href="/blog">Blog</a>
           <a href="/contact">Connect</a>
         </nav>
       </div>
@@ -188,7 +186,7 @@
     </footer>
 
     <script type="module">
-      export async function registerCustomElements() {
+      async function registerCustomElements() {
         // server-only components
         // prettier-ignore
         customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));

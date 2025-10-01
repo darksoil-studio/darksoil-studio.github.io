@@ -228,7 +228,7 @@
       </div>
     </div>
     <script type="module">
-      export async function registerCustomElements() {
+      async function registerCustomElements() {
         // server-only components
         // prettier-ignore
         customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
