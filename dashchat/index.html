@@ -3,300 +3,230 @@
   <head>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <base href="/" />
-    <style>
-      /* Complete inline CSS to prevent ANY FOUC */
-      :root {
-        --theme-primary: #333;
-        --theme-on-primary: #fcfcfc;
-        --theme-secondary: #555;
-        --default-headline-color: black;
-        --background-color: #fcfcfc;
-        --text-color: black;
-        --muted-text-color: #333;
-        --border-color: #eee;
-        --card-background: #fff;
-        --link-color: #1a0dab;
-        --hover-surface: #f5f5f5;
-      }
-      
-      @media (prefers-color-scheme: dark) {
-        :root {
-          --background-color: #0b0c0f;
-          --text-color: #e5e7eb;
-          --muted-text-color: #cbd5e1;
-          --border-color: #2a2f3a;
-          --card-background: #111827;
-          --link-color: #8ab4f8;
-          --hover-surface: #1f2937;
-        }
-      }
-      
-      /* Force hide until loaded - more aggressive */
-      html:not(.loaded) { 
-        visibility: hidden !important;
-      }
-      html:not(.loaded) * { 
-        visibility: hidden !important;
-      }
-      
-      body { 
-        margin: 0; 
-        font-family: "Rubik", sans-serif !important; 
-        background-color: var(--background-color, #fcfcfc) !important;
-        color: var(--text-color, black) !important;
-      }
-      
-      /* All critical layout styles inline */
-      * { box-sizing: border-box; }
-      
-      rocket-content-area { 
-        display: block !important; 
-        padding: 20px 40px !important;
-        max-width: 800px !important; 
-        margin: 0 auto !important; 
-        min-height: auto !important;
-      }
-      
-      h1 { 
-        margin: 0 !important;
-        font-size: 48px !important;
-        font-weight: 600 !important;
-        text-align: center !important; 
-        padding: 40px 0 !important;
-        font-family: "Rubik", sans-serif !important;
-      }
-      
-      h2 { 
-        text-align: left !important;
-        font-size: 36px !important;
-        margin-bottom: 28px !important;
-        margin-top: 48px !important;
-        border-bottom: 1px solid var(--border-color, #eee) !important;
-        padding-bottom: 12px !important;
-        font-family: "Rubik", sans-serif !important;
-        font-weight: 700 !important;
-      }
-      
-      h3 {
-        font-family: 'Rubik', sans-serif !important;
-        font-size: 1.5em !important;
-        font-weight: 700 !important;
-        margin: 2em 0 1em 0 !important;
-        display: flex !important;
-        align-items: center !important;
-        gap: 0.5em !important;
-      }
-      
-      p {
-        font-size: 18px !important;
-        line-height: 1.44 !important;
-        max-width: 800px !important;
-        color: var(--muted-text-color, #333) !important;
-        margin-bottom: 15px !important;
-      }
-      
-      a {
-        color: var(--link-color, #1a0dab) !important;
-        text-decoration: none !important;
-      }
-      
-      a:hover {
-        text-decoration: underline !important;
-      }
-      
-      /* Header styles - prevent jumping */
-      header {
-        position: static !important;
-        height: auto !important;
-        background: none !important;
-        padding: 20px 0 !important;
-        border-bottom: 1px solid var(--border-color, #eee) !important;
-        display: block !important;
-        background-color: var(--background-color, #fcfcfc) !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        margin: 0 !important;
-        min-height: 80px !important;
-      }
-      
-      header a {
-        color: var(--text-color, #333) !important;
-        text-decoration: none !important;
-        font-size: 16px !important;
-        font-weight: normal !important;
-        padding: 0 15px !important;
-      }
-      
-      .menu-links {
-        display: flex !important;
-        justify-content: space-between !important;
-        align-items: center !important;
-        max-width: 800px !important;
-        margin: 0 auto !important;
-        padding: 0 40px !important;
-      }
-      
-      .menu-left, .menu-right {
-        display: flex !important;
-        align-items: center !important;
-        gap: 15px !important;
-      }
-      
-      .hamburger-menu {
-        display: none !important;
-        background: none !important;
-        border: none !important;
-        cursor: pointer !important;
-      }
-      
-      .mobile-menu-overlay {
-        display: none !important;
-      }
-      
-      /* Form styles */
-      form {
-        max-width: 400px !important;
-        margin: 0.5em 0 2em 0 !important;
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 0.75em !important;
-      }
-      
-      input, select, textarea {
-        padding: 0.5em !important;
-        border: 1px solid var(--border-color, #ccc) !important;
-        border-radius: 4px !important;
-        background-color: var(--card-background, #fff) !important;
-        color: var(--text-color, black) !important;
-        font-family: inherit !important;
-      }
-      
-      button, .button {
-        display: inline-block !important;
-        border: 1px solid var(--border-color, #ccc) !important;
-        text-align: center !important;
-        font-weight: 600 !important;
-        white-space: nowrap !important;
-        transition: all 0.2s !important;
-        background-color: var(--card-background, white) !important;
-        color: var(--text-color, #333) !important;
-        border-radius: 5px !important;
-        padding: 10px 20px !important;
-        line-height: normal !important;
-        font-size: 14px !important;
-        text-decoration: none !important;
-        cursor: pointer !important;
-        font-family: inherit !important;
-      }
-      
-      label {
-        display: flex !important;
-        align-items: center !important;
-        gap: 0.5em !important;
-        cursor: pointer !important;
-        color: var(--text-color, black) !important;
-      }
-      
-      div, span {
-        color: var(--text-color, black) !important;
-      }
-      
-      /* Stage indicators */
-      [aria-label="project stage"] {
-        font-family: 'Rubik', sans-serif !important;
-        font-weight: 600 !important;
-        font-size: 1.2em !important;
-        padding: 8px 14px !important;
-        background: var(--card-background, #fff) !important;
-        color: var(--text-color, #111) !important;
-        border: 1px solid var(--border-color, #e5e7eb) !important;
-        border-radius: 8px !important;
-      }
-      
-      /* Roadmap chips */
-      .stage-pre, .stage-alpha, .stage-beta {
-        display: inline-block !important;
-        padding: 8px 16px !important;
-        border-radius: 8px !important;
-        font-weight: 600 !important;
-        margin: 0 8px 8px 0 !important;
-        color: black !important;
-      }
-      
-      .stage-pre { background-color: #fff7ed !important; }
-      .stage-alpha { background-color: #eff6ff !important; }
-      .stage-beta { background-color: #ecfdf5 !important; }
-      
-      /* Lists */
-      ul { margin: 15px 0 20px 20px !important; }
-      li { margin-bottom: 8px !important; line-height: 1.5 !important; }
-      
-      /* Team photos */
-      .team-photo {
-        width: 100px !important;
-        height: 100px !important;
-        border-radius: 50% !important;
-        object-fit: cover !important;
-        margin-bottom: 10px !important;
-      }
-      
-      /* Mobile responsive */
-      @media (max-width: 600px) {
-        rocket-content-area { padding: 20px !important; }
-        h1 { font-size: 36px !important; }
-        h2 { font-size: 28px !important; }
-        .menu-links { padding: 0 20px !important; }
-        .hamburger-menu { display: block !important; }
-      }
-    </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="../style.css" as="style" />
+    <!-- No redirect: serve original page for production stability -->
+    <link rel="stylesheet" href="../style.css" />
     <title>Dash Chat - darksoil studio</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
   </head>
   <body>
-    <script>
-      // Simple FOUC prevention - just show after a brief delay
-      function showContent() {
-        document.documentElement.classList.add('loaded');
-      }
-      
-      // Show immediately since we have all styles inline
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', function() {
-          setTimeout(showContent, 50);
-        });
-      } else {
-        setTimeout(showContent, 50);
-      }
-    </script>
     <header>
-      <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
       <nav class="menu-links">
         <div class="menu-left">
-          <a href="index.html" class="home-link">darksoil studio</a>
+          <a href="/" class="home-link">darksoil studio</a>
         </div>
         <div class="menu-right">
-          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #1D4ED8; border-radius:8px; padding:6px 10px; color:#1D4ED8; text-decoration:none; font-weight:600;">stay connected</a>
+          <!-- Desktop Navigation -->
+          <nav class="desktop-nav">
+            <a href="/dashchat">Dash Chat</a>
+            <a href="/people">People</a>
+            <a href="/contact">Connect</a>
+          </nav>
+          
+          <!-- Mobile Menu Button -->
+          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          
+          <!-- GitHub Link -->
           <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
         </div>
       </nav>
+      
+      <!-- Mobile Menu Overlay -->
       <div class="mobile-menu-overlay">
         <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
         <nav class="mobile-menu-content">
-          <a href="#stay-connected" class="cta-btn" title="Stay Connected" style="border:1px solid #1D4ED8; border-radius:8px; padding:8px 12px; color:#1D4ED8; text-decoration:none; font-weight:600;">stay connected</a>
-          <a href="https://github.com/darksoil-studio/dash-chat" target="_blank" rel="noopener">GitHub</a>
+          <a href="/dashchat">Dash Chat</a>
+          <a href="/people">People</a>
+          <a href="/contact">Connect</a>
         </nav>
       </div>
+    </header>
 
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+    <rocket-content-area>
+      <div style="position: relative;">
+        <h1 style="font-family: 'Rubik', sans-serif; font-size: calc(2.6em + 4px); font-weight: 600; margin-bottom: 0.1em;">Dash Chat</h1>
+      </div>
+      <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.4em; font-weight: 700; line-height: 1.4; margin-top: 0.1em !important; padding-bottom: 24px; margin-bottom: 1em !important; text-align: center !important;">
+        Secure chat,<br>
+        <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
+          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
+            <circle cx="7" cy="7" r="6" fill="#10B981"/>
+            <rect x="16" y="5" width="12" height="4" fill="#1D4ED8"/>
+            <polygon points="34,3 42,7 34,11" fill="#E11D48"/>
+          </svg>
+        </span><br>
+        like Signal,<br>
+        <span aria-hidden="true" style="display: inline-block; margin: 0.35em 0 0.35em 0; width: 100%; text-align: center;">
+          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
+            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
+            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
+            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
+          </svg>
+        </span><br>
+        with or without internet
+      </h2>
+      <div style="display: flex; justify-content: center; margin: 0.2em 0 1em 0;">
+        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: var(--stage-prealpha-bg, #fff7ed); color: var(--stage-prealpha-text, #7c2d12); border: 1px solid var(--stage-prealpha-border, #fed7aa); border-radius: 8px;">Currently in Pre‑Alpha</div>
+      </div>
+      
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="14" width="10" height="3" fill="#1D4ED8"/>
+          <circle cx="6" cy="6" r="4" fill="#10B981"/>
+          <polygon points="16,4 18,10 12,10" fill="#E11D48"/>
+        </svg>
+        Dash Chat is . . .
+      </h3>
+      <p>
+        an end to end encrypted messenger that works with internet, without internet and bridges between the two. As long as there is a way for devices to communicate with each other, Dash Chat works.
+      </p>
+      <p>
+        With internet shutdowns increasing worldwide, secure and reliable communication without dependence on stable internet is becoming ever more essential.
+      </p>
+
+      
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <circle cx="6" cy="6" r="5" fill="#1D4ED8"/>
+          <polygon points="14,3 18,3 16,7" fill="#F59E0B"/>
+        </svg>
+        Usability
+      </h3>
+      <p>
+        Usability is the starting point for an impactful tool. If it's not usable, it doesn't matter how secure it is, or how resilient the network. Usability is crucial for adoption and for making it easy for people to enter into and establish more secure and resilient infrastructure.
+      </p>
+      <p>
+        We're conducting extensive user research and UI/UX design with <a href="https://decentdesign.org" target="_blank" rel="noopener">Decent Design</a>, supported by OTF's User Experience and Discovery Lab. Our research carefully addresses specific needs, contexts, and user priorities, ensuring we develop technology transparently and responsibly.
+      </p>
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="4" width="16" height="3" fill="#1D4ED8"/>
+          <rect x="2" y="9" width="16" height="3" fill="#F59E0B"/>
+          <rect x="2" y="14" width="16" height="3" fill="#10B981"/>
+        </svg>
+        Reliability
+      </h3>
+      <p>
+        Dash Chat works seamlessly when the internet is working, and when the internet shuts down, it continues to function through any other network connection. Whether you're on the same WiFi network, the same university campus, or in the same protest on the street in a Bluetooth environment, Dash Chat maintains connectivity and functionality.
+      </p>
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="3" y="3" width="8" height="8" fill="#E63946"/>
+          <circle cx="14" cy="14" r="4" fill="#10B981"/>
+        </svg>
+        Security
+      </h3>
+      <p>
+        Dash Chat is built with end-to-end encryption and advanced security features to protect users' communications. We're using robust encryption protocols and security measures to ensure that messages remain private and secure, even in challenging network environments.
+      </p>
+      
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 0.75em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="6" height="6" fill="#10B981"/>
+          <rect x="12" y="2" width="6" height="6" fill="#1D4ED8"/>
+          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Community Governance
+      </h3>
+      <p>
+        Dash Chat's Community Partners and the Darksoil team are developing a community governance model to ensure that the project is being built with, not just for, the primary stakeholders. A group of representatives of different stakeholder communities and organizations will guide Dash Chat's roadmap, and ensure that as Dash Chat is initially formed, and as it evolves, it does so in relationship with the people using it. <br><br>We are actively seeking Community Partners to participate in sharing their needs, testing Dash Chat, and/or participating in it's Governance; if you're interested, please <a href="#stay-connected">get in touch below</a>.
+      </p>
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 0.75em 0; display: flex; align-items: center; gap: 0.5em;">
+        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
+          <rect x="2" y="2" width="6" height="6" fill="#1D4ED8"/>
+          <rect x="12" y="2" width="6" height="6" fill="#10B981"/>
+          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
+        </svg>
+        Current Roadmap
+      </h3>
+      <div style="display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 12px;">
+        <div class="stage-chip stage-pre" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Pre‑Alpha</span>
+          <span style="display:inline-flex; align-items:center; gap:4px; color:#1D4ED8; font-weight:600;">
+            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h10M10 4l6 6-6 6" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Now
+          </span>
+        </div>
+        <div class="stage-chip stage-alpha" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Alpha</span>
+          <span style="color:#6b7280;">Late 2025</span>
+        </div>
+        <div class="stage-chip stage-beta" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
+          <span style="font-weight:600; color:#111;">Beta</span>
+          <span style="color:#6b7280;">Mid 2026</span>
+        </div>
+      </div>
+      <div style="border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px; padding: 16px; background: var(--card-background, #fff); display: grid; gap: 18px;">
+        <div>
+          <div style="font-weight: 800; font-size: 1.2em; color: #F59E0B; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#F59E0B"/><rect x="11" y="11" width="7" height="7" fill="#FCD34D"/></svg>
+            Past
+          </div>
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
+            <li>User research</li>
+            <li>Community needs assessment</li>
+            <li>Secure ephemeral relay service</li>
+            <li>Push notifications</li>
+            <li>p2p networking integration</li>
+            <li>Linked devices</li>
+            <li>Android, Mac, Linux, Windows</li>
+            <li>WiFi</li>
+            <li>Google Play Store</li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-weight: 800; font-size: 1.2em; color: #60A5FA; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#60A5FA"/><circle cx="14" cy="14" r="4" fill="#BFDBFE"/></svg>
+            In Progress
+          </div>
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
+            <li>UI/UX design</li>
+            <li>Usability testing</li>
+            <li>Visual identity</li>
+            <li>Publish research report</li>
+            <li>Community testing</li>
+            <li>Community Governance</li>
+            <li>Community Partners</li>
+            <li>Bluetooth</li>
+            <li>iOS (beta version)</li>
+            <li>Group invite links</li>
+            <li>Bridging between shutdowns and internet<div style="font-size: 0.9em; color: #6b7280;">Starlink, satellite, etc.</div></li>
+          </ul>
+        </div>
+        <div>
+          <div style="font-weight: 800; font-size: 1.2em; color: #10B981; display:flex; align-items:center; gap:6px; margin-bottom: 8px;">
+            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 18,18 2,18" fill="#10B981"/></svg>
+            Future
+          </div>
+          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
+            <li>Emergency relay mode</li>
+            <li>Build and field-test prototype</li>
+            <li>Voice messages</li>
+            <li>File sharing</li>
+            <li>Security features<div style="font-size: 0.9em; color: #6b7280;">disappearing messages, hidden chats, etc.</div></li>
+            <li>Apple App Store</li>
+            <li>Localize app in more languages</li>
+            <li>Raspberry pi relay nodes</li>
+            <li>Research alternative networks<div style="font-size: 0.9em; color: #6b7280;">Ham radio, reticulum, WiFi aware, etc.</div></li>
+          </ul>
+        </div>
+      </div>
+
+      <h3 id="stay-connected" style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <circle cx="5" cy="10" r="3" fill="#1D4ED8"/>
           <circle cx="15" cy="6" r="3" fill="#F59E0B"/>
@@ -315,19 +245,19 @@
         <input type="email" id="email" name="email" required placeholder="Email*" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
         <input type="text" id="name" name="name" placeholder="Name (optional)" style="padding: 0.5em; border: 1px solid #ccc; border-radius: 4px;">
 
-        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I’d like to…</div>
+        <div style="margin-top: 0.25em; font-weight: 600; font-size: 0.95em;">I'd like to…</div>
         <div style="display: flex; flex-direction: column; gap: 0.5em;">
+          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
+            <input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" style="margin: 0;">
+            <span>Receive Newsletter</span>
+          </label>
           <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
             <input type="checkbox" id="opt_test" name="test" value="yes" style="margin: 0;">
             <span>Test Dash Chat</span>
           </label>
           <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
-            <input type="checkbox" id="opt_pilot" name="pilot" value="yes" style="margin: 0;">
-            <span>Pilot Dash Chat with my community</span>
-          </label>
-          <label style="display: flex; align-items: center; gap: 0.5em; cursor: pointer;">
             <input type="checkbox" id="opt_partner" name="partner" value="yes" style="margin: 0;">
-            <span>Partner or fund</span>
+            <span>Explore Partnership</span>
           </label>
         </div>
 
@@ -338,118 +268,23 @@
 
         <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
 
-        <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc; background:#f3f4f6; color:#111; border-radius:8px; padding:10px 12px; font-weight:600;"
+        <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc; background: #f3f4f6; color: #111; border-radius: 8px; padding: 10px 12px; font-weight: 600;"
           onmouseover="this.style.background='#93C5FD'; this.style.color='#1D4ED8'; this.style.border='1px solid #93C5FD'"
           onmouseout="this.style.background='#f3f4f6'; this.style.color='#111'; this.style.border='1px solid #ccc'"
           onmousedown="this.style.background='#60A5FA'; this.style.color='#1D4ED8'; this.style.border='1px solid #1D4ED8'"
           onmouseup="this.style.background='#93C5FD'; this.style.color='#1D4ED8'; this.style.border='1px solid #93C5FD'"
         >Connect</button>
       </form>
-    </header>
-
-    <rocket-content-area>
-      <div style="position: relative;">
-        <h1 style="font-family: 'Rubik', sans-serif; font-size: 2.6em; font-weight: 600; margin-bottom: 0.1em;">Dash Chat</h1>
+      <div id="formSuccess" style="display:none; max-width: 400px; margin: 0.5em 0 2em 0; padding: 16px; border: 1px solid #e5e7eb; border-radius: 8px; background: #f8fafc; color: #111; text-align: left;">
+        <div style="font-weight: 600; margin-bottom: 8px;">Thanks for connecting!</div>
+        <div>We received your info and will be in touch.</div>
       </div>
-      <h2 style="font-family: 'Rubik', sans-serif; font-size: 1.4em; font-weight: 500; line-height: 1.4; margin-top: 0.1em !important; padding-bottom: 24px; margin-bottom: 1em !important; text-align: center !important;">Secure chat,<br>
-        <span aria-hidden="true" style="display: inline-block; margin: 0.25em 0; width: 100%; text-align: center;">
-          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
-            <circle cx="7" cy="7" r="6" fill="#10B981"/>
-            <rect x="16" y="5" width="12" height="4" fill="#1D4ED8"/>
-            <polygon points="34,3 42,7 34,11" fill="#E11D48"/>
-          </svg>
-        </span><br>
-        like Signal,<br>
-        <span aria-hidden="true" style="display: inline-block; margin: 0.25em 0; width: 100%; text-align: center;">
-          <svg width="44" height="14" viewBox="0 0 44 14" role="img" aria-label="decorative separator">
-            <rect x="0" y="6" width="16" height="2" fill="#1D4ED8"/>
-            <circle cx="24" cy="7" r="5" fill="#F59E0B"/>
-            <rect x="32" y="4" width="12" height="6" fill="#10B981"/>
-          </svg>
-        </span><br>
-        with or without internet
-      </h2>
-      <div style="display: flex; justify-content: center; margin: 0.2em 0 1em 0;">
-        <div aria-label="project stage" style="font-family: 'Rubik', sans-serif; font-weight: 600; font-size: 1.2em; padding: 8px 14px; background: var(--card-background, #fff); color: var(--text-color, #111); border: 1px solid var(--border-color, #e5e7eb); border-radius: 8px;">Currently in Pre‑Alpha</div>
-      </div>
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <rect x="2" y="14" width="10" height="3" fill="#1D4ED8"/>
-          <circle cx="6" cy="6" r="4" fill="#10B981"/>
-          <polygon points="16,4 18,10 12,10" fill="#E11D48"/>
-        </svg>
-        Dash Chat is . . .
-      </h3>
-      <p>
-        an end to end encrypted messenger that works with internet, without internet and bridges between the two. As long as there is a way for devices to communicate with each other, Dash Chat works.
-      </p>
-      <p>
-        With internet shutdowns increasing worldwide, secure and reliable communication without dependence on stable internet is becoming ever more essential.
-      </p>
 
       
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <circle cx="6" cy="6" r="5" fill="#1D4ED8"/>
-          <polygon points="14,3 18,3 16,7" fill="#F59E0B"/>
-        </svg>
-        Usability
-      </h3>
-      <p>
-        Usability is the starting point for an impactful tool. If it's not usable, it doesn't matter how secure it is, or how resilient the network. Usability is crucial for adoption and for making it easy for people to enter into and establish more secure and resilient infrastructure.
-      </p>
-      <p>
-        We’re conducting extensive user research and UI/UX design with <a href="https://decentdesign.org" target="_blank" rel="noopener">Decent Design</a>, supported by OTF’s User Experience and Discovery Lab. Our research carefully addresses specific needs, contexts, and user priorities, ensuring we develop technology transparently and responsibly.
-      </p>
-
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <rect x="2" y="4" width="16" height="3" fill="#1D4ED8"/>
-          <rect x="2" y="9" width="16" height="3" fill="#F59E0B"/>
-          <rect x="2" y="14" width="16" height="3" fill="#10B981"/>
-        </svg>
-        Reliability
-      </h3>
-      <p>
-        Dash Chat works seamlessly when the internet is working, and when the internet shuts down, it continues to function through any other network connection. Whether you're on the same WiFi network, the same university campus, or in the same protest on the street in a Bluetooth environment, Dash Chat maintains connectivity and functionality.
-      </p>
-
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <rect x="3" y="3" width="8" height="8" fill="#E63946"/>
-          <circle cx="14" cy="14" r="4" fill="#10B981"/>
-        </svg>
-        Security
-      </h3>
-      <p>
-        Dash Chat is built with end-to-end encryption and advanced security features to protect users' communications. We're using robust encryption protocols and security measures to ensure that messages remain private and secure, even in challenging network environments.
-      </p>
       
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 0.75em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <rect x="2" y="2" width="6" height="6" fill="#1D4ED8"/>
-          <rect x="12" y="2" width="6" height="6" fill="#10B981"/>
-          <rect x="7" y="12" width="6" height="6" fill="#F59E0B"/>
-        </svg>
-        Roadmap
-      </h3>
-      <div style="display:flex; flex-wrap: wrap; gap: 10px; align-items:center; margin-bottom: 12px;">
-        <div class="stage-chip stage-pre" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
-          <span style="font-weight:600; color:#111;">Pre‑Alpha</span>
-          <span style="display:inline-flex; align-items:center; gap:4px; color:#1D4ED8; font-weight:600;">
-            <svg width="14" height="14" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h10M10 4l6 6-6 6" fill="none" stroke="#1D4ED8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Now
-          </span>
-        </div>
-        <div class="stage-chip stage-alpha" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
-          <span style="font-weight:600; color:#111;">Alpha</span>
-          <span style="color:#6b7280;">Late 2026</span>
-        </div>
-        <div class="stage-chip stage-beta" style="display:inline-flex; align-items:center; gap:8px; padding:10px 14px; border:none;">
-          <span style="font-weight:600; color:#111;">Beta</span>
-          <span style="color:#6b7280;">Mid 2026</span>
-        </div>
-      </div>
+      
+      
+      
       
       <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
@@ -461,14 +296,17 @@
       </h3>
       <div style="display:flex; align-items:center; justify-content:center; gap: 40px; margin: 0 0 1.5em 0; text-align: center; flex-wrap: wrap;">
         <a href="https://activaterights.org/" target="_blank" rel="noopener noreferrer" title="Visit activaterights.org" style="display: flex; align-items: center; justify-content: center; height: 80px;">
-          <img src="../activate_rights.png" alt="Activate Rights" style="max-width: 200px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
+          <img src="../activate_rights.png" alt="Activate Rights" style="max-width: 160px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
         </a>
         <a href="https://asl19.org/en" target="_blank" rel="noopener noreferrer" title="Visit asl19.org" style="display: flex; align-items: center; justify-content: center; height: 80px;">
-          <img src="../ASL19-English (1).png" alt="ASL19" style="max-width: 200px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
+          <img src="../ASL19-English (1).png" alt="ASL19" style="max-width: 240px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
+        </a>
+        <a href="https://defenddefenders.org/" target="_blank" rel="noopener noreferrer" title="Visit defenddefenders.org" style="display: flex; align-items: center; justify-content: center; height: 80px;">
+          <img src="../DefendDefenders-Complete-Colour.jpg" alt="Defend Defenders" style="max-width: 240px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
         </a>
       </div>
-      
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
+
+      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.5em; font-weight: 700; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
         <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
           <circle cx="6" cy="6" r="5" fill="#1D4ED8"/>
           <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
@@ -477,419 +315,12 @@
       </h3>
       <div style="display:flex; align-items:center; justify-content:center; gap: 40px; margin: 0 0 2em 0; text-align: center; flex-wrap: wrap;">
         <a href="https://www.opentech.fund/" target="_blank" rel="noopener noreferrer" title="Visit opentech.fund" style="display: flex; align-items: center; justify-content: center; height: 80px;">
-          <img src="../otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 200px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
+          <img src="../otf-logo.webp" alt="OTF UXD Lab Logo" style="max-width: 240px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
         </a>
         <a href="https://p2panda.org/" target="_blank" rel="noopener noreferrer" title="Visit p2panda.org" style="display: flex; align-items: center; justify-content: center; height: 80px;">
-          <img src="../p2pandalogo.png" alt="p2panda Logo" style="max-width: 280px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
+          <img src="../p2pandalogo.png" alt="p2panda Logo" style="max-width: 240px; max-height: 80px; width: auto; height: auto; object-fit: contain;" />
         </a>
       </div>
-      <div style="border: 1px solid #e5e7eb; border-radius: 8px; padding: 16px; background: #fff; display: grid; gap: 18px;">
-        <div>
-          <div style="font-weight: 700; color: #F59E0B; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><circle cx="6" cy="6" r="5" fill="#F59E0B"/><rect x="11" y="11" width="7" height="7" fill="#FCD34D"/></svg>
-            Past
-          </div>
-          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
-            <li>User research</li>
-            <li>Community needs assessment</li>
-            <li>Secure ephemeral relay service</li>
-            <li>Push notifications</li>
-            <li>p2p networking integration</li>
-            <li>Linked devices</li>
-            <li>Android, Mac, Linux</li>
-            <li>WiFi</li>
-            <li>Google Play Store</li>
-          </ul>
-        </div>
-        <div>
-          <div style="font-weight: 700; color: #60A5FA; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><rect x="2" y="2" width="7" height="7" fill="#60A5FA"/><circle cx="14" cy="14" r="4" fill="#BFDBFE"/></svg>
-            In progress
-          </div>
-          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
-            <li>UI/UX design</li>
-            <li>Usability testing</li>
-            <li>Visual identity</li>
-            <li>Publish research report</li>
-            <li>Community testing</li>
-            <li>Community Governance</li>
-            <li>Community Partners</li>
-            <li>Bluetooth</li>
-            <li>iOS (beta version), Windows</li>
-            <li>Group invite links</li>
-            <li>Bridging between shutdowns and internet<div style="font-size: 0.9em; color: #6b7280;">Starlink, satellite, etc.</div></li>
-          </ul>
-        </div>
-        <div>
-          <div style="font-weight: 700; color: #10B981; display:flex; align-items:center; gap:6px; margin-bottom: 6px;">
-            <svg width="16" height="16" viewBox="0 0 20 20" aria-hidden="true"><polygon points="10,2 18,18 2,18" fill="#10B981"/></svg>
-            Future
-          </div>
-          <ul style="margin: 0; padding-left: 20px; line-height: 1.55;">
-            <li>Emergency relay mode</li>
-            <li>Build and field-test prototype</li>
-            <li>Voice messages</li>
-            <li>File sharing</li>
-            <li>Security features<div style="font-size: 0.9em; color: #6b7280;">disappearing messages, hidden chats, etc.</div></li>
-            <li>Apple App Store</li>
-            <li>Localize app in more languages</li>
-            <li>Raspberry pi relay nodes</li>
-            <li>Research alternative networks<div style="font-size: 0.9em; color: #6b7280;">Ham radio, reticulum, WiFi aware, etc.</div></li>
-          </ul>
-        </div>
-      </div>
-          <defs>
-            <style>
-              .rm-label { font: 14px 'Rubik', sans-serif; fill: #111; }
-              .rm-label-small { font: 12.5px 'Rubik', sans-serif; fill: #111; }
-              .rm-muted { fill: #6b7280; }
-              .rm-checked { fill: #065f46; }
-            </style>
-          </defs>
-          <!-- baseline -->
-          <line x1="60" y1="220" x2="1140" y2="220" stroke="#d1d5db" stroke-width="5" />
-
-          <!-- major stages: Past, Now, Future -->
-          <!-- Past -->
-          <line x1="180" y1="220" x2="180" y2="150" stroke="#6b7280" stroke-width="2" />
-          <circle cx="180" cy="220" r="11" fill="#6b7280" />
-          <g transform="translate(180,140) rotate(-18)">
-            <text class="rm-label" text-anchor="middle">Past</text>
-          </g>
-
-          <!-- Now -->
-          <line x1="600" y1="220" x2="600" y2="150" stroke="#1D4ED8" stroke-width="2" />
-          <circle cx="600" cy="220" r="18" fill="none" stroke="#1D4ED8" stroke-width="6" opacity="0.15" />
-          <circle cx="600" cy="220" r="11" fill="#1D4ED8" />
-          <g transform="translate(600,140) rotate(-18)">
-            <text class="rm-label" text-anchor="middle">Now — you are here</text>
-          </g>
-
-          <!-- Future -->
-          <line x1="1000" y1="220" x2="1000" y2="150" stroke="#10B981" stroke-width="2" />
-          <circle cx="1000" cy="220" r="11" fill="#10B981" />
-          <g transform="translate(1000,140) rotate(-18)">
-            <text class="rm-label" text-anchor="middle">Future</text>
-          </g>
-
-          <!-- Pre-Alpha items (left cluster) -->
-          <!-- Checked items -->
-          <g>
-            <line x1="90" y1="220" x2="90" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="90" y1="260" x2="70" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="90" cy="220" r="4" fill="#059669" />
-            <g transform="translate(70,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Community needs assessment / User research / Contextual research</text>
-            </g>
-
-            <line x1="120" y1="220" x2="120" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="120" y1="260" x2="110" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="120" cy="220" r="4" fill="#059669" />
-            <g transform="translate(110,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Secure ephemeral relay service</text>
-            </g>
-
-            <line x1="150" y1="220" x2="150" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="150" y1="260" x2="160" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="150" cy="220" r="4" fill="#059669" />
-            <g transform="translate(160,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Push notifications</text>
-            </g>
-
-            <line x1="180" y1="220" x2="180" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="180" y1="260" x2="200" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="180" cy="220" r="4" fill="#059669" />
-            <g transform="translate(200,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ p2p networking integration</text>
-            </g>
-
-            <line x1="210" y1="220" x2="210" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="210" y1="260" x2="240" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="210" cy="220" r="4" fill="#059669" />
-            <g transform="translate(240,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Linked devices</text>
-            </g>
-
-            <line x1="240" y1="220" x2="240" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="240" y1="260" x2="270" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="240" cy="220" r="4" fill="#059669" />
-            <g transform="translate(270,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Android, Mac, Linux, Windows</text>
-            </g>
-
-            <line x1="270" y1="220" x2="270" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="270" y1="260" x2="300" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="270" cy="220" r="4" fill="#059669" />
-            <g transform="translate(300,320) rotate(-18)">
-              <text class="rm-label-small rm-checked" text-anchor="middle">✓ Google Play Store (alpha)</text>
-            </g>
-
-            <!-- Upcoming in Pre-Alpha -->
-            <line x1="300" y1="220" x2="300" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="300" y1="260" x2="330" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="300" cy="220" r="4" fill="#374151" />
-            <g transform="translate(330,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">UI/UX design</text>
-            </g>
-
-            <line x1="330" y1="220" x2="330" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="330" y1="260" x2="360" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="330" cy="220" r="4" fill="#374151" />
-            <g transform="translate(360,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Usability testing</text>
-            </g>
-
-            <line x1="360" y1="220" x2="360" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="360" y1="260" x2="390" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="360" cy="220" r="4" fill="#374151" />
-            <g transform="translate(390,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Visual identity</text>
-            </g>
-
-            <line x1="390" y1="220" x2="390" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="390" y1="260" x2="420" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="390" cy="220" r="4" fill="#374151" />
-            <g transform="translate(420,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Bluetooth</text>
-            </g>
-
-            <line x1="420" y1="220" x2="420" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="420" y1="260" x2="450" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="420" cy="220" r="4" fill="#374151" />
-            <g transform="translate(450,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">iOS</text>
-            </g>
-
-            <line x1="450" y1="220" x2="450" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="450" y1="260" x2="480" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="450" cy="220" r="4" fill="#374151" />
-            <g transform="translate(480,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Group invite links</text>
-            </g>
-
-            <line x1="480" y1="220" x2="480" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="480" y1="260" x2="510" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="480" cy="220" r="4" fill="#374151" />
-            <g transform="translate(510,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Routing messages in/out of shutdown zones</text>
-            </g>
-          </g>
-
-          <!-- Alpha items (center cluster) -->
-          <g>
-            <line x1="540" y1="220" x2="540" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="540" cy="220" r="4" fill="#374151" />
-            <g transform="translate(540,300) rotate(-24)">
-              <text class="rm-label-small rm-muted" text-anchor="middle">Includes</text>
-            </g>
-
-            <line x1="570" y1="220" x2="570" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="570" cy="220" r="4" fill="#374151" />
-            <g transform="translate(570,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">Bluetooth</text>
-            </g>
-
-            <line x1="600" y1="220" x2="600" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="600" cy="220" r="4" fill="#374151" />
-            <g transform="translate(600,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">iOS</text>
-            </g>
-
-            <line x1="630" y1="220" x2="630" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="630" cy="220" r="4" fill="#374151" />
-            <g transform="translate(630,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">Group invite links</text>
-            </g>
-
-            <line x1="660" y1="220" x2="660" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="660" cy="220" r="4" fill="#374151" />
-            <g transform="translate(660,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">Routing messages in/out of shutdown zones</text>
-            </g>
-
-            <line x1="690" y1="220" x2="690" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="690" cy="220" r="4" fill="#374151" />
-            <g transform="translate(690,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">UI/UX design</text>
-            </g>
-
-            <line x1="720" y1="220" x2="720" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="720" cy="220" r="4" fill="#374151" />
-            <g transform="translate(720,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">Usability testing</text>
-            </g>
-
-            <line x1="750" y1="220" x2="750" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <circle cx="750" cy="220" r="4" fill="#374151" />
-            <g transform="translate(750,300) rotate(-24)">
-              <text class="rm-label-small" text-anchor="middle">Visual identity</text>
-            </g>
-          </g>
-
-          <!-- Beta items (right cluster) -->
-          <g>
-            <line x1="940" y1="220" x2="940" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="940" y1="260" x2="920" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="940" cy="220" r="4" fill="#374151" />
-            <g transform="translate(920,320) rotate(-18)">
-              <text class="rm-label-small rm-muted" text-anchor="middle">Targets</text>
-            </g>
-
-            <line x1="970" y1="220" x2="970" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="970" y1="260" x2="950" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="970" cy="220" r="4" fill="#374151" />
-            <g transform="translate(950,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Raspberry Pi always-online nodes</text>
-            </g>
-
-            <line x1="1000" y1="220" x2="1000" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1000" y1="260" x2="1000" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1000" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1000,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Emergency relay / Local mode</text>
-            </g>
-
-            <line x1="1030" y1="220" x2="1030" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1030" y1="260" x2="1050" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1030" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1050,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Voice messages</text>
-            </g>
-
-            <line x1="1060" y1="220" x2="1060" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1060" y1="260" x2="1090" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1060" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1090,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">File sharing</text>
-            </g>
-
-            <line x1="1090" y1="220" x2="1090" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1090" y1="260" x2="1120" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1090" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1120,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Security features (disappearing messages, hidden chats, etc.)</text>
-            </g>
-
-            <line x1="1120" y1="220" x2="1120" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1120" y1="260" x2="1150" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1120" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1150,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Apple App Store</text>
-            </g>
-
-            <line x1="1150" y1="220" x2="1150" y2="260" stroke="#9ca3af" stroke-width="1.5" />
-            <line x1="1150" y1="260" x2="1180" y2="300" stroke="#9ca3af" stroke-width="1" />
-            <circle cx="1150" cy="220" r="4" fill="#374151" />
-            <g transform="translate(1180,320) rotate(-18)">
-              <text class="rm-label-small" text-anchor="middle">Field usability testing (offline, secure backups, encryptions)</text>
-            </g>
-          </g>
-        </svg>
-      </div>
-
-      <h3 style="font-family: 'Rubik', sans-serif; font-size: 1.3em; font-weight: 500; margin: 2em 0 1em 0; display: flex; align-items: center; gap: 0.5em;">
-        <svg width="20" height="20" viewBox="0 0 20 20" aria-hidden="true" focusable="false">
-          <circle cx="6" cy="6" r="5" fill="#E63946"/>
-          <rect x="12" y="10" width="6" height="6" fill="#F59E0B"/>
-        </svg>
-        Team & Advisors
-      </h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1em; align-items: start;">
-        <div style="text-align: left;">
-          <img src="eric_bw_circle_smile.png" alt="Eric Bear" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
-          <div style="font-weight: 600;">Eric Bear</div>
-          <div style="font-size: 0.9em; color: #666;">Lead</div>
-        </div>
-        <div style="text-align: left;">
-          <img src="guillem_bw.png" alt="Guillem Córdoba" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
-          <div style="font-weight: 600;">Guillem Córdoba</div>
-          <div style="font-size: 0.9em; color: #666;">Engineering</div>
-        </div>
-        <div style="text-align: left;">
-          <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display: flex; align-items: center; justify-content: center; margin: 0 0 0.5em 0;">
-            <svg width="72" height="72" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
-              <rect x="4" y="36" width="24" height="24" fill="#E63946"/>
-              <circle cx="48" cy="24" r="16" fill="#1D4ED8"/>
-              <polygon points="12,8 32,8 22,24" fill="#F59E0B"/>
-            </svg>
-          </div>
-          <div style="font-weight: 600;">Jun Nguyen</div>
-          <div style="font-size: 0.9em; color: #666;">UI/UX Design & Research</div>
-        </div>
-        <div style="text-align: left;">
-          <img src="viktor_bw_circle.png" alt="Viktor Zaunders" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
-          <div style="font-weight: 600;">Viktor Zaunders</div>
-          <div style="font-size: 0.9em; color: #666;">Operations</div>
-        </div>
-        <div style="text-align: left;">
-          <img src="michael_bw.png" alt="Michael Dougherty" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover; display: block; margin: 0 0 0.5em 0;" />
-          <div style="font-weight: 600;">Michael Dougherty</div>
-          <div style="font-size: 0.9em; color: #666;">Engineering</div>
-        </div>
-      </div>
-
-      <div style="margin-top: 1.5em;">
-        <div style="font-weight: 600; margin-bottom: 0.5em;">Advisors</div>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1em; align-items: start;">
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <circle cx="7" cy="7" r="5" fill="#1D4ED8"/>
-                <rect x="12" y="12" width="8" height="8" fill="#E63946"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Andreas Dzialocha</div>
-              <div style="font-size: 0.9em; color: #666;">p2panda, Delta Chat</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <polygon points="11,2 20,18 2,18" fill="#F59E0B"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Holmes Wilson</div>
-              <div style="font-size: 0.9em; color: #666;">Quiet</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <rect x="3" y="3" width="10" height="10" fill="#10B981"/>
-                <circle cx="16" cy="16" r="5" fill="#1D4ED8"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Stacey Tsui</div>
-              <div style="font-size: 0.9em; color: #666;">Security Trainer</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <div style="width: 60px; height: 60px; border-radius: 50%; background: #e9ecef; display:flex; align-items:center; justify-content:center;">
-              <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" focusable="false">
-                <rect x="2" y="4" width="18" height="3" fill="#E63946"/>
-                <rect x="2" y="10" width="18" height="3" fill="#F59E0B"/>
-                <rect x="2" y="16" width="18" height="3" fill="#1D4ED8"/>
-              </svg>
-            </div>
-            <div>
-              <div style="font-weight: 600;">Scott Garrison</div>
-              <div style="font-size: 0.9em; color: #666;">Disaster.Radio</div>
-            </div>
-          </div>
-          <div style="display: flex; align-items: center; gap: 0.75em;">
-            <img src="../shoeb.jpeg" alt="Shoeb Abdullah" style="width: 60px; height: 60px; border-radius: 50%; object-fit: cover;" />
-            <div>
-              <div style="font-weight: 600;">Shoeb Abdullah</div>
-              <div style="font-size: 0.9em; color: #666;">Activate Rights</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      
     </rocket-content-area>
 
     <footer>
@@ -911,82 +342,56 @@
 
       registerCustomElements();
       import "../custom-social-link.js";
-    </script>
-    <script>
-      document.addEventListener('DOMContentLoaded', () => {
-        const hamburger = document.querySelector('.hamburger-menu');
-        const mobileOverlay = document.querySelector('.mobile-menu-overlay');
-        const closeMobileMenu = document.querySelector('.close-mobile-menu');
-        const dropdown = document.querySelector('.dropdown');
-        const dropdownToggle = document.querySelector('.dropdown-toggle');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
+      import { initializeSharedMenu } from '../shared-menu.js';
+      // Initialize menu interactions (hamburger, overlay)
+      initializeSharedMenu();
 
-        // Mobile dropdown
-        const mobileDropdown = document.querySelector('.mobile-dropdown');
-        const mobileDropdownToggle = mobileDropdown?.querySelector('.dropdown-toggle');
-        const mobileDropdownMenu = mobileDropdown?.querySelector('.dropdown-menu');
+      // Header is inlined, no runtime DOM rewrites needed
 
-        // Hamburger opens overlay
-        if (hamburger && mobileOverlay) {
-          hamburger.addEventListener('click', () => {
-            mobileOverlay.classList.add('open');
-            hamburger.setAttribute('aria-expanded', true);
-            document.body.classList.add('mobile-menu-open');
-          });
+      // Conditional textarea for pilot/partner
+      const pilot = document.getElementById('opt_pilot');
+      const partner = document.getElementById('opt_partner');
+      const details = document.getElementById('pilotPartnerDetails');
+      function toggleDetails() {
+        if ((pilot && pilot.checked) || (partner && partner.checked)) {
+          details.style.display = 'block';
+        } else {
+          details.style.display = 'none';
         }
-        if (closeMobileMenu && mobileOverlay) {
-          closeMobileMenu.addEventListener('click', () => {
-            mobileOverlay.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', false);
-            document.body.classList.remove('mobile-menu-open');
-          });
-        }
-        // Close overlay when clicking outside nav
-        mobileOverlay.addEventListener('click', (e) => {
-          if (e.target === mobileOverlay) {
-            mobileOverlay.classList.remove('open');
-            hamburger.setAttribute('aria-expanded', false);
-            document.body.classList.remove('mobile-menu-open');
+      }
+      pilot?.addEventListener('change', toggleDetails);
+      partner?.addEventListener('change', toggleDetails);
+
+      // Inline submit success
+      const form = document.getElementById('stayConnectedForm');
+      const successBox = document.getElementById('formSuccess');
+      form?.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (typeof grecaptcha !== 'undefined') {
+          const token = grecaptcha.getResponse();
+          if (!token) {
+            alert('Please complete the reCAPTCHA.');
+            return;
           }
-        });
-
-        // Mobile dropdown logic
-        if (mobileDropdown && mobileDropdownToggle && mobileDropdownMenu) {
-          mobileDropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            mobileDropdown.classList.toggle('open');
-          });
-          mobileDropdownMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-              mobileOverlay.classList.remove('open');
-              hamburger.setAttribute('aria-expanded', false);
-              document.body.classList.remove('mobile-menu-open');
-              mobileDropdown.classList.remove('open');
-            });
-          });
         }
-
-        // Desktop dropdown logic only
-        if (dropdown && dropdownToggle && dropdownMenu) {
-          dropdownToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            e.stopPropagation();
-            dropdown.classList.toggle('open');
+        const fd = new FormData(form);
+        try {
+          const resp = await fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: fd,
           });
-          document.addEventListener('click', (e) => {
-            if (!dropdown.contains(e.target)) {
-              dropdown.classList.remove('open');
-            }
-          });
-          dropdownMenu.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-              dropdown.classList.remove('open');
-            });
-          });
+          if (resp.ok) {
+            form.style.display = 'none';
+            successBox.style.display = 'block';
+            if (typeof grecaptcha !== 'undefined') { grecaptcha.reset(); }
+          } else {
+            alert('Sorry, there was a problem sending your message. Please try again.');
+          }
+        } catch (err) {
+          alert('Network error. Please try again.');
         }
       });
     </script>
   </body>
 </html>
-
