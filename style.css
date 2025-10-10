@@ -1095,4 +1095,11 @@ rocket-content-area .example li {
     --link-color: #8ab4f8;
     --hover-surface: #1f2937;
   }
+  
+  /* Add white background behind p2panda logo in dark mode */
+  img[alt="p2panda Logo"] {
+    background-color: white;
+    border-radius: 4px;
+    padding: 2px 1px 2px 2px;
+  }
 }
