@@ -196,6 +196,20 @@
         transition: background 0.15s;
       }
       form .submit-btn:hover { background: var(--accent-hover); }
+      .form-label { font-weight: 600; font-size: 0.95rem; }
+      .form-checkboxes {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .form-checkboxes label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+        font-size: 0.95rem;
+      }
+      .form-checkboxes label input { margin: 0; }
 
       #formSuccess {
         display: none;
@@ -320,10 +334,21 @@
         <p class="lead">Dash Chat is in active development, currently in testing with partners and community members. If you're interested in testing it, building it for your context, or just want to know when it's ready — get in touch.</p>
 
         <form action="https://submit-form.com/x8wivjMPt" method="POST" id="stayConnectedForm">
-          <input type="text" id="name" name="name" placeholder="Name" required />
-          <input type="email" id="email" name="email" placeholder="Email" required />
-          <input type="text" id="organization" name="organization" placeholder="Organization (optional)" />
-          <textarea id="context" name="context" placeholder="Tell us about your context"></textarea>
+          <input type="email" id="email" name="email" required placeholder="Email*" />
+          <input type="text" id="name" name="name" placeholder="Name (optional)" />
+
+          <div class="form-label">I'd like to…</div>
+          <div class="form-checkboxes">
+            <label><input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" /><span>Receive Newsletter</span></label>
+            <label><input type="checkbox" id="opt_test" name="test" value="yes" /><span>Test Dash Chat</span></label>
+            <label><input type="checkbox" id="opt_partner" name="partner" value="yes" /><span>Explore Partnership</span></label>
+          </div>
+
+          <div id="pilotPartnerDetails" style="display: none;">
+            <div class="form-label" style="margin-bottom: 6px;">Tell us a bit?</div>
+            <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind."></textarea>
+          </div>
+
           <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
           <button type="submit" class="submit-btn">Send &rarr;</button>
         </form>
@@ -431,6 +456,15 @@
 
     <script>
       (function () {
+        var test = document.getElementById('opt_test');
+        var partner = document.getElementById('opt_partner');
+        var details = document.getElementById('pilotPartnerDetails');
+        function toggleDetails() {
+          details.style.display = (test && test.checked) || (partner && partner.checked) ? 'block' : 'none';
+        }
+        if (test) test.addEventListener('change', toggleDetails);
+        if (partner) partner.addEventListener('change', toggleDetails);
+
         var form = document.getElementById('stayConnectedForm');
         var successBox = document.getElementById('formSuccess');
         if (!form) return;
