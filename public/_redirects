@@ -1,0 +1,12 @@
+# All routes show the landing page while site is being redone
+/contact / 200
+/corri / 200
+/bouy-os / 200
+/dashchat / 200
+/roadmap / 200
+/drapac / 200
+/people / 200
+/blog / 200
+
+# Catch-all: any other path serves the landing page
+/* /index.html 200
