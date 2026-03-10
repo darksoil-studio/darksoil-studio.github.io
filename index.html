@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Dash Chat</title>
     <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
       :root {
         --bg: #fcfcfc;
@@ -359,7 +359,7 @@
             <textarea id="details" name="details" rows="4" placeholder="Org/group, size, Android/iOS mix, what you have in mind."></textarea>
           </div>
 
-          <!-- <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div> -->
+          <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
           <button type="submit" class="submit-btn">Send &rarr;</button>
         </form>
 
@@ -481,13 +481,16 @@
 
         form.addEventListener('submit', function (e) {
           e.preventDefault();
-          // if (typeof grecaptcha !== 'undefined') {
-          //   var token = grecaptcha.getResponse();
-          //   if (!token) { alert('Please complete the reCAPTCHA.'); return; }
-          // }
+          if (typeof grecaptcha !== 'undefined') {
+            var token = grecaptcha.getResponse();
+            if (!token) { alert('Please complete the reCAPTCHA.'); return; }
+          }
           var fd = new FormData(form);
           var data = {};
           fd.forEach(function (value, key) { data[key] = value; });
+          if (typeof grecaptcha !== 'undefined') {
+            data['g-recaptcha-response'] = grecaptcha.getResponse();
+          }
           fetch(form.action, {
             method: 'POST',
             headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
@@ -497,7 +500,7 @@
               if (resp.ok) {
                 form.style.display = 'none';
                 successBox.style.display = 'block';
-                // if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
               } else {
                 alert('Sorry, there was a problem. Please try again.');
               }
