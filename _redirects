@@ -1,11 +1,12 @@
-# Clean URLs - redirect requests without .html to .html files
-/contact /contact.html 200
-/corri /corri.html 200
-/bouy-os /bouy-os.html 200
-/dashchat /dashchat.html 200
-/roadmap /roadmap.html 200
-/drapac /drapac.html 200
-/people /people/index.html 200
+# All routes show the landing page while site is being redone
+/contact / 200
+/corri / 200
+/bouy-os / 200
+/dashchat / 200
+/roadmap / 200
+/drapac / 200
+/people / 200
+/blog / 200
 
-# Handle 404s gracefully
-/* /index.html 404
+# Catch-all: any other path serves the landing page
+/* /index.html 200

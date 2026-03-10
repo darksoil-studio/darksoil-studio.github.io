@@ -1,217 +1,464 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
+    <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Dash Chat</title>
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
     <style>
-      /* Critical CSS to prevent FOUC */
       :root {
-        --theme-primary: #333;
-        --theme-on-primary: #fcfcfc;
-        --theme-secondary: #555;
-        --default-headline-color: black;
-        --background-color: #fcfcfc;
-        --text-color: black;
-        --muted-text-color: #333;
-        --border-color: #eee;
-        --card-background: #fff;
-        --link-color: #1a0dab;
-        --hover-surface: #f5f5f5;
+        --bg: #fcfcfc;
+        --surface: #fff;
+        --text: #111;
+        --muted: #555;
+        --faint: #888;
+        --border: #e5e7eb;
+        --input-bg: #fff;
+        --accent: #1D4ED8;
+        --accent-hover: #1e40af;
+        --accent-light: #dbeafe;
       }
-      
       @media (prefers-color-scheme: dark) {
         :root {
-          --background-color: #0b0c0f;
-          --text-color: #e5e7eb;
-          --muted-text-color: #cbd5e1;
-          --border-color: #2a2f3a;
-          --card-background: #111827;
-          --link-color: #8ab4f8;
-          --hover-surface: #1f2937;
+          --bg: #0b0c0f;
+          --surface: #111318;
+          --text: #e5e7eb;
+          --muted: #94a3b8;
+          --faint: #64748b;
+          --border: #1e293b;
+          --input-bg: #0f172a;
+          --accent: #60a5fa;
+          --accent-hover: #93c5fd;
+          --accent-light: #1e3a5f;
         }
       }
-      
-      body { 
-        margin: 0; 
-        font-family: "Rubik", sans-serif; 
-        background-color: var(--background-color, #fcfcfc);
-        color: var(--text-color, black);
-        visibility: hidden;
+
+      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+      html { scroll-behavior: smooth; }
+
+      body {
+        font-family: "Rubik", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.6;
+        -webkit-font-smoothing: antialiased;
       }
-      body.loaded {
-        visibility: visible;
+
+      /* NAV */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: var(--bg);
+        border-bottom: 1px solid var(--border);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
       }
-      rocket-content-area { 
-        display: block; 
-        padding: 20px 40px;
-        max-width: 800px; 
-        margin: 0 auto; 
-        min-height: auto;
+      @supports (backdrop-filter: blur(12px)) {
+        nav { background: color-mix(in srgb, var(--bg) 85%, transparent); }
       }
-      h1 { 
-        margin: 0;
-        font-size: 48px !important;
+      .nav-inner {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 0 24px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .nav-brand {
         font-weight: 600;
-        text-align: center; 
-        padding: 40px 0;
-      }
-      h2 { 
-        text-align: left;
-        font-size: 36px !important;
-        margin-bottom: 28px !important;
-        margin-top: 48px;
-        border-bottom: 1px solid var(--border-color, #eee);
-        padding-bottom: 12px;
-      }
-      p {
-        font-size: 18px;
-        line-height: 1.44;
-        max-width: 800px;
-        color: var(--muted-text-color, #333);
-      }
-      a {
-        color: var(--link-color, #1a0dab);
+        font-size: 1.05rem;
+        color: var(--text);
         text-decoration: none;
       }
-      
-      @media (max-width: 600px) {
-        rocket-content-area {
-          padding: 20px;
-        }
-        h2 {
-          font-size: 28px !important;
-        }
+      .nav-links { display: flex; align-items: center; gap: 20px; }
+      .nav-links a {
+        font-size: 0.9rem;
+        font-weight: 500;
+        color: var(--muted);
+        text-decoration: none;
+        transition: color 0.15s;
+      }
+      .nav-links a:hover { color: var(--text); }
+      .nav-links .gh-link {
+        display: flex;
+        align-items: center;
+        color: var(--muted);
+        transition: color 0.15s;
+      }
+      .nav-links .gh-link:hover { color: var(--text); }
+      .nav-links .gh-link svg { display: block; }
+
+      /* LAYOUT */
+      .container {
+        max-width: 720px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+
+      section { padding: 80px 0; }
+      section + section { border-top: 1px solid var(--border); }
+
+      /* HERO */
+      .hero {
+        padding: 140px 0 80px;
+        text-align: center;
+      }
+      .hero h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        font-weight: 700;
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        margin-bottom: 16px;
+      }
+      .hero .subtitle {
+        font-size: clamp(1.05rem, 2.5vw, 1.25rem);
+        color: var(--muted);
+        max-width: 520px;
+        margin: 0 auto 32px;
+      }
+      .cta {
+        display: inline-block;
+        padding: 12px 28px;
+        font-size: 1rem;
+        font-weight: 600;
+        font-family: inherit;
+        color: #fff;
+        background: var(--accent);
+        border: none;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: background 0.15s;
+        cursor: pointer;
+      }
+      .cta:hover { background: var(--accent-hover); }
+
+      /* HOW IT WORKS */
+      .how h2, .involved h2, .team-section h2 {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 20px;
+      }
+      .how p {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin-bottom: 16px;
+      }
+      .how p:last-child { margin-bottom: 0; }
+
+      /* GET INVOLVED */
+      .involved .lead {
+        color: var(--muted);
+        font-size: 1.05rem;
+        margin-bottom: 32px;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        max-width: 480px;
+      }
+      form input[type="text"],
+      form input[type="email"],
+      form textarea {
+        width: 100%;
+        padding: 10px 12px;
+        font-size: 0.95rem;
+        font-family: inherit;
+        color: var(--text);
+        background: var(--input-bg);
+        border: 1px solid var(--border);
+        border-radius: 6px;
+        outline: none;
+        transition: border-color 0.15s;
+      }
+      form input:focus, form textarea:focus {
+        border-color: var(--accent);
+      }
+      form textarea { resize: vertical; min-height: 100px; }
+      form .submit-btn {
+        align-self: flex-start;
+        padding: 10px 24px;
+        font-size: 0.95rem;
+        font-weight: 600;
+        font-family: inherit;
+        color: #fff;
+        background: var(--accent);
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        transition: background 0.15s;
+      }
+      form .submit-btn:hover { background: var(--accent-hover); }
+
+      #formSuccess {
+        display: none;
+        max-width: 480px;
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: var(--surface);
+      }
+      #formSuccess strong { display: block; margin-bottom: 4px; }
+      #formSuccess span { color: var(--muted); }
+
+      /* TEAM */
+      .team-section h3 {
+        font-size: 1rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--faint);
+        margin-bottom: 20px;
+      }
+      .team-section h3:not(:first-of-type) { margin-top: 48px; }
+      .people-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 24px 20px;
+      }
+      .person {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+      }
+      .person .avatar {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        object-fit: cover;
+        margin-bottom: 8px;
+        background: var(--border);
+      }
+      .person .avatar-placeholder {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        background: var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 8px;
+        overflow: hidden;
+      }
+      .person .name {
+        font-weight: 500;
+        font-size: 0.95rem;
+        line-height: 1.3;
+      }
+      .person .role {
+        color: var(--muted);
+        font-size: 0.85rem;
+        line-height: 1.3;
+      }
+
+      /* FOOTER */
+      footer {
+        border-top: 1px solid var(--border);
+        padding: 32px 24px;
+        text-align: center;
+        font-size: 0.85rem;
+        color: var(--faint);
+      }
+      footer a {
+        color: var(--faint);
+        text-decoration: underline;
+        text-underline-offset: 2px;
+      }
+      footer a:hover { color: var(--muted); }
+
+      @media (max-width: 480px) {
+        .people-grid { grid-template-columns: 1fr; }
+        .hero { padding: 120px 0 60px; }
+        section { padding: 60px 0; }
       }
     </style>
-    <link
-      href="https://fonts.googleapis.com/css?family=Rubik"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <title>Darksoil Studio</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   </head>
   <body>
-    <script>
-      // Show body once everything is fully loaded
-      function showContent() {
-        document.body.classList.add('loaded');
-      }
-      
-      // Wait for both DOM and stylesheets to load
-      if (document.readyState === 'complete') {
-        showContent();
-      } else {
-        window.addEventListener('load', showContent);
-      }
-    </script>
-    <header>
-      <nav class="menu-links">
-        <div class="menu-left">
-          <a href="/" class="home-link">darksoil studio</a>
+
+    <nav>
+      <div class="nav-inner">
+        <a href="#" class="nav-brand">Dash Chat</a>
+        <div class="nav-links">
+          <a href="#get-involved">Get involved</a>
+          <a href="https://github.com/dash-chat" target="_blank" rel="noopener noreferrer" class="gh-link" title="GitHub">
+            <svg width="22" height="22" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+          </a>
         </div>
-        <div class="menu-right">
-          <!-- Desktop Navigation -->
-          <nav class="desktop-nav">
-            <a href="/dashchat">Dash Chat</a>
-            <a href="/people">People</a>
-            <a href="/contact">Connect</a>
-          </nav>
-          
-          <!-- Mobile Menu Button -->
-          <button class="hamburger-menu" aria-label="Open menu" aria-expanded="false">
-            <span></span>
-            <span></span>
-            <span></span>
-          </button>
-          
-          <!-- GitHub Link -->
-          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
-        </div>
-      </nav>
-      
-      <!-- Mobile Menu Overlay -->
-      <div class="mobile-menu-overlay">
-        <button class="close-mobile-menu" aria-label="Close menu">&times;</button>
-        <nav class="mobile-menu-content">
-          <a href="/dashchat">Dash Chat</a>
-          <a href="/people">People</a>
-          <a href="/contact">Connect</a>
-        </nav>
       </div>
-    </header>
+    </nav>
 
-    <rocket-content-area>
-      <h1>darksoil studio</h1>
-    </rocket-content-area>
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <h1>Stay connected<br>when systems fail.</h1>
+        <p class="subtitle">Secure messaging that keeps working when the internet doesn't.</p>
+        <a href="#get-involved" class="cta">Get involved &rarr;</a>
+      </div>
+    </section>
 
-    <rocket-content-area>
-      <h2 id="what-we-do">What We Do</h2>
-      <p>
-        We build distributed, peer-to-peer technologies that empower communities to coordinate, communicate, and collaborate — even when networks go down or centralized platforms fail.
-      </p>
-      <p>
-        We build things with and for partners for whom current technological infrastructure is insufficient, unavailable, and/or dangerous.
-      </p>
-      <p>
-        We work with people who care about sovereignty, resilience, and keeping the web human.
-      </p>
-    </rocket-content-area>
+    <!-- HOW IT WORKS -->
+    <section class="how">
+      <div class="container">
+        <h2>How it works</h2>
+        <p>When the internet stops working, Signal, WhatsApp, and Telegram all stop working. Dash Chat is built for when they fail.</p>
+        <p>When there's internet, Dash Chat works like these tools — end-to-end encrypted messages and voice notes. When the internet goes down and the others fail, Dash Chat keeps going on local WiFi networks, Bluetooth, and radio. We're starting with WiFi and working toward Bluetooth and radio simultaneously.</p>
+      </div>
+    </section>
 
+    <!-- GET INVOLVED -->
+    <section class="involved" id="get-involved">
+      <div class="container">
+        <h2>Get involved</h2>
+        <p class="lead">Dash Chat is in active development, currently in testing with partners and community members. If you're interested in testing it, building it for your context, or just want to know when it's ready — get in touch.</p>
 
+        <form action="https://submit-form.com/x8wivjMPt" method="POST" id="stayConnectedForm">
+          <input type="text" id="name" name="name" placeholder="Name" required />
+          <input type="email" id="email" name="email" placeholder="Email" required />
+          <input type="text" id="organization" name="organization" placeholder="Organization (optional)" />
+          <textarea id="context" name="context" placeholder="Tell us about your context"></textarea>
+          <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
+          <button type="submit" class="submit-btn">Send &rarr;</button>
+        </form>
 
-    <rocket-content-area>
-      <h2 id="building-dash-chat">We’re Building Dash Chat</h2>
-      <p>
-        Dash Chat is an offline-first, end-to-end encrypted messenger that works with internet, without internet, and bridges between the two. It’s designed for communities that need secure and reliable communication even during shutdowns or unstable connectivity. 
-      </p>
-      <p style="text-align: center;">
-        <a href="/dashchat" class="cta-btn" title="Learn more about Dash Chat" style="border:1px solid #1D4ED8; border-radius:8px; padding:10px 14px; color:#1D4ED8; text-decoration:none; font-weight:600; display:inline-block;">Learn more →</a>
-      </p>
-    </rocket-content-area>
-
-
-    <rocket-content-area>
-              <h2 id="connect">Connect</h2>
-      <p>
-        Contact us at: <a href="mailto:hello@darksoil.studio">hello@darksoil.studio</a>
-      </p>
-        <div class="custom-social-links">
-          <custom-social-link name="OpenCollective" url="https://opencollective.com/darksoil"></custom-social-link>
-          <custom-social-link name="Github" url="https://github.com/darksoil-studio/dash-chat"></custom-social-link>
-          <custom-social-link name="Substack" url="https://darksoil.substack.com"></custom-social-link>
-          
+        <div id="formSuccess">
+          <strong>Thanks for reaching out!</strong>
+          <span>We received your message and will be in touch.</span>
         </div>
-    </rocket-content-area>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="team-section">
+      <div class="container">
+        <h2>Team</h2>
+
+        <h3>Team</h3>
+        <div class="people-grid">
+          <div class="person">
+            <img src="eric_bw_circle_smile.png" alt="Eric Bear" class="avatar" />
+            <span class="name">Eric Bear</span>
+            <span class="role">Lead</span>
+          </div>
+          <div class="person">
+            <img src="guillem_bw.png" alt="Guillem Córdoba" class="avatar" />
+            <span class="name">Guillem Córdoba</span>
+            <span class="role">Engineering</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="4" y="4" width="8" height="8" fill="#60a5fa"/><circle cx="17" cy="17" r="5" fill="#f59e0b"/></svg></div>
+            <span class="name">Jade Ambrose</span>
+            <span class="role">Engineering</span>
+          </div>
+          <div class="person">
+            <img src="michael_bw.png" alt="Michael Dougherty" class="avatar" />
+            <span class="name">Michael Dougherty</span>
+            <span class="role">Engineering</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="3" fill="#e63946"/><rect x="2" y="10" width="20" height="3" fill="#f59e0b"/><rect x="2" y="15" width="20" height="3" fill="#60a5fa"/></svg></div>
+            <span class="name">Scott Garrison (Nanomonkey)</span>
+            <span class="role">Engineering</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="10" width="8" height="8" fill="#e63946"/><circle cx="16" cy="8" r="6" fill="#60a5fa"/><polygon points="6,2 12,2 9,8" fill="#f59e0b"/></svg></div>
+            <span class="name">Jun Nguyen</span>
+            <span class="role">UI/UX Design &amp; Research</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="8" cy="12" r="6" fill="#10b981"/><rect x="14" y="6" width="6" height="12" fill="#f59e0b"/></svg></div>
+            <span class="name">Carolyn Beer</span>
+            <span class="role">Project Coordinator</span>
+          </div>
+        </div>
+
+        <h3>Advisors</h3>
+        <div class="people-grid">
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6" fill="#60a5fa"/><rect x="14" y="14" width="8" height="8" fill="#e63946"/></svg></div>
+            <span class="name">Andreas Dzialocha</span>
+            <span class="role">p2panda, Delta Chat</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="3" width="10" height="10" fill="#10b981"/><circle cx="17" cy="17" r="5" fill="#60a5fa"/></svg></div>
+            <span class="name">Stacey Tsui</span>
+            <span class="role">Security Trainer</span>
+          </div>
+          <div class="person">
+            <img src="shoeb.jpeg" alt="Shoeb Abdullah" class="avatar" />
+            <span class="name">Shoeb Abdullah</span>
+            <span class="role">Activate Rights</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><polygon points="12,3 21,19 3,19" fill="#f59e0b"/></svg></div>
+            <span class="name">Holmes Wilson</span>
+            <span class="role">Quiet</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#8b5cf6"/><rect x="7" y="7" width="10" height="10" fill="#10b981"/><circle cx="12" cy="12" r="3" fill="#f59e0b"/></svg></div>
+            <span class="name">Michael Suantak</span>
+            <span class="role">Association for Progressive Communication</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#e63946"/><polygon points="12,4 16,20 8,20" fill="#f59e0b"/><rect x="10" y="16" width="4" height="2" fill="#60a5fa"/></svg></div>
+            <span class="name">Alex Linton</span>
+            <span class="role">Session</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="#e63946"/><rect x="7" y="7" width="10" height="3" fill="#f59e0b"/><rect x="7" y="13" width="10" height="3" fill="#60a5fa"/></svg></div>
+            <span class="name">Mark Kiggundu</span>
+            <span class="role">Defend Defenders</span>
+          </div>
+          <div class="person">
+            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" fill="#8b5cf6"/><circle cx="12" cy="12" r="6" fill="#f59e0b"/><polygon points="12,6 15,18 9,18" fill="#60a5fa"/></svg></div>
+            <span class="name">Laura Guntrum</span>
+            <span class="role">Researcher</span>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <footer>
-        <p class="legal">
-            © 2025 darksoil studio. All rights reserved.
-        </p>
+      Open source under the <a href="https://github.com/dash-chat/dash-chat/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">AGPL-3.0</a> license.
     </footer>
 
-    <script type="module">
-      async function registerCustomElements() {
-        // server-only components
-        // prettier-ignore
-        customElements.define('rocket-content-area', await import('@rocket/components/content-area.js').then(m => m.RocketContentArea));
-        // prettier-ignore
-        customElements.define('rocket-card', await import('@rocket/components/card.js').then(m => m.RocketCard));
-        // prettier-ignore
-        customElements.define('rocket-columns', await import('@rocket/components/columns.js').then(m => m.RocketColumns));
-      }
+    <script>
+      (function () {
+        var form = document.getElementById('stayConnectedForm');
+        var successBox = document.getElementById('formSuccess');
+        if (!form) return;
 
-      registerCustomElements();
-      import "./custom-social-link.js";
-      import "./clean-urls.js";
-      import { initializeSharedMenu } from './shared-menu.js';
-      
-      // Initialize menu interactions (hamburger, overlay)
-      initializeSharedMenu();
-
-      // Hide developer portal on homepage (desktop and mobile menus)
-      const header = document.querySelector('header');
-      header?.querySelector('.dev-btn')?.remove();
-      header?.querySelector('.mobile-menu-content .dev-btn')?.remove();
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          if (typeof grecaptcha !== 'undefined') {
+            var token = grecaptcha.getResponse();
+            if (!token) { alert('Please complete the reCAPTCHA.'); return; }
+          }
+          var fd = new FormData(form);
+          fetch(form.action, {
+            method: 'POST',
+            headers: { 'Accept': 'application/json' },
+            body: fd,
+          })
+            .then(function (resp) {
+              if (resp.ok) {
+                form.style.display = 'none';
+                successBox.style.display = 'block';
+                if (typeof grecaptcha !== 'undefined') grecaptcha.reset();
+              } else {
+                alert('Sorry, there was a problem. Please try again.');
+              }
+            })
+            .catch(function () { alert('Network error. Please try again.'); });
+        });
+      })();
     </script>
   </body>
 </html>
-
