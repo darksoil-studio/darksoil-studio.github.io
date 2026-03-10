@@ -486,10 +486,12 @@
           //   if (!token) { alert('Please complete the reCAPTCHA.'); return; }
           // }
           var fd = new FormData(form);
+          var data = {};
+          fd.forEach(function (value, key) { data[key] = value; });
           fetch(form.action, {
             method: 'POST',
-            headers: { 'Accept': 'application/json' },
-            body: fd,
+            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+            body: JSON.stringify(data),
           })
             .then(function (resp) {
               if (resp.ok) {
