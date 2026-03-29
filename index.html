@@ -422,11 +422,6 @@
             <span class="role">p2panda, Delta Chat</span>
           </div>
           <div class="person">
-            <div class="avatar-placeholder"><svg width="24" height="24" viewBox="0 0 24 24"><rect x="3" y="3" width="10" height="10" fill="#10b981"/><circle cx="17" cy="17" r="5" fill="#60a5fa"/></svg></div>
-            <span class="name">Stacey Tsui</span>
-            <span class="role">Security Trainer</span>
-          </div>
-          <div class="person">
             <img src="/assets/shoeb-b2d6326e.jpeg" alt="Shoeb Abdullah" class="avatar" />
             <span class="name">Shoeb Abdullah</span>
             <span class="role">Activate Rights</span>
@@ -486,15 +481,10 @@
             if (!token) { alert('Please complete the reCAPTCHA.'); return; }
           }
           var fd = new FormData(form);
-          var data = {};
-          fd.forEach(function (value, key) { data[key] = value; });
-          if (typeof grecaptcha !== 'undefined') {
-            data['g-recaptcha-response'] = grecaptcha.getResponse();
-          }
           fetch(form.action, {
             method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-            body: JSON.stringify(data),
+            headers: { 'Accept': 'application/json' },
+            body: fd,
           })
             .then(function (resp) {
               if (resp.ok) {
