@@ -14,6 +14,8 @@
         --text: #111; --muted: #555; --faint: #888; --border: #e5e7eb; --input-bg: #fff;
         --accent: #1D4ED8; --accent-hover: #1e40af; --accent-light: #dbeafe;
         --ok: #10b981; --warn: #f59e0b; --dot: rgba(29,78,216,0.12);
+        --focus-ring: color-mix(in srgb, var(--accent) 22%, transparent);
+        --shadow-soft: 0 16px 40px rgba(17, 24, 39, 0.08);
       }
       @media (prefers-color-scheme: dark) {
         :root {
@@ -25,7 +27,7 @@
       }
       *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
       html { scroll-behavior: smooth; }
-      body { font-family: "Rubik", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.65; -webkit-font-smoothing: antialiased; }
+      body { font-family: "Rubik", system-ui, sans-serif; background: var(--bg); color: var(--text); line-height: 1.62; -webkit-font-smoothing: antialiased; }
       nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: var(--bg); border-bottom: 1px solid var(--border); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
       @supports (backdrop-filter: blur(12px)) { nav { background: color-mix(in srgb, var(--bg) 82%, transparent); } }
       .nav-inner { max-width: 1000px; margin: 0 auto; padding: 0 24px; height: 60px; display: flex; align-items: center; justify-content: flex-end; }
@@ -37,37 +39,39 @@
       .nav-links .gh-link svg { display: block; }
       .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
       .container-wide { max-width: 920px; margin: 0 auto; padding: 0 24px; }
-      section { padding: 88px 0; }
+      a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
+      section { padding: 84px 0; }
       .section-alt { background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-      h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 22px; }
-      .section-body p { color: var(--muted); font-size: 1.08rem; line-height: 1.75; margin-bottom: 18px; max-width: 60ch; }
+      h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: 0; line-height: 1.2; margin-bottom: 22px; }
+      .section-body p { color: var(--muted); font-size: 1.05rem; line-height: 1.72; margin-bottom: 18px; max-width: 60ch; }
       .section-body p:last-child { margin-bottom: 0; }
       .section-body p strong { color: var(--text); font-weight: 600; }
-      .hero { position: relative; padding: 168px 0 96px; text-align: center; overflow: hidden; border-bottom: 1px solid var(--border); }
+      .hero { position: relative; padding: 156px 0 92px; text-align: center; overflow: hidden; border-bottom: 1px solid var(--border); }
       .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(var(--dot) 1.4px, transparent 1.4px); background-size: 26px 26px; -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, #000 40%, transparent 80%); mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, #000 40%, transparent 80%); pointer-events: none; }
       .hero .container { position: relative; }
       .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; margin-top: 0; font-size: 0.82rem; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; }
       .hero-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent); animation: pulse 2.4s infinite; }
       @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent); } 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
-      .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 20px; }
+      .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: 0; margin-bottom: 20px; }
       .hero .subtitle { font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.5; }
       .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 36px; padding-bottom: 36px; }
-      .cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; font-size: 1rem; font-weight: 600; font-family: inherit; color: #fff; background: var(--accent); border: none; border-radius: 10px; text-decoration: none; transition: background 0.15s, transform 0.15s; }
+      .cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; font-size: 1rem; font-weight: 600; font-family: inherit; color: #fff; background: var(--accent); border: none; border-radius: 8px; text-decoration: none; transition: background 0.15s, transform 0.15s; }
       .cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
-      .form-card { margin-top: 32px; padding: 28px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; max-width: 520px; }
-      form { display: flex; flex-direction: column; gap: 14px; }
+      .form-card { margin-top: 30px; padding: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; max-width: 520px; box-shadow: var(--shadow-soft); }
+      form { display: flex; flex-direction: column; gap: 13px; }
       form input[type="text"], form input[type="email"], form textarea { width: 100%; padding: 11px 13px; font-size: 0.95rem; font-family: inherit; color: var(--text); background: var(--input-bg); border: 1px solid var(--border); border-radius: 8px; outline: none; transition: border-color 0.15s, box-shadow 0.15s; }
-      form input:focus, form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 18%, transparent); }
+      form input:focus, form textarea:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--focus-ring); }
       form textarea { resize: vertical; min-height: 100px; }
       .form-label { font-weight: 600; font-size: 0.95rem; margin-top: 4px; }
       .form-checkboxes { display: flex; flex-direction: column; gap: 10px; }
       .form-checkboxes label { display: flex; align-items: center; gap: 9px; cursor: pointer; font-size: 0.95rem; }
       .form-checkboxes label input { margin: 0; width: 16px; height: 16px; accent-color: var(--accent); }
-      form .submit-btn { align-self: flex-start; margin-top: 4px; padding: 12px 28px; font-size: 0.95rem; font-weight: 600; font-family: inherit; color: #fff; background: var(--accent); border: none; border-radius: 8px; cursor: pointer; transition: background 0.15s, transform 0.15s; }
+      form .submit-btn { align-self: flex-start; margin-top: 4px; padding: 12px 28px; font-size: 0.95rem; font-weight: 600; font-family: inherit; color: #fff; background: var(--accent); border: none; border-radius: 8px; cursor: pointer; transition: background 0.15s, transform 0.15s, opacity 0.15s; }
       form .submit-btn:hover { background: var(--accent-hover); transform: translateY(-1px); }
+      form .submit-btn:disabled { cursor: not-allowed; opacity: 0.68; transform: none; }
       .form-hint { font-size: 0.85rem; color: #b45309; margin: 0; line-height: 1.4; }
-      #recaptcha-wrap { min-height: 78px; }
-      #formSuccess { display: none; margin-top: 32px; padding: 22px; border: 1px solid var(--border); border-radius: 14px; background: var(--surface); max-width: 520px; }
+      #recaptcha-wrap { min-height: 78px; overflow: hidden; }
+      #formSuccess { display: none; margin-top: 30px; padding: 22px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); max-width: 520px; box-shadow: var(--shadow-soft); }
       #formSuccess strong { display: block; margin-bottom: 4px; font-size: 1.05rem; }
       #formSuccess span { color: var(--muted); }
       .team-section h3 { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--faint); margin-bottom: 22px; }
@@ -83,7 +87,16 @@
       footer { border-top: 1px solid var(--border); padding: 40px 24px; text-align: center; font-size: 0.85rem; color: var(--faint); }
       footer a { color: var(--accent); text-decoration: none; }
       footer a:hover { text-decoration: underline; text-underline-offset: 2px; }
-      @media (max-width: 480px) { .people-grid { grid-template-columns: repeat(2, 1fr); } .hero { padding: 140px 0 72px; } section { padding: 64px 0; } }
+      @media (max-width: 480px) {
+        .container, .container-wide { padding: 0 20px; }
+        .nav-inner { padding: 0 20px; }
+        .nav-links { gap: 18px; }
+        .people-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 18px; }
+        .hero { padding: 134px 0 68px; }
+        section { padding: 62px 0; }
+        .form-card { padding: 20px; }
+        #recaptcha-wrap { transform: scale(0.92); transform-origin: left top; min-height: 72px; }
+      }
     </style>
   </head>
   <body>
@@ -120,13 +133,11 @@
         <h2>Our priorities</h2>
         <p><strong>Usable, Reliable, and Secure... and in that order</strong></p>
         <p>A tool that isn't used can't provide any security at all. Dash Chat is designed to feel like the messaging apps people already know — because people don't build habits around software that frustrates them. End-to-end encryption is the baseline, not a feature.</p>
-        <p>We develop Dash Chat in close relationship with the organizations and communities who need it most. Their contexts shape what we build and in what order.</p>
       </div>
     </section>
     <section class="involved" id="get-involved">
       <div class="container section-body">
         <h2>Get involved</h2>
-        <p>We'd like to hear from you. Dash Chat is in active development, currently in testing with partners and community members. If you're interested in testing it, building it for your context, or just want to know when it's ready — get in touch.</p>
         <div class="form-card">
           <form action="https://submit-form.com/x8wivjMPt" method="POST" id="stayConnectedForm">
             <input type="email" id="email" name="email" required placeholder="Email*" />
@@ -134,7 +145,6 @@
             <div class="form-label">I'd like to…</div>
             <div class="form-checkboxes">
               <label><input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" /><span>Receive Newsletter</span></label>
-              <label><input type="checkbox" id="opt_test" name="test" value="yes" /><span>Test Dash Chat</span></label>
               <label><input type="checkbox" id="opt_partner" name="partner" value="yes" /><span>Explore Partnership</span></label>
             </div>
             <div id="pilotPartnerDetails" style="display: none;">
@@ -183,13 +193,11 @@
     </footer>
     <script>
       (function () {
-        var test = document.getElementById('opt_test');
         var partner = document.getElementById('opt_partner');
         var details = document.getElementById('pilotPartnerDetails');
         function toggleDetails() {
-          details.style.display = (test && test.checked) || (partner && partner.checked) ? 'block' : 'none';
+          details.style.display = partner && partner.checked ? 'block' : 'none';
         }
-        if (test) test.addEventListener('change', toggleDetails);
         if (partner) partner.addEventListener('change', toggleDetails);
 
         var form = document.getElementById('stayConnectedForm');
@@ -197,20 +205,30 @@
         var recaptchaHint = document.getElementById('recaptcha-hint');
         if (!form) return;
 
+        function showRecaptchaHint(message) {
+          if (!recaptchaHint) return;
+          recaptchaHint.hidden = false;
+          recaptchaHint.textContent = message;
+        }
+
         function submitForm() {
           var submitBtn = form.querySelector('.submit-btn');
           if (submitBtn) submitBtn.disabled = true;
           var body = new FormData(form);
-          if (typeof grecaptcha !== 'undefined' && grecaptcha.getResponse) {
-            var token = grecaptcha.getResponse();
-            if (!token) {
-              alert('Please complete the reCAPTCHA.');
-              if (submitBtn) submitBtn.disabled = false;
-              return;
-            }
-            body.set('g-recaptcha-response', token);
+          if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse) {
+            showRecaptchaHint('reCAPTCHA did not load. Please refresh the page and try again.');
+            if (submitBtn) submitBtn.disabled = false;
+            return;
           }
-          fetch(form.action, { method: 'POST', body: body, redirect: 'follow' })
+          var token = grecaptcha.getResponse();
+          if (!token) {
+            showRecaptchaHint('Please complete the reCAPTCHA before sending.');
+            if (submitBtn) submitBtn.disabled = false;
+            return;
+          }
+          if (recaptchaHint) recaptchaHint.hidden = true;
+          body.set('g-recaptcha-response', token);
+          fetch(form.action, { method: 'POST', headers: { 'Accept': 'application/json' }, body: body, redirect: 'follow' })
             .then(function (resp) {
               var ok = resp.ok || (resp.url && resp.url.indexOf('_status=OK') !== -1);
               if (ok) {
@@ -218,10 +236,14 @@
                 successBox.style.display = 'block';
                 if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) grecaptcha.reset();
               } else {
-                alert('Sorry, there was a problem. Please try again.');
+                showRecaptchaHint('Sorry, there was a problem sending your message. Please try again.');
+                if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) grecaptcha.reset();
               }
             })
-            .catch(function () { alert('Network error. Please try again.'); })
+            .catch(function () {
+              showRecaptchaHint('Network error. Please try again.');
+              if (typeof grecaptcha !== 'undefined' && grecaptcha.reset) grecaptcha.reset();
+            })
             .finally(function () { if (submitBtn) submitBtn.disabled = false; });
         }
 
@@ -237,10 +259,7 @@
         window.setTimeout(function () {
           var wrap = document.getElementById('recaptcha-wrap');
           if (!wrap || wrap.querySelector('iframe')) return;
-          if (recaptchaHint) {
-            recaptchaHint.hidden = false;
-            recaptchaHint.textContent = 'reCAPTCHA did not load. If you manage this site, add dashchat.org and localhost to your reCAPTCHA domain list in Google Admin.';
-          }
+          showRecaptchaHint('reCAPTCHA did not load. If you manage this site, add dashchat.org and localhost to your reCAPTCHA domain list in Google Admin.');
         }, 8000);
       })();
     </script>

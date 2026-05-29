@@ -264,6 +264,7 @@
         </div>
 
         <div class="g-recaptcha" data-sitekey="6LfXWbYrAAAAAA0JyvaevQVvn_5YCQIkLDJPOKoL"></div>
+        <p id="recaptcha-hint" style="display:none; margin: 0; color: #b45309; font-size: 0.9em; line-height: 1.4;"></p>
 
         <button type="submit" class="button" style="width: 100%; border: 1px solid #ccc; background: #f3f4f6; color: #111; border-radius: 8px; padding: 10px 12px; font-weight: 600;"
           onmouseover="this.style.background='#93C5FD'; this.style.color='#1D4ED8'; this.style.border='1px solid #93C5FD'"
@@ -362,16 +363,26 @@
       // Inline submit success
       const form = document.getElementById('stayConnectedForm');
       const successBox = document.getElementById('formSuccess');
+      const recaptchaHint = document.getElementById('recaptcha-hint');
+      function showRecaptchaHint(message) {
+        if (!recaptchaHint) return;
+        recaptchaHint.style.display = 'block';
+        recaptchaHint.textContent = message;
+      }
       form?.addEventListener('submit', async (e) => {
         e.preventDefault();
-        if (typeof grecaptcha !== 'undefined') {
-          const token = grecaptcha.getResponse();
-          if (!token) {
-            alert('Please complete the reCAPTCHA.');
-            return;
-          }
+        if (typeof grecaptcha === 'undefined' || !grecaptcha.getResponse) {
+          showRecaptchaHint('reCAPTCHA did not load. Please refresh the page and try again.');
+          return;
+        }
+        const token = grecaptcha.getResponse();
+        if (!token) {
+          showRecaptchaHint('Please complete the reCAPTCHA before sending.');
+          return;
         }
         const fd = new FormData(form);
+        fd.set('g-recaptcha-response', token);
+        if (recaptchaHint) recaptchaHint.style.display = 'none';
         try {
           const resp = await fetch(form.action, {
             method: 'POST',
@@ -383,10 +394,12 @@
             successBox.style.display = 'block';
             if (typeof grecaptcha !== 'undefined') { grecaptcha.reset(); }
           } else {
-            alert('Sorry, there was a problem sending your message. Please try again.');
+            showRecaptchaHint('Sorry, there was a problem sending your message. Please try again.');
+            if (typeof grecaptcha !== 'undefined') { grecaptcha.reset(); }
           }
         } catch (err) {
-          alert('Network error. Please try again.');
+          showRecaptchaHint('Network error. Please try again.');
+          if (typeof grecaptcha !== 'undefined') { grecaptcha.reset(); }
         }
       });
     </script>

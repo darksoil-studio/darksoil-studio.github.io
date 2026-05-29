@@ -6,7 +6,8 @@
 /roadmap / 200
 /drapac / 200
 /people / 200
-/blog / 200
+/blog /blog.html 200
+/hello-world /hello-world.html 200
 
 # Catch-all: any other path serves the landing page
 /* /index.html 200
