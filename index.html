@@ -39,22 +39,22 @@
       .nav-links .gh-link svg { display: block; }
       .container { max-width: 760px; margin: 0 auto; padding: 0 24px; }
       .container-wide { max-width: 920px; margin: 0 auto; padding: 0 24px; }
+      .team-section .container-wide { width: min(920px, calc(100% - 48px)); margin-left: max(24px, calc((100% - 760px) / 2 + 24px)); margin-right: auto; padding: 0; }
       a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible { outline: 3px solid var(--focus-ring); outline-offset: 3px; }
       section { padding: 84px 0; }
-      .section-alt { background: var(--surface-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+      .section-alt { background: var(--bg); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
       h2 { font-size: clamp(1.5rem, 3vw, 1.9rem); font-weight: 700; letter-spacing: 0; line-height: 1.2; margin-bottom: 22px; }
       .section-body p { color: var(--muted); font-size: 1.05rem; line-height: 1.72; margin-bottom: 18px; max-width: 60ch; }
       .section-body p:last-child { margin-bottom: 0; }
       .section-body p strong { color: var(--text); font-weight: 600; }
       .hero { position: relative; padding: 156px 0 92px; text-align: center; overflow: hidden; border-bottom: 1px solid var(--border); }
-      .hero::before { content: ""; position: absolute; inset: 0; background-image: radial-gradient(var(--dot) 1.4px, transparent 1.4px); background-size: 26px 26px; -webkit-mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, #000 40%, transparent 80%); mask-image: radial-gradient(ellipse 70% 70% at 50% 35%, #000 40%, transparent 80%); pointer-events: none; }
       .hero .container { position: relative; }
       .hero-badge { display: inline-flex; align-items: center; gap: 8px; padding: 6px 14px; margin-top: 0; font-size: 0.82rem; font-weight: 500; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-radius: 999px; }
       .hero-badge .pulse { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 60%, transparent); animation: pulse 2.4s infinite; }
       @keyframes pulse { 0% { box-shadow: 0 0 0 0 color-mix(in srgb, var(--ok) 55%, transparent); } 70% { box-shadow: 0 0 0 9px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
       .hero h1 { font-size: clamp(2.2rem, 5.5vw, 3.4rem); font-weight: 700; line-height: 1.1; letter-spacing: 0; margin-bottom: 20px; }
       .hero .subtitle { font-size: clamp(1.1rem, 2.5vw, 1.3rem); color: var(--muted); max-width: 540px; margin: 0 auto 36px; line-height: 1.5; }
-      .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 36px; padding-bottom: 36px; }
+      .hero-actions { display: flex; flex-direction: column; align-items: center; gap: 24px; padding-bottom: 20px; }
       .cta { display: inline-flex; align-items: center; gap: 8px; padding: 13px 30px; font-size: 1rem; font-weight: 600; font-family: inherit; color: #fff; background: var(--accent); border: none; border-radius: 8px; text-decoration: none; transition: background 0.15s, transform 0.15s; }
       .cta:hover { background: var(--accent-hover); transform: translateY(-1px); }
       .form-card { margin-top: 30px; padding: 26px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; max-width: 520px; box-shadow: var(--shadow-soft); }
@@ -76,7 +76,7 @@
       #formSuccess span { color: var(--muted); }
       .team-section h3 { font-size: 0.82rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.07em; color: var(--faint); margin-bottom: 22px; }
       .team-section h3:not(:first-of-type) { margin-top: 52px; }
-      .people-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(170px, 1fr)); gap: 28px 22px; }
+      .people-grid { display: grid; grid-template-columns: repeat(auto-fill, 150px); gap: 28px 34px; justify-content: start; }
       .person { display: flex; flex-direction: column; align-items: flex-start; }
       .person .avatar, .person .avatar-placeholder { width: 60px; height: 60px; border-radius: 50%; margin-bottom: 10px; background: var(--border); transition: transform 0.15s; }
       .person .avatar { object-fit: cover; }
@@ -89,6 +89,7 @@
       footer a:hover { text-decoration: underline; text-underline-offset: 2px; }
       @media (max-width: 480px) {
         .container, .container-wide { padding: 0 20px; }
+        .team-section .container-wide { width: calc(100% - 40px); margin-left: 20px; padding: 0; }
         .nav-inner { padding: 0 20px; }
         .nav-links { gap: 18px; }
         .people-grid { grid-template-columns: repeat(2, 1fr); gap: 26px 18px; }
@@ -145,6 +146,7 @@
             <div class="form-label">I'd like to…</div>
             <div class="form-checkboxes">
               <label><input type="checkbox" id="opt_newsletter" name="newsletter" value="yes" /><span>Receive Newsletter</span></label>
+              <label><input type="checkbox" id="opt_test" name="test" value="yes" /><span>Test Dash Chat</span></label>
               <label><input type="checkbox" id="opt_partner" name="partner" value="yes" /><span>Explore Partnership</span></label>
             </div>
             <div id="pilotPartnerDetails" style="display: none;">
@@ -193,11 +195,13 @@
     </footer>
     <script>
       (function () {
+        var test = document.getElementById('opt_test');
         var partner = document.getElementById('opt_partner');
         var details = document.getElementById('pilotPartnerDetails');
         function toggleDetails() {
-          details.style.display = partner && partner.checked ? 'block' : 'none';
+          details.style.display = (test && test.checked) || (partner && partner.checked) ? 'block' : 'none';
         }
+        if (test) test.addEventListener('change', toggleDetails);
         if (partner) partner.addEventListener('change', toggleDetails);
 
         var form = document.getElementById('stayConnectedForm');
